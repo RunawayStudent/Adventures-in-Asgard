@@ -1,0 +1,170 @@
+Your stats.
+
+*stat_chart
+  text Name
+  percent Magic
+  percent Diplomacy
+  percent Charm
+  percent Strength
+
+
+*temp Odin_text
+*if odin_status=0
+  *set odin_text "is dead."
+  *goto chart1
+*elseif Odin < 20
+  *set Odin_text "hates you."
+  *goto chart1
+*elseif Odin < 40
+  *set Odin_text "dislikes you."
+  *goto chart1
+*elseif Odin < 60
+  *set Odin_text "doesn't care about you."
+  *goto chart1
+*elseif Odin < 80
+  *set Odin_text "likes you."
+  *goto chart1
+*else
+  *set Odin_text "is your friend."
+*label chart1
+
+*stat_chart
+  text Odin_text Odin
+
+*temp Loki_text
+*if loki_angry=0
+  *set loki_text "is dead."
+  *goto chart2
+*elseif Loki < 20
+  *set Loki_text "hates you."
+  *goto chart2
+*elseif Loki < 40
+  *set Loki_text "dislikes you."
+  *goto chart2
+*elseif Loki < 60
+  *set Loki_text "doesn't care about you."
+  *goto chart2
+*elseif Loki < 80
+  *set Loki_text "likes you."
+  *goto chart2
+*else
+  *set Loki_text "is your friend."
+*label chart2
+
+*stat_chart
+  text Loki_text Loki
+
+*temp Thor_text
+*if thor_status=0
+  *set thor_text "is dead."
+  *goto chart3
+*elseif Thor < 20
+  *set Thor_text "hates you."
+  *goto chart3
+*elseif Thor < 40
+  *set Thor_text "dislikes you."
+  *goto chart3
+*elseif Thor < 60
+  *set Thor_text "doesn't care about you."
+  *goto chart3
+*elseif Thor < 80
+  *set Thor_text "likes you."
+  *goto chart3
+*else
+  *set Thor_text "is your friend."
+*label chart3
+
+*stat_chart
+  text Thor_text Thor
+
+*temp Freya_text
+*if freya_status=0
+  *set freya_text "is dead."
+  *goto chart4
+*elseif Freya < 20
+  *set Freya_text "hates you."
+  *goto chart4
+*elseif Freya < 40
+  *set Freya_text "dislikes you."
+  *goto chart4
+*elseif Freya < 60
+  *set Freya_text "doesn't care about you."
+  *goto chart4
+*elseif Freya < 80
+  *set Freya_text "likes you."
+  *goto chart4
+*else
+  *set Freya_text "is your friend."
+*label chart4
+
+*stat_chart
+  text Freya_text Freya
+
+*temp Frey_text
+*if frey_status=0
+  *set frey_text "is dead."
+  *goto chart5
+*elseif Frey < 20
+  *set Frey_text "hates you."
+  *goto chart5
+*elseif Frey < 40
+  *set Frey_text "dislikes you."
+  *goto chart5
+*elseif Frey < 60
+  *set Frey_text "doesn't care about you."
+  *goto chart5
+*elseif Frey < 80
+  *set Frey_text "likes you."
+  *goto chart5
+*else
+  *set Frey_text "is your friend."
+*label chart5
+
+*stat_chart
+  text Frey_text Frey
+
+*temp heimdall_text
+*if heimdall_status=0
+  *set heimdall_text "is dead."
+  *goto chart6
+*elseif heimdall < 20
+  *set heimdall_text "hates you."
+  *goto chart6
+*elseif heimdall < 40
+  *set heimdall_text "dislikes you."
+  *goto chart6
+*elseif heimdall < 60
+  *set heimdall_text "doesn't care about you."
+  *goto chart6
+*elseif heimdall < 80
+  *set heimdall_text "likes you."
+  *goto chart6
+*else
+  *set heimdall_text "is your friend."
+*label chart6
+  
+*stat_chart
+  text heimdall_text Heimdall
+
+*temp kvasir_text
+*if kvasir_status=0
+  *set kvasir_text "is dead."
+  *goto chart7
+*elseif kvasir < 20
+  *set kvasir_text "hates you."
+  *goto chart7
+*elseif kvasir < 40
+  *set kvasir_text "dislikes you."
+  *goto chart7
+*elseif kvasir < 60
+  *set kvasir_text "doesn't care about you."
+  *goto chart7
+*elseif kvasir < 80
+  *set kvasir_text "likes you."
+  *goto chart7
+*else
+  *set kvasir_text "is your friend."
+*label chart7
+    
+*stat_chart
+    text kvasir_text Kvasir

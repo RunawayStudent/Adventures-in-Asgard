@@ -1,0 +1,275 @@
+*comment Copyright 2010 by Dan Fabulich.
+*comment 
+*comment Dan Fabulich licenses this file to you under the
+*comment ChoiceScript License, Version 1.0 (the "License"); you may
+*comment not use this file except in compliance with the License. 
+*comment You may obtain a copy of the License at
+*comment 
+*comment  http://www.choiceofgames.com/LICENSE-1.0.txt
+*comment 
+*comment See the License for the specific language governing
+*comment permissions and limitations under the License.
+*comment 
+*comment Unless required by applicable law or agreed to in writing,
+*comment software distributed under the License is distributed on an
+*comment "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+*comment either express or implied.
+
+*title Adventures in Asgard
+*author Eleanor Cooke
+*scene_list
+  startup
+  char_gen
+  back_home
+  the_builder
+  kvasir
+  hammer
+
+
+*create name "???"
+
+*create hammer false
+*create gungnir false
+*create gulltoppr false
+*create skidbladnir false
+*create shield false
+*create spy false
+*create armour false
+*create hook false
+*create brisingamen false
+*create staff false
+*create scales false
+*create veil false
+*create hideband false
+*create dress false
+*create net false
+*create draupnir false
+*create gullinbursti false
+
+*create mead_owned false
+*create mead_drunk false
+
+*create cult false
+
+*create cloak false
+*create Sleipnir 1
+
+*create Wall "none"
+
+*create ElfFavour false
+*create DwarfFavour false
+*create Aurboda false
+
+*create Gerdborn true
+
+*create Sifhair true
+
+*create Fire 0
+*create Death 0
+*create Dream 0
+*create Rain 0
+*create Animal 0
+
+*create Loki 30
+*create Odin 40
+*create Heimdall 50
+*create Thor 50
+*create Tyr 50
+*create Frey 50
+*create Freya 40
+*create Sigyn 50
+*create Idunn 80
+*create Sif 50
+*create Baldur 65
+*create Njord 50
+*create Frigg 50
+*create Fulla 50
+*create Vor 50
+*create Kvasir 65
+*create Aegir 50
+*create Ran 50
+
+*create Gerd 30
+
+*comment 0=dead 1=Odin 2=Loki 3=PC
+*create Loki_angry 1
+*create Odin_status 1
+*create Heimdall_status 1
+*create Thor_status 1
+*create Tyr_status 1
+*create Frey_status 1
+*create Freya_status 1
+*create Sigyn_status 2
+*create Idunn_status 1
+*create Sif_status 1
+*create Baldur_status 1
+*create Njord_status 1
+*create Frigg_status 1
+*create Fulla_status 1
+*create Vor_status 1
+*create Kvasir_status 1
+
+*create Charm 20
+*create Magic 20
+*create Strength 20
+*create Diplomacy 20
+
+*create Threat 0
+
+Welcome to your very first ChoiceScript game!
+
+Copyright 2010 by Dan Fabulich.
+
+Dan Fabulich licenses this file to you under the
+ChoiceScript License, Version 1.0 (the "License"); you may
+not use this file except in compliance with the License. 
+You may obtain a copy of the License at
+
+*link http://www.choiceofgames.com/LICENSE-1.0.txt
+
+See the License for the specific language governing
+permissions and limitations under the License.
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+either express or implied.
+
+*page_break
+
+Asgard shines before you as you make stride up the rainbow bridge, walking with the confidence of a god. You've been away for a long time, and it's good to be home.
+
+You're on your way to Valhalla, the hall of the Allfather, Odin, when you spot an altercation breaking out between two of the aesir - Heimdall, the watchman, and the trickster Loki.
+
+It isn't unusual for them to be arguing - they hate each other intensely - but this looks like its about to get violent, and that never ends well.
+
+*choice
+  #Side with Loki - Heimdall is always nasty to him.
+    That's true. Heimdall, who watches the future as closely as other watchmen watch the present, and whose eagle's eyes see further than anyone save Odin, has a particular dislike for the sly, secretive Loki.
+    
+    What exactly are you planning to do?
+    *set Loki %+10
+    *set Heimdall %-20
+    *choice
+      #Flash Heimdall a charming smile and calm him down.
+        *set Heimdall %+25
+        He glares at you when you step into his way, but calms down almost immediately. He likes you, and he's extremely patient - whatever his current issue with Loki, he's willing to wait for another time.
+
+        He offers you a polite nod and walks away.
+        *set Charm +50
+        *finish Move on to Valhalla.
+      #Restrain him magically. Then he can't fight.
+        Not the most honourable tactic, but an effective one. He bares his golden teeth at you in annoyance, but he can't escape. Loki gives you a nod before he slips away, impressed by your technique.     
+        *set Magic +50
+        *set Heimdall -5
+        *set Loki +1
+        *finish Move on to Valhalla.
+      #Punch him.
+        When in doubt, go with the classics. 
+
+        He punches back a few times, but he's not a match for you. Loki takes the opportunity to sidle away. Despite having lost, Heimdall respects your decison.
+        *set Strength +50
+        *set Heimdall +1
+        *finish Move on to Valhalla.
+      #Make a deal.
+        You offer him a fur cloak you picked up while you were away, in exchange for letting this go; it can get cold sitting on watch on the Bifrost at night.
+
+        Loki casts you an impressed look as Heimdall takes it.
+        *set Diplomacy +50
+        *set Loki +2
+        *finish Move on to Valhalla.
+      #Threaten to tell Odin. He doesn't like it when his soldiers fight.
+        That gets his attention; no one wants to be on the wrong side of Odin. He bares his golden teeth at you in anger, then turns and walks away. Loki give you a look of disgust as he does the same.
+        *set Loki %-10
+        *set Heimdall %-5
+        *set Odin +50
+        *finish Move on to Valhalla.
+  #Side with Heimdall - Loki has probably done something stupid.
+    It wouldn't be the first time. An unstable mix of imagination, spite and irreverance puts Loki at the center of most of what happens in Asgard, and Heimdall is one of his favourite people to needle.
+    
+    How will you deal with him?
+    *set Loki %-25
+    *set Heimdall %+10
+    *choice
+      #By being charming. I'll just ask him to go.
+        *set loki %+15
+        He starts to put on an innocent facade, then shrugs and grins. 
+       
+        "Well… if you say so…" 
+
+        His tone is bright and cocky and friendly, but with a definite hint of sarcasm. That may not mean much though; Loki [i]always [/i]sounds slightly sarcastic.
+   
+        He gives slight bow, then saunters away.
+        *set Charm +50
+        *finish Move on to Valhalla.
+      #Restrain him magically.
+        Not the most honourable tactic, but an effective one. At least it is usually. Loki slips out of your enchantment like a fish slipping a net and dances away. At least the argument has stopped.
+        *set Magic +50
+        *set Heimdall %-5
+        *set Loki %+5
+        *finish Move on to Valhalla.
+      #Punch him.
+        "Woah, woah, woah!"
+
+        He scuttles backwards, raising his hands, then transforms into an impala to spring away.
+        *set Strength +50
+        *set Heimdall +5
+        *set Loki -10
+        *finish Move on to Valhalla.
+      #Point out that he can't beat Heimdall in a fight.
+        Loki listens to you with a cocky smirk on his face, then shrugs.
+
+        "Fair enough." he decides, and then saunters off.
+        *set Diplomacy +50
+        *set Loki %+5
+        *finish Move on to Valhalla.
+      #Threaten to tell Odin. He doesn't like it when his soldiers fight.
+        That gets his attention; no one wants to be on the wrong side of Odin. He casts you a look of pure disgust before he leaves.
+        *set Loki %-20
+        *set Heimdall %-5
+        *set Odin +50
+        *finish Move on to Valhalla.
+  #Stay neutral - picking sides won't help.
+    You're probably right. Loki's cocky irreverance and spiteful little games infuriate Heimdall, and Heimdall's accusations and threats towards Loki only make them worse. There's no way to tell who's to blame for this particular incident.
+    
+    Your refusal to choose annoys them a little, though. 
+    
+    How will you stop them fighting?
+    *set Loki -2
+    *set Heimdall -1
+    *set Diplomacy +5
+    *choice
+      #I'll be charming and calm them down.
+        You're good at that. A winning smile and a few soft words lower their tempers, and they go their seperate ways. Well done.
+        *set Charm +50
+        *set Loki +1
+        *finish Move on to Valhalla.
+      #Restrain them magically.
+        Not the most honourable tactic, but an effective one. At least it is usually. Heimdall is bound, but Loki slips out of your enchantment like a fish and dances away. At least the argument has stopped.
+        *set Magic +50
+        *set Heimdall -5
+        *set Loki +1
+        *finish Move on to Valhalla.
+      #Punch them.
+        It's hard to punch them both at once, but you are a god. Heimdall looks impressed, and fights back, while Loki yelps and flees.
+        *set Strength +50
+        *set Heimdall +1
+        *set Loki -10
+        *finish Move on to Valhalla.
+      #Point out that whatever their problem is, fighting won't solve it.
+        "How about the two of you just go your seperate ways?"
+
+        They consider it, then Loki shrugs.
+
+        "Fair enough."
+
+        The two of them leave.
+        *set Diplomacy +50
+        *set Loki +2
+        *finish Move on to Valhalla.
+      #Threaten to tell Odin. He doesn't like it when his soldiers fight.
+        That gets their attention; no one wants to be on the wrong side of Odin. They aren't happy, and Loki in particular casts you a disgusted look, but they both leave.
+        *set Loki -10
+        *set Heimdall -5
+        *set Odin +50
+        *finish Move on to Valhalla.

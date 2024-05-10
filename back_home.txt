@@ -1,0 +1,128 @@
+*comment Copyright 2010 by Dan Fabulich.
+*comment 
+*comment Dan Fabulich licenses this file to you under the
+*comment ChoiceScript License, Version 1.0 (the "License"); you may
+*comment not use this file except in compliance with the License. 
+*comment You may obtain a copy of the License at
+*comment 
+*comment  http://www.choiceofgames.com/LICENSE-1.0.txt
+*comment 
+*comment See the License for the specific language governing
+*comment permissions and limitations under the License.
+*comment 
+*comment Unless required by applicable law or agreed to in writing,
+*comment software distributed under the License is distributed on an
+*comment "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+*comment either express or implied.
+You enter the great hall of Valhalla, and walk past tables full of the einherjar - dead warriors handpicked by Odin for his army - and approach the raised throne.
+
+Cold, calculating and enigmatic, Odin rules Asgard with an iron fist, demanding loyalty, and getting it. He is the father of most of the aesir, and of the human race, and it is down to him that the nine worlds were created at all. He sits straightbacked on his throne, staring out at those worlds and planning for the future, and no-one really knows what those plans entail.
+
+He lets very few people into his confidence, 
+*if Odin>50
+  and you are one of them. Even so, he doesn't trust you entirely - he truly trusts only himself.
+  *goto allfathershall
+*else
+  and you are not one of them.
+  *goto allfathershall
+*label allfathershall
+
+As you come before him, his single eye - the other was sacrificed for wisdom at Mimir's well - refocuses, as he brings his mind back into the here and now.
+
+*if Odin>50
+  He smiles slightly to see you, and bows his head respectfully. 
+
+  "${name}, how was your mission?"
+  *goto what_job
+*else
+  He looks you over with a face like granite then narrows his eye and speaks in a neutral tone.
+  
+  "How was your mission?"
+  *label what_job
+  *page_break
+  On that subject, [i]what[/i] was your mission?
+  *choice
+    #It was diplomatic.
+      *set Diplomacy +5
+      *set Charm +5
+      I see. Who were you negotiating with?
+      *choice
+        #The giants in Jotunheim.
+          *set Diplomacy %+10
+          *set Odin %+10
+          Of course!
+          *page_break
+          Odin is pleased when you tell him of your success dealing with the Jotun. This peace probably won't last long, but it's still valuable to him.
+          *finish Settle down and feast.
+        #The dwarves in Svartalfheim.
+          *set Diplomacy %+10
+          *set Odin %+10
+          Of course!
+          *page_break
+          Odin is delighted when you say your mission went well. The dwarves are master craftsmen, and he likes to have them on his side.
+          *finish Settle down and feast.
+        #The light elves in Alfheim.
+          *set Charm %+10
+          *set Odin %+5
+          Of course!
+          *page_break
+          Odin nods as you inform him of your success. The elves are both powerful and wise, but they are also hard to predict. Still, it never hurts to have people on your side, and Odin knows that.
+          *finish Settle down and feast.
+    #I was going to war.
+      *set strength +5
+      *set Strength %+10
+      I see. Who were you fighting?
+      *choice
+        #The giants in Jotunheim.
+          Right. They were encroaching on Asgard again, weren't they? 
+          *page_break
+          *set Odin %+10
+          Odin is relieved when you tell him the invasions were stopped, and he offers you a slight nod.
+          *finish Settle down and feast.
+        *selectable_if (Rain>50) #The fire demons from Muspellheim.
+          Oh, yes. A job you're perfect for.
+          *page_break
+          Odin is pleased to hear that you did a bit of damage to Muspellheim. It should keep them away for a while.
+          *set Odin %+10
+          *finish Settle down and feast.
+    #I was working on a spell.
+      *set Magic %+10
+      Ah, yes. For whose benefit was it, again?
+      *choice
+        #For myself, of course!
+          Of course. Your spell went off perfectly, and it strengthened your magical abilities.
+          *set Magic %+40
+          *set Odin %-10
+          *page_break
+          Odin takes the news of your success impassively.
+          *finish Settle down and feast.
+        #It was a favour for Odin.
+          Right! 
+          *page_break
+          *set Odin %+15
+          Odin is delighted to hear about the spell's success. He offers you the seat at his side.
+          *finish Settle down and feast.
+        #It was a favour for Frey, the vanir god of fertility.
+          Right!
+          *page_break
+          *set Frey %+40
+          Odin takes the news of your success impassively, but Frey beams and invites you to sit by him.
+          *finish Settle down and feast.
+        #It was a favour for Loki.
+          Oh! He could have been nicer to you earlier then, couldn't he…
+          *page_break
+          *set Loki %+15
+          Odin takes the news of your success impassively, then invites you to eat.
+          *finish Settle down and feast.
+        #It was a favour for the dwarves.
+          *set DwarfFavour true
+          I see. That may pay in the future.
+          *page_break
+          Odin takes the news of your success impassively, then invites you to eat.
+          *finish Settle down and feast.
+
+
+
+
+
+         

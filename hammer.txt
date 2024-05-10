@@ -1,0 +1,1521 @@
+*if Loki>50
+    It's early morning, and you are woken by 
+    *if Dream=100
+        someone calling out into your dreams. Loki?
+        *goto myhouse
+    *elseif fire=100
+        the sizzling of someone throwing a small bucket of water on the inferno you live in. Loki?
+        *goto myhouse
+    *elseif death=100
+        someone knocking on the burned husk of a ship you live in. Loki?
+        *goto myhouse
+    *elseif rain=100
+        someone throwing rocks into your rainstorm of a house. Loki?
+        *goto myhouse
+    *else
+        someone knocking on the ground above your burrow. Loki?
+        *goto myhouse
+*else
+    After a while, Thor suddenly becomes angry. He takes to stomping around Asgard starting fights, and you haven't seen Sif or Loki in a while.
+    *goto gift_gathering
+*label myhouse
+*temp lokiin false
+*temp Iknow false
+*choice
+    #I'll get up and ask him what he wants.
+
+        He spreads his hands innocently and widens his green eyes.
+
+        "Just paying an early morning visit to a friend. May I come in?"
+        *choice
+            #"Ugh, whatever. I'm going back to bed."
+                *set loki %+5
+                You create a room in your home for Loki to enter, and then go back to bed.
+                *set Lokiin true
+                *page_break
+                *goto thor_cross
+            #"Uh, huh. Why are you really here?"
+                He opens his mouth, shuts it, then purses his lips and blows air through them.
+
+                "I… may have done something stupid." he confesses.
+                *choice
+                    #"Right. Come in and tell me about it."
+                        *set lokiin true
+                        *set iknow true
+                        You create a room in your house for Loki to enter, then sit down to talk.
+
+                        "Well…?"
+
+                        "I… kind of pulled out all of Sif's hair."
+
+                        You stare at him, and he offers a sheepish grin.
+
+                        Sif is the much loved wife of the thunder god Thor. She takes a great deal of pride in her golden hair, and has a sharp tongue that rivals even Freya's. She and Thor adore each other, and they constantly appear at each other's sides and enter each other's space. Thor is going to be [i]furious[/i].
+                        *choice
+                            #"Why in the nine worlds did you do [i]that?[/i]"
+                                Loki shrugs awkwardly.
+
+                                "It seemed like a good idea?"
+
+                                He rocks back and forth nervously for a few seconds.
+
+                                "So… help?"
+                                *choice
+                                    #"I'm going to regret this, but okay."
+                                        *goto inside
+                                    #"Fine."
+                                        *goto inside
+                                        The two of you continue talking about nothing much, trying to control your nervousness.
+                                        *goto thor_cross
+                                    #"No. Go away."
+                                        *set lokiin false
+                                        "But!" Loki stops talking as 
+                                        *if Dream=100
+                                            the floor he's standing on starts to phase out of the realm of the conscious. He springs backwards just as you and your home fade away entirely.
+                                            *goto getout
+                                        *elseif fire=100
+                                            the room starts to heat up, and the firey walls close in. He scampers backwards out of your home.
+                                            *goto getout
+                                        *elseif death=100
+                                            the charred wood under his feet creaks ominously. He edges out of your home before it can collapse.
+                                            *goto getout
+                                        *elseif rain=100
+                                            the raincloud he's standing on stops being solid. He yelps as he falls out of your home.
+                                            *goto getout
+                                        *else
+                                            your hair stands on end and you show your teeth. The burrow shudders, and he scampers away.
+                                            *goto getout
+                            #"And… we're dead."
+                                He smiles slightly.
+
+                                "So… you'll help?
+                                *choice
+                                    #"I'm going to regret this, but yes."
+                                        *goto inside
+                                    #"Fine."
+                                        *goto inside
+                                        The two of you continue talking about nothing much, trying to control your nervousness.
+                                        *goto thor_cross
+                                    #"No. Go away."
+                                        *set lokiin false
+                                        "But!" Loki stops talking as 
+                                        *if Dream=100
+                                            the floor he's standing on starts to phase out of the realm of the conscious. He springs backwards just as you and your home fade away entirely.
+                                            *goto getout
+                                        *elseif fire=100
+                                            the room starts to heat up, and the firey walls close in. He scampers backwards out of your home.
+                                            *goto getout
+                                        *elseif death=100
+                                            the charred wood under his feet creaks ominously. He edges out of your home before it can collapse.
+                                            *goto getout
+                                        *elseif rain=100
+                                            the raincloud he's standing on stops being solid. He yelps as he falls out of your home.
+                                            *goto getout
+                                        *else
+                                            your hair stands on end and you show your teeth. The burrow shudders, and he scampers away.
+                                            *goto getout
+                            #"And… you're dead."
+                                "There… is that." he admits, and then, "…Help?"
+                                *choice
+                                    #"I'm going to regret this, but okay."
+                                        *goto inside
+                                    #"Fine."
+                                        *goto inside
+                                        The two of you continue talking about nothing much, trying to control your nervousness.
+                                        *goto thor_cross
+                                    #"No. Go away."
+                                        *set lokiin false
+                                        "But!" Loki stops talking as 
+                                        *if Dream=100
+                                            the floor he's standing on starts to phase out of the realm of the conscious. He springs backwards just as you and your home fade away entirely.
+                                            *goto getout
+                                        *elseif fire=100
+                                            the room starts to heat up, and the firey walls close in. He scampers backwards out of your home.
+                                            *goto getout
+                                        *elseif death=100
+                                            the charred wood under his feet creaks ominously. He edges out of your home before it can collapse.
+                                            *goto getout
+                                        *elseif rain=100
+                                            the raincloud he's standing on stops being solid. He yelps as he falls out of your home.
+                                            *goto getout
+                                        *else
+                                            your hair stands on end and you show your teeth. The burrow shudders, and he scampers away.
+                                            *goto getout
+                            #"What do you want [i]me[/i] to do about it?"
+                                "Well… I was thinking maybe… stop Thor?"
+
+                                He widens his eyes further and adds a "Please?"
+                                *choice
+                                    #"I'm going to regret this, but okay."
+                                        *goto inside
+                                    #"Fine."
+                                        *label inside
+                                        The two of you continue talking about nothing much, trying to control your nervousness.
+                                        *goto thor_cross
+                                    #"No. Go away."
+                                        *set lokiin false
+                                        "But!" Loki stops talking as 
+                                        *if Dream=100
+                                            the floor he's standing on starts to phase out of the realm of the conscious. He springs backwards just as you and your home fade away entirely.
+                                            *goto getout
+                                        *elseif fire=100
+                                            the room starts to heat up, and the firey walls close in. He scampers backwards out of your home.
+                                            *goto getout
+                                        *elseif death=100
+                                            the charred wood under his feet creaks ominously. He edges out of your home before it can collapse.
+                                            *goto getout
+                                        *elseif rain=100
+                                            the raincloud he's standing on stops being solid. He yelps as he falls out of your home.
+                                            *goto getout
+                                        *else
+                                            your hair stands on end and you show your teeth. The burrow shudders, and he scampers away.
+                                            *goto getout
+                            #"Right. Get out."
+                                *set lokiin false
+                                "But!" Loki stops talking as 
+                                *if Dream=100
+                                    the floor he's standing on starts to phase out of the realm of the conscious. He springs backwards just as you and your home fade away entirely.
+                                    *goto getout
+                                *elseif fire=100
+                                    the room starts to heat up, and the firey walls close in. He scampers backwards out of your home.
+                                    *goto getout
+                                *elseif death=100
+                                    the charred wood under his feet creaks ominously. He edges out of your home before it can collapse.
+                                    *goto getout
+                                *elseif rain=100
+                                    the raincloud he's standing on stops being solid. He yelps as he falls out of your home.
+                                    *goto getout
+                                *else
+                                    your hair stands on end and you show your teeth. The burrow shudders, and he scampers away.
+                                    *label getout
+
+                                    With Loki trapped outside, you head back to bed, but your mind is too frantic for you to sleep.
+                                    *goto thor_cross
+                    #"… What?"
+                        *set iknow true
+                        "I… kind of pulled out all of Sif's hair."
+
+                        You stare at him, and he offers a sheepish grin.
+
+                        Sif is the much loved wife of the thunder god Thor. She takes a great deal of pride in her golden hair, and has a sharp tongue that rivals even Freya's. She and Thor adore each other, and they constantly appear at each other's sides and enter each other's space. Thor is going to be [i]furious[/i].
+                        *choice
+                            #"Why in the nine worlds did you do [i]that?[/i]"
+                                Loki shrugs.
+
+                                "It seemed like a good idea? So… can I come in?"
+                                *choice
+                                    #"Fine."
+                                        *set loki %+5
+                                        *set lokiin true
+                                        You create a room in your home for Loki to enter, and two of you start to talk.
+                                        *page_break
+                                        *goto thor_cross
+                                    #"No chance!"
+                                        *set Loki %-10
+                                        You duck back inside your home and head back to bed, but you can't quiet your mind, and you won't be getting any more sleep.
+                                        *page_break
+                                        *goto thor_cross
+                            #"And… we're dead."
+                                He smiles slightly.
+
+                                "So… I can come in?"
+                                *choice
+                                    #"Alright."
+                                        *set loki %+5
+                                        *set lokiin true
+                                        You create a room in your home for Loki to enter, and two of you start to talk.
+                                        *page_break
+                                        *goto thor_cross
+                                    #"No chance!"
+                                        *set Loki %-10
+                                        You duck back inside your home and head back to bed, but you can't quiet your mind, and you won't be getting any more sleep.
+                                        *page_break
+                                        *goto thor_cross
+                            #"And… you're dead."
+                                "Yes… There is that. So… can I come in?"
+                                *choice
+                                    #"Alright.."
+                                        *set loki %+5
+                                        *set lokiin true
+                                        You create a room in your home for Loki to enter, and two of you start to talk.
+                                        *page_break
+                                        *goto thor_cross
+                                    #"No chance!"
+                                        *set Loki %-10
+                                        You duck back inside your home and head back to bed, but you can't quiet your mind, and you won't be getting any more sleep.
+                                        *page_break
+                                        *goto thor_cross
+                            #"What do you want [i]me[/i] to do about it?"
+                                "Oh… just let me in… and maybe stop Thor?"
+
+                                He widens his eyes further and adds a "Please?"
+                                *choice
+                                    #"Fine. Come in."
+                                        *set loki %+5
+                                        *set lokiin true
+                                        You create a room in your home for Loki to enter, and two of you start to talk.
+                                        *page_break
+                                        *goto thor_cross
+                                    #"No chance!"
+                                        *set Loki %-10
+                                        You duck back inside your home and head back to bed, but you can't quiet your mind, and you won't be getting any more sleep.
+                                        *page_break
+                                        *goto thor_cross
+                            #"That seems like a you problem."
+                                *set Loki %-15
+                                You return to your bed, leaving Loki lurking outside your home, scowling.
+                                *page_break
+                                *goto thor_cross
+                    #"Yeah, I'm not getting involved in whatever that means."
+                        *set Loki %-15
+                        You return to your bed, leaving Loki lurking outside your home, scowling.
+                        *page_break
+                        *goto thor_cross
+            #"Sure. Come in."
+                *set Loki %+5
+                You rub the sleep out of your eyes and create a room in your home for Loki to enter. The two of you settle down and start to talk.
+                *page_break
+                *set Lokiin true
+                *goto thor_cross
+            #"No. It's not even dawn."
+                *set Loki %-10
+                You go back to bed, leaving Loki outside.
+                *page_break
+                *goto thor_cross
+        *label thor_cross
+        After about an hour, you are interrupted again by the sound of furious footfalls approaching.
+        
+        Thor is coming, and he is coming fast and [i]angry.[/i]
+        *if lokiin=true
+            He raises a fist and
+            *if Dream=100
+                punches into the space your home is only barely occupying.
+                *goto thorknocks
+            *elseif fire=100
+                punches the firey walls of your home, burning himself.
+                *goto thorknocks
+            *elseif death=100
+                smashes through the wood of your home, scratching himself.
+                *goto thorknocks
+            *elseif rain=100
+                punches into your raincloud, nearly toppling himself.
+                *goto thorknocks
+            *else
+                punches the hillside next to the opening of your burrow.
+                *label thorknocks
+
+                "Come out, Loki!" he roars, "Or I'm coming in!"
+
+                *if fire=100
+                    Whether he has realised quite how bad an idea that would be isn't clear - he is very cross.
+                    *goto thorwhat
+                *else
+                    *label thorwhat
+                    *choice
+                        #Go talk to him calmly.
+                            *label thorpleasego
+                            You step out of your home and offer him a soothing smile.
+
+                            "Thor. Let's talk about this."
+
+                            *if Thor>50
+                                He looks at you, makes a noise like a disgruntled bear, then puts away his axe.
+
+                                "[i]He[/i]," Thor spits the word, "[i]dishonoured my Sif.[/i] He. Cut. Off. Her. [i]Hair.[/i]"
+
+                                *if iknow=false
+                                    Sif is the much loved wife of the thunder god Thor. She takes a great deal of pride in her golden hair, and has a sharp tongue that rivals even Freya's. She and Thor adore each other, and they constantly appear at each other's sides and enter each other's space. It's no wonder he's [i]furious[/i].
+                                    *goto calmer
+                                *else
+                                    *goto calmer
+                            *elseif charm>70
+                                He looks at you, makes a noise like a disgruntled bear, then puts away his axe.
+
+                                "[i]He[/i]," Thor spits the word, "[i]dishonoured my Sif.[/i] He. Cut. Off. Her. [i]Hair.[/i]"
+
+                                *if iknow=false
+                                    Sif is the much loved wife of the thunder god Thor. She takes a great deal of pride in her golden hair, and has a sharp tongue that rivals even Freya's. She and Thor adore each other, and they constantly appear at each other's sides and enter each other's space. It's no wonder he's [i]furious[/i].
+                                    *goto calmer
+                                *else
+                                    *goto calmer
+                            *else
+                                *set loki_angry +1
+                                Thor scowls at you.
+
+                                "No!" he bellows, then faces your house again, "Come out you spineless coward!"
+                                
+                                "Thanks for the option but I'd rather not!" Loki calls back, confident inside your house.
+
+                                Thor's voice goes suddenly low and quiet, like a growling dog.
+
+                                "Listen, [i]you.[/i] You pulled out Sif's hair. We won't forget that, and eventually, you will have to come out."
+
+                                His voice gets even quieter, and you can barely hear him.
+
+                                "And when you do, I will [i]break every bone in your body.[/i]"
+
+                                Loki doesn't reply.
+                                *choice
+                                    #Step in.
+                                        *set Loki %+10
+                                        You step between him and the house.
+
+                                        "No." you say softly, and he turns on you with the speed of a lightning bolt, gripping his axe.
+                                        *label dontdoit
+                                        *choice
+                                            #Try to intimidate him.
+                                                *if death=100
+                                                    *set thor %-40
+                                                    *set loki %+20
+                                                    You stare at him with pale, half-rotted eyes, and he lowers the weapon.
+
+                                                    He glares back at you a little longer, then turns and stalks away. He's gone for now, but he won't forget this.
+                                                    *goto thorgone
+                                                *elseif fire=100
+                                                    *set thor %-40
+                                                    *set loki %+20
+                                                    You set yourself on fire and look him dead in the eyes, and he lowers the weapon.
+
+                                                    He glares back at you a little longer, then turns and stalks away. He's gone for now, but he won't forget this.
+                                                    *goto thorgone
+                                                *elseif (animal=100) and (strength>70)
+                                                    *set thor %-40
+                                                    *set loki %+20
+                                                    Your hair stands up on end as you stare into his eyes, and the bushes and trees of Asgard start to shake with animal life. Thor looks around, scowls, and lowers his weapon.
+
+                                                    He glares back at you a little longer, then turns and stalks away. He's gone for now, but he won't forget this.
+                                                    *goto thorgone
+                                                *else
+                                                    *set thor %-10
+                                                    You stare back at him, trying to seem confident, but Thor is a hard man to intimidate. He lifts the axe and takes another step forwards - it's a fight now.
+
+                                                    *goto fightthor1
+                                            #Fight him.
+                                                *label fightthor1
+                                                *if magic>90
+                                                    *set thor %-40
+                                                    *set loki %+20
+                                                    You raise your hands and cast a binding on him, trapping him in place.
+
+                                                    He writhes in it, and curses and threatens you, calling you a coward, but he can't escape.
+
+                                                    "I'll free you if you promise to leave." you say, knowing that Thor generally keeps to his word.
+
+                                                    It takes him over an hour to agree, a process not helped by the series of smug comments Loki insists on making, but the thunder god finally relents, and stalks away. He's gone for now, but he won't forget this.
+                                                    *goto thorgone
+                                                *else
+                                                    You try to fight him, but you are hopelessly outmatched, and Thor throws you down onto the ground. He's in a blind rage now, and for a few seconds it looks like he might kill you. Then Loki calls out of your home in an uncharictaristically shrill voice.
+
+                                                    "I can fix it!" he yelps, "I can fix Sif's hair!"
+
+                                                    Thor pauses, swaying slightly in place, then he grunts and looks up.
+
+                                                    "Hrrr." he growls, and Loki hurries to explain.
+
+                                                    "The dwarves. They can make new hair. I can get them to. Just give me some time."
+
+                                                    Thor stares up at him, grunts again, then lowers his axe and turns to walk away.
+                                                    *goto illdoit
+                                            #Try to bargain.
+                                                What will you offer him?
+                                                *choice
+                                                    #I'll fix Sif's hair.
+                                                        *set thor %+10
+                                                        *set Sif %+10
+                                                        *set Loki %+10
+                                                        Thor pauses and stares at you. Then he grunts, gives a single nod, and turns to walk away.
+                                                        *goto volunteer
+                                                    #Loki will fix Sif's hair.
+                                                        *set thor %+10
+                                                        *set Sif %+10
+                                                        *set Loki %-10
+
+                                                        Thor halts and looks back up at your house.
+                                                        
+                                                        "Well?" he barks, "Can you do it?"
+
+                                                        "Yes!"
+
+                                                        Loki's answer is immediate, and a little too frantic. Perhaps he realises this, because he follows it up with, "Absolutely I can. Nothing easier. Just got to… talk to the dwarves! They can do it!"
+
+                                                        The God of Thunder stares for a few more seconds, then lowers his axe and turns to walk away.
+                                                        *goto illdoit
+                                                    *if (Mead_owned=true) #A draught of the Mead of Poetry.
+                                                        *set thor %-20
+                                                        *set Sif %-20
+                                                        He glares at you.
+
+                                                        "What is that worth compared to my wife?" he growls, "That [i]rat[/i] hurt her, and he [i]will[/i] pay."
+                                                        *goto dontdoit
+                                                    *selectable_if (cloak=true) #The falcon feather cloak.
+                                                        *set thor %-20
+                                                        *set Sif %-20
+                                                        He glares at you.
+
+                                                        "What is that worth compared to my wife?" he growls, "That [i]rat[/i] hurt her, and he [i]will[/i] pay."
+                                                        *goto dontdoit
+                                                    *selectable_if (death=100) #A favour from a God of Death.
+                                                        *set thor %-20
+                                                        *set Sif %-20
+                                                        He glares at you.
+
+                                                        "What is that worth compared to my wife?" he growls, "That [i]rat[/i] hurt her, and he [i]will[/i] pay."
+                                                        *goto dontdoit
+                                            #Back down.
+                                                You step backwards, out of the way, and he turns back to the house.
+
+                                                "[i]Every. Bone.[/i]"
+
+                                                *set Loki %-10
+                                                *set Thor %+10
+                                                For a few minutes, no-one speaks. Thor sits down on the ground and rests his axe across his knees, staring at your home with barely controlled fury, while sparks of electricity dance across him.
+
+                                                Then Loki calls out again. "What if I fix her hair?"
+
+                                                He's trying to maintain his usual flippant tone, but there's a slight crack in it.
+
+                                                Thor doesn't move at all, not even his eyes. He simply grunts, and Loki hurries to explain.
+
+                                                "The dwarves. They can make new hair. I can get them to. Just give me some time."
+                                        
+                                                Thor stares up at him, grunts again, then stands up and walks away.
+                                                *goto illdoit
+                                    #Stay silent.
+                                        *set Loki %-10
+                                        *set Thor %+10
+                                        For a few minutes, no-one speaks. Thor sits down on the ground and rests his axe across his knees, staring at your home with barely controlled fury, while sparks of electricity dance across him.
+
+                                        Then Loki calls out again. "What if I fix her hair?"
+
+                                        He's trying to maintain his usual flippant tone, but there's a slight crack in it.
+
+                                        Thor doesn't move at all, not even his eyes. He simply grunts, and Loki hurries to explain.
+
+                                        "The dwarves. They can make new hair. I can get them to. Just give me some time."
+                                        
+                                        Thor stares up at him, grunts again, then stands up and walks away.
+                                        *goto illdoit
+                        #Go warn him away.
+                            *label thorbegone
+                            *set loki_angry +1
+                            You step out of your home and meet his eye.
+
+                            "That's my house, Thor. Stay out of it."
+
+                            Thor scowls at you.
+
+                            "No!" he bellows, then faces your house again, "Come out you spineless coward!"
+                                
+                            "Thanks for the option but I'd rather not!" Loki calls back, confident inside your house.
+
+                            Thor's voice goes suddenly low and quiet, like a growling dog.
+
+                            "Listen, [i]you.[/i] You pulled out Sif's hair. We won't forget that, and eventually, you will have to come out."
+
+                            His voice gets even quieter, and you can barely hear him.
+
+                            "And when you do, I will [i]break every bone in your body.[/i]"
+
+                            Loki doesn't reply.
+                            *choice
+                                #Step in.
+                                    *set Loki %+10
+                                    You step between him and the house.
+
+                                    "No." you say softly, and he turns on you with the speed of a lightning bolt, gripping his axe.
+                                    *goto dontdoit
+                                #Stay silent.
+                                    *set Loki %-10
+                                    *set Thor %+10
+                                    For a few minutes, no-one speaks. Thor sits down on the ground and rests his axe across his knees, staring at your home with barely controlled fury, while sparks of electricity dance across him.
+
+                                    Then Loki calls out again. "What if I fix her hair?"
+
+                                    He's trying to maintain his usual flippant tone, but there's a slight crack in it.
+
+                                    Thor doesn't move at all, not even his eyes. He simply grunts, and Loki hurries to explain.
+
+                                    "The dwarves. They can make new hair. I can get them to. Just give me some time."
+                                        
+                                    Thor stares up at him, grunts again, then stands up and walks away.
+                                    *goto illdoit
+                        #Tell Loki to talk to him.
+                            "Uh… Is that really a good idea?"
+
+                            The cocky tone he normally uses is muted; 
+                            *if iknow=true
+                                he knows he's in a lot of trouble here.
+                                *choice
+                                    #"Yes, it is. Go."
+                                        *goto uhoh
+                                    #"Maybe not - I'll talk to him."
+                                        *goto thorpleasego
+                                    #"Probably not - I'll tell him to go away."
+                                        *goto thorbegone
+                            *else
+                                he's scared.
+                                *choice
+                                    #"Yes. Now go."
+                                        *label uhoh
+                                        Loki swallows, looking intensely nervous as he edges out of your home.
+
+                                        He just gets out a "Hey! Thor!" before he's grabbed by the neck.
+                                        *goto sifshair
+                                    #"Why does he want you, anyway?"
+                                        "I… kind of pulled out all of Sif's hair."
+
+                                        You stare at him, and he offers a sheepish grin.
+                
+                                        Sif is the much loved wife of the thunder god Thor. She takes a great deal of pride in her golden hair, and has a sharp tongue that rivals even Freya's. She and Thor adore each other, and they constantly appear at each other's sides and enter each other's space. Thor must be [i]furious[/i].
+                                        *choice
+                                            #"Okay… Go apologise to him."
+                                                *goto uhoh
+                                            #"Okay…  I'll talk to him."
+                                                *goto thorpleasego
+                                            #"Right. I'll tell him to go away."
+                                                *goto thorbegone
+                                    #"I'll talk to him."
+                                        *goto thorpleasego
+                                    #"I'll tell him to go away."
+                                        *goto thorbegone
+
+        *else
+            Outside your home, Loki puts on the expression he always wears when he's trying to think of something[i] very fast.[/i]
+            *choice
+                #I'll go talk to Thor.
+                    *set Loki%+10
+                    *set thor%-10
+                    You emerge from your home and step between them.
+
+                    "Thor. Let's talk about this."
+                    *if Thor>50
+                        He looks at you, makes a noise like a disgruntled bear, then puts away his axe.
+
+                        "[i]He[/i]," Thor spits the word, "[i]dishonoured my Sif.[/i] He. Cut. Off. Her. [i]Hair.[/i]"
+
+                        *if iknow=false
+                            Sif is the much loved wife of the thunder god Thor. She takes a great deal of pride in her golden hair, and has a sharp tongue that rivals even Freya's. She and Thor adore each other, and they constantly appear at each other's sides and enter each other's space. It's no wonder he's [i]furious[/i].
+                            *goto calmer
+                        *else
+                            *goto calmer
+                    *elseif charm>70
+                        He looks at you, makes a noise like a disgruntled bear, then puts away his axe.
+
+                        "[i]He[/i]," Thor spits the word, "[i]dishonoured my Sif.[/i] He. Cut. Off. Her. [i]Hair.[/i]"
+
+                        *if iknow=false
+                            Sif is the much loved wife of the thunder god Thor. She takes a great deal of pride in her golden hair, and has a sharp tongue that rivals even Freya's. She and Thor adore each other, and they constantly appear at each other's sides and enter each other's space. It's no wonder he's [i]furious[/i].
+                            *goto calmer
+                        *else
+                            *goto calmer
+                    *else
+                        *set loki_angry +1
+                        Thor scowls at you, then charges past you with incredible speed, and grabs Loki by the neck.
+
+                        "You!" the thunder god snarls, and then his voice goes suddenly, chillingly quiet, "You pulled out Sif's hair. You're going to fix it, and the reason you're going to fix it, is that if you do not fix it, I will [i]break every bone in your body.[/i]"
+
+                        Loki does his best to swallow. Sif is the much loved wife of the thunder god Thor. She takes a great deal of pride in her golden hair, and has a sharp tongue that rivals even Freya's. She and Thor adore each other, and they constantly appear at each other's sides and enter each other's space. Thor is absolutely willing to kill over this..
+                        *choice
+                            #Step in.
+                                *set Loki %+10
+                                You step towards them.
+
+                                "No." you say softly, and he drops Loki to turn on you with the speed of a lightning bolt, gripping his axe.
+                                *choice
+                                    #Try to intimidate him.
+                                        *if death=100
+                                            *set thor %-40
+                                            *set loki %+20
+                                            You stare at him with pale, half-rotted eyes, and he lowers the weapon.
+
+                                            He glares back at you a little longer, then turns and stalks away. He's gone for now, but he won't forget this.
+                                            *goto thorgone
+                                        *elseif fire=100
+                                            *set thor %-40
+                                            *set loki %+20
+                                            You set yourself on fire and look him dead in the eyes, and he lowers the weapon.
+
+                                            He glares back at you a little longer, then turns and stalks away. He's gone for now, but he won't forget this.
+                                            *goto thorgone
+                                        *elseif (animal=100) and (strength>70)
+                                            *set thor %-40
+                                            *set loki %+20
+                                            Your hair stands up on end as you stare into his eyes, and the bushes and trees of Asgard start to shake with animal life. Thor looks around, scowls, and lowers his weapon.
+
+                                            He glares back at you a little longer, then turns and stalks away. He's gone for now, but he won't forget this.
+                                            *goto thorgone
+                                        *else
+                                            *set thor %-10
+                                            You stare back at him, trying to seem confident, but Thor is a hard man to intimidate. He lifts the axe and takes another step forwards - it's a fight now.
+
+                                            *goto fightthor1
+                                    #Fight him.
+                                        *goto fightthor1
+                                    #Try to bargain.
+                                        What will you offer him?
+                                        *choice
+                                            #I'll fix Sif's hair.
+                                                *set thor %+10
+                                                *set Sif %+10
+                                                *set Loki %+10
+                                                Thor pauses and stares at you. Then he grunts, gives a single nod, and turns to walk away.
+                                                *goto volunteer
+                                            #Loki will fix Sif's hair.
+                                                *set thor %+10
+                                                *set Sif %+10
+                                                *set Loki %-10
+
+                                                Thor halts and looks down at Loki.
+                                            
+                                                "Well?" he barks, "Can you do it?"
+
+                                                "Yes!"
+
+                                                Loki's answer is immediate, and a little too frantic. Perhaps he realises this, because he follows it up with, "Absolutely I can. Nothing easier. Just got to… talk to the dwarves! They can do it!"
+
+                                                The god of thunder stares for a few more seconds, then lowers his axe and turns to walk away.
+                                                *goto illdoit
+                                            *if (Mead_owned=true) #A draught of the Mead of Poetry.
+                                                *set thor %-20
+                                                *set Sif %-20
+                                                He glares at you.
+
+                                                "What is that worth compared to my wife?" he growls, "That [i]rat[/i] hurt her, and he [i]will[/i] pay."
+                                                *goto dontdoit
+                                            *selectable_if (cloak=true) #The falcon feather cloak.
+                                                *set thor %-20
+                                                *set Sif %-20
+                                                He glares at you.
+
+                                                "What is that worth compared to my wife?" he growls, "That [i]rat[/i] hurt her, and he [i]will[/i] pay."
+                                                *goto dontdoit
+                                            *selectable_if (death=100) #A favour from a God of Death.
+                                                *set thor %-20
+                                                *set Sif %-20
+                                                He glares at you.
+
+                                                "What is that worth compared to my wife?" he growls, "That [i]rat[/i] hurt her, and he [i]will[/i] pay."
+                                                *goto dontdoit
+                                    #Back down.
+                                        You step backwards, out of the way, and he turns back towards Loki, who is still lying on the ground.
+
+                                        "[i]Every. Bone.[/i]"
+
+                                        *set Loki %-10
+                                        *set Thor %+10
+                                        Loki shuts his eyes for a few seconds, and 
+                                        *if dream=100
+                                            you sense his mind working frantically. 
+                                            *goto lightbulb
+                                        *elseif animal=100
+                                            you can smell the fear on him. 
+                                            *goto lightbulb
+                                        *else
+                                            Loki swallows again.
+                                            *goto lightbulb
+                                        *label lightbulb
+                                        Then he almost yelps an "Okay!"
+
+                                        Thor doesn't move at all, just continues staring at him, and Loki hurries to explain.
+
+                                        "The dwarves. They can make new hair. I can get them to. Just give me some time."
+                            
+                                        Thor glares down at him, grunts, then walks away.
+                                        *goto illdoit
+                            #Stay silent.
+                                *set Loki %-10
+                                *set Thor %+10
+                                Loki shuts his eyes for a few seconds, and 
+                                *if dream=100
+                                    you sense his mind working frantically. 
+                                    *goto lightbulb2
+                                *elseif animal=100
+                                    you can smell the fear on him. 
+                                    *goto lightbulb2
+                                *else
+                                    swallows again. 
+                                *label lightbulb2
+                                Then he chokes out an "Okay!"
+
+                                Thor doesn't move at all, just continues holding him, and Loki hurries to explain.
+
+                                "The dwarves. They can make new hair. I can get them to. Just give me some time."
+                                
+                                Thor glares at him, grunts, then drops him on the ground and walks away.
+                                *goto illdoit
+                #I'll go warn Thor away.
+                    *set loki_angry +1
+                    You step out of your home and try to intercept Thor, but he shoves you, throwing you onto the ground, and grabs Loki by the neck.
+
+                    "You!" the thunder god snarls, and then his voice goes suddenly, chillingly quiet, "You pulled out Sif's hair. You're going to fix it, and the reason you're going to fix it, is that if you do not fix it, I will [i]break every bone in your body.[/i]"
+
+                    Loki does his best to swallow. Sif is the much loved wife of the thunder god Thor. She takes a great deal of pride in her golden hair, and has a sharp tongue that rivals even Freya's. She and Thor adore each other, and they constantly appear at each other's sides and enter each other's space. Thor is absolutely willing to kill over this..
+                    *choice
+                        #Step in.
+                            *set Loki %+10
+                            You step towards them.
+
+                            "No." you say softly, and he drops Loki to turn on you with the speed of a lightning bolt, gripping his axe.
+                            *choice
+                                #Try to intimidate him.
+                                    *if death=100
+                                        *set thor %-40
+                                        *set loki %+20
+                                        You stare at him with pale, half-rotted eyes, and he lowers the weapon.
+
+                                        He glares back at you a little longer, then turns and stalks away. He's gone for now, but he won't forget this.
+                                        *goto thorgone
+                                    *elseif fire=100
+                                        *set thor %-40
+                                        *set loki %+20
+                                        You set yourself on fire and look him dead in the eyes, and he lowers the weapon.
+
+                                        He glares back at you a little longer, then turns and stalks away. He's gone for now, but he won't forget this.
+                                        *goto thorgone
+                                    *elseif (animal=100) and (strength>70)
+                                        *set thor %-40
+                                        *set loki %+20
+                                        Your hair stands up on end as you stare into his eyes, and the bushes and trees of Asgard start to shake with animal life. Thor looks around, scowls, and lowers his weapon.
+
+                                        He glares back at you a little longer, then turns and stalks away. He's gone for now, but he won't forget this.
+                                        *goto thorgone
+                                    *else
+                                        *set thor %-10
+                                        You stare back at him, trying to seem confident, but Thor is a hard man to intimidate. He lifts the axe and takes another step forwards - it's a fight now.
+
+                                        *goto fightthor1
+                                #Fight him.
+                                    *goto fightthor1
+                                #Try to bargain.
+                                    What will you offer him?
+                                    *choice
+                                        #I'll fix Sif's hair.
+                                            *set thor %+10
+                                            *set Sif %+10
+                                            *set Loki %+10
+                                            Thor pauses and stares at you. Then he grunts, gives a single nod, and turns to walk away.
+                                            *goto volunteer
+                                        #Loki will fix Sif's hair.
+                                            *set thor %+10
+                                            *set Sif %+10
+                                            *set Loki %-10
+
+                                            Thor halts and looks down at Loki.
+                                            
+                                            "Well?" he barks, "Can you do it?"
+
+                                            "Yes!"
+
+                                            Loki's answer is immediate, and a little too frantic. Perhaps he realises this, because he follows it up with, "Absolutely I can. Nothing easier. Just got to… talk to the dwarves! They can do it!"
+
+                                            The God of Thunder stares for a few more seconds, then lowers his axe and turns to walk away.
+                                            *goto illdoit
+                                        *if (Mead_owned=true) #A draught of the Mead of Poetry.
+                                            *set thor %-20
+                                            *set Sif %-20
+                                            He glares at you.
+
+                                            "What is that worth compared to my wife?" he growls, "That [i]rat[/i] hurt her, and he [i]will[/i] pay."
+                                            *goto dontdoit
+                                        *selectable_if (cloak=true) #The falcon feather cloak.
+                                            *set thor %-20
+                                            *set Sif %-20
+                                            He glares at you.
+
+                                            "What is that worth compared to my wife?" he growls, "That [i]rat[/i] hurt her, and he [i]will[/i] pay."
+                                            *goto dontdoit
+                                        *selectable_if (death=100) #A favour from a God of Death.
+                                            *set thor %-20
+                                            *set Sif %-20
+                                            He glares at you.
+
+                                            "What is that worth compared to my wife?" he growls, "That [i]rat[/i] hurt her, and he [i]will[/i] pay."
+                                            *goto dontdoit
+                                #Back down.
+                                    You step backwards, out of the way, and he turns back towards Loki, who is still lying on the ground.
+
+                                    "[i]Every. Bone.[/i]"
+
+                                    *set Loki %-10
+                                    *set Thor %+10
+                                    Loki shuts his eyes for a few seconds, and 
+                                    *if dream=100
+                                        you sense his mind working frantically. 
+                                        *goto lightbulb
+                                    *elseif animal=100
+                                        you can smell the fear on him. 
+                                        *goto lightbulb
+                                    *else
+                                        swallows again. 
+                                    *goto lightbulb
+                        #Stay silent.
+                            *set Loki %-10
+                            *set Thor %+10
+                            Loki shuts his eyes for a few seconds, and 
+                            *if dream=100
+                                you sense his mind working frantically. 
+                                *goto lightbulb2
+                            *elseif animal=100
+                                you can smell the fear on him. 
+                                *goto lightbulb2
+                            *else
+                                swallows again. 
+                            *goto lightbulb2
+                #I'll watch.
+                    *set loki %-10
+                    *set loki_angry +1
+                    Thor storms right up to Loki and grabs him by the neck.
+                    *label sifshair
+
+                    "You!" the thunder god snarls, and then his voice goes suddenly, chillingly quiet, "You pulled out Sif's hair. You're going to fix it, and the reason you're going to fix it, is that if you do not fix it, I will [i]break every bone in your body.[/i]"
+
+                    Loki does his best to swallow. Sif is the much loved wife of the thunder god Thor. She takes a great deal of pride in her golden hair, and has a sharp tongue that rivals even Freya's. She and Thor adore each other, and they constantly appear at each other's sides and enter each other's space. Thor is absolutely willing to kill over this..
+                    *choice
+                        #Step in.
+                            *set Loki %+10
+                            You step out of your home and come up beside them.
+
+                            "No." you say softly, and he drops Loki to turn on you with the speed of a lightning bolt, gripping his axe.
+                            *choice
+                                #Try to intimidate him.
+                                    *if death=100
+                                        *set thor %-40
+                                        *set loki %+20
+                                        You stare at him with pale, half-rotted eyes, and he lowers the weapon.
+
+                                        He glares back at you a little longer, then turns and stalks away. He's gone for now, but he won't forget this.
+                                        *goto thorgone
+                                    *elseif fire=100
+                                        *set thor %-40
+                                        *set loki %+20
+                                        You set yourself on fire and look him dead in the eyes, and he lowers the weapon.
+
+                                        He glares back at you a little longer, then turns and stalks away. He's gone for now, but he won't forget this.
+                                        *goto thorgone
+                                    *elseif (animal=100) and (strength>70)
+                                        *set thor %-40
+                                        *set loki %+20
+                                        Your hair stands up on end as you stare into his eyes, and the bushes and trees of Asgard start to shake with animal life. Thor looks around, scowls, and lowers his weapon.
+
+                                        He glares back at you a little longer, then turns and stalks away. He's gone for now, but he won't forget this.
+                                        *goto thorgone
+                                    *else
+                                        *set thor %-10
+                                        You stare back at him, trying to seem confident, but Thor is a hard man to intimidate. He lifts the axe and takes another step forwards - it's a fight now.
+
+                                        *goto fightthor1
+                                #Fight him.
+                                    *goto fightthor1
+                                #Try to bargain.
+                                    What will you offer him?
+                                    *choice
+                                        #I'll fix Sif's hair.
+                                            *set thor %+10
+                                            *set Sif %+10
+                                            *set Loki %+10
+                                            Thor pauses and stares at you. Then he grunts, gives a single nod, and turns to walk away.
+                                            *goto volunteer
+                                        #Loki will fix Sif's hair.
+                                            *set thor %+10
+                                            *set Sif %+10
+                                            *set Loki %-10
+
+                                            Thor halts and looks back up at your house.
+                                            
+                                            "Well?" he barks, "Can you do it?"
+
+                                            "Yes!"
+
+                                            Loki's answer is immediate, and a little too frantic. Perhaps he realises this, because he follows it up with, "Absolutely I can. Nothing easier. Just got to… talk to the dwarves! They can do it!"
+
+                                            The God of Thunder stares for a few more seconds, then lowers his axe and turns to walk away.
+                                            *goto illdoit
+                                        *if (Mead_owned=true) #A draught of the Mead of Poetry.
+                                            *set thor %-20
+                                            *set Sif %-20
+                                            He glares at you.
+
+                                            "What is that worth compared to my wife?" he growls, "That [i]rat[/i] hurt her, and he [i]will[/i] pay."
+                                            *goto dontdoit
+                                        *selectable_if (cloak=true) #The falcon feather cloak.
+                                            *set thor %-20
+                                            *set Sif %-20
+                                            He glares at you.
+
+                                            "What is that worth compared to my wife?" he growls, "That [i]rat[/i] hurt her, and he [i]will[/i] pay."
+                                            *goto dontdoit
+                                        *selectable_if (death=100) #A favour from a God of Death.
+                                            *set thor %-20
+                                            *set Sif %-20
+                                            He glares at you.
+
+                                            "What is that worth compared to my wife?" he growls, "That [i]rat[/i] hurt her, and he [i]will[/i] pay."
+                                            *goto dontdoit
+                                #Back down.
+                                    You step backwards, out of the way, and he turns back towards Loki, who is still lying on the ground.
+
+                                    "[i]Every. Bone.[/i]"
+
+                                    *set Loki %-10
+                                    *set Thor %+10
+                                    Loki shuts his eyes for a few seconds, and 
+                                    *if dream=100
+                                        you sense his mind working frantically. 
+                                        *goto lightbulb
+                                    *elseif animal=100
+                                        you can smell the fear on him. 
+                                        *goto lightbulb
+                                    *else
+                                        swallows again. 
+                                    *goto lightbulb
+                        #Stay silent.
+                            *set Loki %-10
+                            *set Thor %+10
+                            Loki shuts his eyes for a few seconds, and 
+                            *if dream=100
+                                you sense his mind working frantically. 
+                                *goto lightbulb2
+                            *elseif animal=100
+                                you can smell the fear on him. 
+                                *goto lightbulb2
+                            *else
+                                swallows again. 
+                            *goto lightbulb2
+                #I'm still sleeping.
+                    *set loki_angry +1
+                    *set loki %-10
+                    You stay comfortably in bed.
+
+                    By the time you wake, Loki has departed Asgard.
+                    *page_break
+                    He stays away for a few days, and Sif stays in her home the whole time, while Thor stamps around starting fights with people.
+                    *goto gift_gathering
+    #I'm sleeping. I'll ask in a few hours.
+        You ignore him and turn over.
+        *page_break
+        *goto thor_cross
+
+*label illdoit
+*page_break
+Loki shuts his eyes and takes a few breaths. Then he opens them again and his cocky smile returns.
+
+"Well, that was fun." he says.
+*choice
+    #"Please tell me you can actually do this."
+        "Oh, sure." he assures you, "I'll just pop over to Svartalfheim. Easy."
+
+        With his constant, slightly sarcastic tone, it's hard to tell is he's serious, but he gives you an ostentaious bow, then strides off towards the B.
+        *page_break
+        He stays away for a few days, while Thor stomps around Asgard starting fights, and Sif stays hidden at home.
+        *goto gift_gathering
+    #"Great. I'm going back to bed."
+        Loki meanders off towards the Bifrost, and you return to your bed.
+        *page_break
+        The trickster stays away for a few days, and Sif stays in her home the whole time, while Thor stamps around starting fights with people.
+        *goto gift_gathering
+
+*label thorgone
+*page_break
+Loki turns to look at you.
+
+"So… what now?"
+*choice
+    #"Now, I go back to bed."
+        *set sifhair false
+        *set loki %+10
+        You go back into your home and fall asleep again, but 
+        *if dream=100
+            you have strange dreams. You see an awl and a giant, golden boar, and you hear muffled screaming. You wake unable to shake the feeling that you narrowly avoided something terrible.
+            *finish
+        *else
+            you have strange dreams. You wake unable to remember them, but you can't shake the feeling that you narrowly avoided something terrible.
+            *finish
+    #"Now, I go get new hair for Sif."
+        Loki nods.
+
+        "I'd try the dwarves." he says, then saunters away without so much as a goodbye.
+
+        He's probably right though; if anyone can make magical hair for Sif, it's the dwarves. Unfortunately, it's notoriously hard to buy their favour - almost anything people can offer them they can make.
+        *choice
+            *selectable_if (mead_owned=true) #But I have the mead of poetry.
+                That's true.
+
+                You depart Asgard and 
+                *if sleipnir=true
+                    ride into Svartalfheim on Sleipnir,  
+                    *goto tavern
+                *else
+                    travel to Svartalfheim, 
+                    *goto tavern
+                *label tavern
+                where you find a tavern where the master craftsmen drink. Then you announce that you will give a draught from the mead of poetry to anyone who can make you golden hair that will bond with Sif's head.
+
+                There is immediate interest, and two dwarves approach you from different tables.
+
+                "I am Brokk." says one, "My brother and I are the greatest smiths around. We can make perfect hair for you."
+
+                The other dwarf shakes his head furiously.
+
+                "No!" he bursts out, "My three brothers and I are the sons of Ivaldi - the greatest smith ever! We can make much better hair than Brokk and Eitri! We'll even make other gifts for you, too!"
+
+                Brokk glares at him.
+
+                "So will we."
+                *choice
+                    #I'll accept Brokk's offer.
+                        *goto brokk
+                    #I'll accept Ivaldi's son's offer.
+                        *goto ivaldi
+                    #I'll offer them both draughts if they both make gifts.
+                        They exchange glances.
+
+                        "He'll make the hair." Brokk decides, "My brother and I will make three other gifts. For Thor, Odin and Frey. Meet back here in two days."
+
+                        Then he turns around and walks out of the tavern.
+
+                        Ivaldi's son stares after him open-mouthed.
+
+                        "That… He… That wretch!"
+
+                        He turns to you.
+
+                        "Right. I'll make three gifts then, and you can be sure they'll be better than his. You'll be the judge."
+
+                        Then he stamps away.
+                        *goto judging
+            *selectable_if (dwarffavour=true) #But they also owe me a favour.
+                That's true.
+
+                You depart Asgard and 
+                *if sleipnir=true
+                    ride into Svartalfheim on Sleipnir,  
+                    *goto favour
+                *else
+                    travel to Svartalfheim, 
+                    *goto favour
+                *label favour
+                where you're greeted by a group of dwarves who heard you were coming. They hold a small feast for you, then ask why you are here.
+                
+                You explain Sif's situation to them, and they confer, then two dwarves approch you.
+
+                "I am Brokk." says one, "My brother and I are the greatest smiths around. We can make perfect hair for you."
+
+                The other dwarf shakes his head furiously.
+
+                "No!" he bursts out, "My three brothers and I are the sons of Ivaldi - the greatest smith ever! We can make much better hair than Brokk and Eitri! We'll even make other gifts for you, too!"
+
+                Brokk glares at him.
+
+                "So will we."
+                *choice
+                    #I'll accept Ivaldi's son's offer.
+                        *label ivaldi
+                        He grins, and leads you to his smithy. There, all four sons of Ivaldi set to work.
+
+                        Watching them is amazing - they weave molten metal more swiftly and efficiently than a spider weaves a web, and it isn't long before you have a golden wig before you, which the sons assure you will bond with Sif's head.
+
+                        "We will do you two more gifts." one of them decides, "Who do you want them for?"
+                        *choice
+                            #Odin, the Allfather.
+                                It never hurts to do a favour for Odin.
+                                *set gungnir true
+                                *goto secondchoice
+                            #Heimdall, the Watchman.
+                                He might make a powerful ally.
+                                *set gulltoppr true
+                                *goto secondchoice
+                            #Frey, the brother of Freya.
+                                *comment describe Frey
+                                *set Skidbladnir true
+                                *goto secondchoice
+                            #Tyr, the just god.
+                                *comment describe Tyr
+                                *set shield true
+                                *goto secondchoice
+                            #Loki, the Trickster.
+                                You have a soft spot for him, don't you?
+                                *set spy true
+                                *goto secondchoice
+                            #Baldur, the beloved god.
+                                *comment describe Baldur
+                                *set armour true
+                                *goto secondchoice
+                            #Njord, the god of the sea.
+                                *comment describe Njord
+                                *set hook true
+                                *label secondchoice
+                                *choice
+                                    #… and Freya, the golden teared.
+                                        She'll appreciate that.
+                                        *set brisingamen true
+                                        *goto giftsmade
+                                    #… and Frigg, the seer.
+                                        *comment describe Frigg
+                                        *set staff true
+                                        *goto giftsmade
+                                    #… and Sigyn, the wife of Loki.
+                                        *comment describe Sigyn
+                                        She's also a goddess of victory, which makes it wise to be on her good side.
+                                        *set scales true
+                                        *goto giftsmade
+                                    #… and Vor, the goddess of knowledge.
+                                        *comment describe Vor
+                                        *set veil true
+                                        *goto giftsmade
+                                    #… and Fulla, Frigg's handmaid.
+                                        *comment describe Fulla
+                                        *set hideband true
+                                        *goto giftsmade
+                                    #… and Idunn, the peacable.
+                                        *comment decribe Idunn
+                                        *set dress true
+                                        *goto giftsmade
+                                    #… and Ran, goddess of the drowned.
+                                        *comment decsribe Ran
+                                        *set net true
+                                        *label giftsmade
+                                        The dwarves set to work at once. 
+                                        *if gungnir=true
+                                            Fist they take an enormous bone and shape it into a spear, and then they start to add runes. Finally, they lay it before you.
+
+                                            "For Odin." they say, "This spear will never miss its mark, and any oath sworn on it is unbreakable."
+
+                                            *goto secondgift
+                                        *elseif gulltoppr=true
+                                            First they take an enormous chunk of clay and shape it into a horse, then they drizzle gold over it's mane and tail. Finally, they breathe life into it and it looks around. They place a halter on it, and offer the reins to you.
+
+                                            "For Heimdall." they say, "This horse will always know where it's owner is, and will always be able to hear their commands."
+
+                                            *goto secondgift
+                                        *elseif skidbladnir=true
+                                            First they a long ribbon of silk and start to weave it. They make large, curved sections, then fold them away and move on until they are left with a folded square of cloth, much smaller then that much silk should be.
+
+                                            "For Frey." they say, "When unfolded, this will become a ship large enough to carry all the aesir, and it will always sail with the wind, but it can be folded up again into a cloth."
+
+                                            *goto secondgift
+                                        *elseif shield=true
+                                            First they take a slab of iron and hammer it into a shield. They start to add straps, then stop and talk for a while, and you hear one say, "It's the shape it wants to be." and they all get back to work. They decorate the shield then offer it to you.
+
+                                            "For Tyr." they say, "This shield is unbreakable, and no-one who carries it can be knocked off their feet."
+
+                                            *goto secondgift
+                                        *elseif spy=true
+                                            First they take an eyeball and drizzle it with molten silver. Then they gather round with tiny tools and start to refine it. When they finally finish, they show you the finished result - a brown eye with a silver sclera and silver-feathered wings.
+
+                                            "For Loki." they say, "Whatever is seen by this eye is seen by its owner, and it can be commanded to fly anywhere."
+
+                                            *goto secondgift
+                                        *elseif armour=true
+                                            First they take a large block of gold and hammer it into a chestplate. Then they start carving in runes and drawings on it. At last, they put the plate before you.
+
+                                            "For Baldur." they say, "This breastplate is unbreakable, and whoever wears it shall rule on the battlefield."
+
+                                            *goto secondgift
+                                        *else
+                                            First they take a litte block of iron and shape it into a hook, and then they start to add runes. Finally, they offer it to you.
+
+                                            "For Njord." they say, "This hook only has to be submerged for a few seconds before it will catch a fish, and no line that is attached to it can break."
+
+                                            *goto secondgift
+                                        *label secondgift
+                                        They take a few seconds to exchange pleased glances, then move on to the last gift.
+
+                                        *if brisingamen=true
+                                            They take some silver and a handful of precious stones, and fashion a necklace. When they show it to you, you can't help gasping at its beauty. You feel jealousy twinge inside you as you take it.
+
+                                            "And that's for Freya. The most beautiful item for the most beautiful goddess."
+
+                                            One of the sons of Ivaldi gets un unpleasant leer on his face.
+                                            
+                                            "I saw her once." he confides, "She's ravishing."
+
+                                            You give him a forced smile, then take your gifts and return home.
+                                            *goto presents
+                                        *elseif staff=true
+                                            They take a branch of ash wood, and fashion it into a staff, then use silver to add runes.
+
+                                            "And this is for Frigg. If she focuses on the grain in the wood, it will tell of the next death to come near to her."
+
+                                            You compliment their work, then take your gifts and return home.
+                                            *goto presents
+                                        *elseif scales=true
+                                            They heat bronze and make a set of scales, and little weights in the shapes of soldiers - "She's a goddess of victory after all."
+
+                                            They offer it to you when they're done.
+
+                                            "This is for Sigyn. Any bowl placed on one side will hold exactly the weight that she places on the other."
+
+                                            You compliment their work, then take your gifts and return home.
+                                            *goto presents
+                                        *elseif veil=true
+                                            They take a large spiderweb and get to work on it, forming a gossamer veil.
+
+                                            "And this is for Vor. It enhances the sight of its wearer, and it captures all of their memories."
+
+                                            You compliment their work, then take your gifts and return home.
+                                            *goto presents
+                                        *elseif hideband=true
+                                            They take a block of gold and melt it, then stretch it out into threads. Then, they weave the threads into a long, thin band.
+
+                                            "This is for the goddess Fulla. When she wishes, it will hide her."
+
+                                            You compliment their work, then take your gifts and return home.
+                                            *goto presents
+                                        *elseif dress=true
+                                            They melt an iron ingot and stretch it into threads, then start to weave. Eventually, they present you with a silvery dress.
+
+                                            "And this is for Idunn. When she wears it, she will be safe from all outside harm, and it will never be dirty."
+
+                                            You compliment their work, then take your gifts and return home.
+                                            *goto presents
+                                        *else
+                                            They take a simple rope and start to weave it, making a net. From time to time, they add a string that they seemingly draw out of the air.
+
+                                            "And this is for Ran. It's can be used to snatch the souls of the drowned to her from her own home."
+
+                                            You compliment their work, then take your gifts and return home.
+                                            *goto presents
+                                        *label presents
+                                        *page_break
+                                        *label backtoasgard
+                                        You stride back up the Bifrost, laden with gifts, and 
+                                        *if gulltoppr=true
+                                            *set Heimdall %+40
+                                            leading a golden-maned horse. Heimdall watched you approach dutifully, and raises his eyebrows as you stop by him.
+
+                                            You smile at him and present him with the horse's reins.
+
+                                            "I got you a gift." you say, "He can find you wherever you, and will always be able to hear you."
+
+                                            He takes the reins and lays a hand on the animal's neck, and it nickers.
+
+                                            "Thank you." he says, sounding genuinely touched as he strokes the horse's nose.
+
+                                            You smile again, then leave him and head deeper into the city.
+                                            *page_break
+                                            *goto backhomeagain
+                                        *elseif gullinbursti=true
+                                            leading an enormous boar. Heimdall gives you a very odd look as you pass into the city.
+
+                                            *goto backhomeagain
+                                        *else
+                                            walk past Heimdall.
+
+                                            *label backhomeagain
+                                            You hurry to Sif's door and knock, and Thor opens it.
+
+                                            "I have hair for your wife." you tell him, and his face breaks into a smile.
+
+                                            You 
+                                            *if gullinbursti=true
+                                                tie up Gullinbursti and 
+                                            *label intohouse
+                                            follow him in to where Sif is sitting in a rocking chair by the fire, with a scarf knotted around her head.
+
+                                            She turns when you enter 
+                                            *if sif>50
+                                                and smiles at you.
+
+                                                "$[name!] Can I help you?"
+
+                                                *goto sifhair
+                                            *else
+                                                and raises here eybrows at you.
+
+                                                "What do you want?"
+
+                                                *goto sifhair
+                                            *label sifhair
+                                            *set Thor %+40
+                                            *set Sif %+40
+                                            You raise the hair.
+
+                                            "I brought something for you."
+
+                                            She reaches out, and can't supress a grin when she feels it. She unties her scarf and raises the hair to her head. A shimmer runs through it, and she gasps. You have to admit, the new hair looks spectactular.
+                                            
+                                            Thor kneels in front of her to take her hands and kisses them.
+
+                                            "You're breathtaking." he tells her gruffly, then, "Not that you didn't look good bald."
+
+                                            She smiles at him, then looks up at you.
+
+                                            "Thank you." she says, and Thor nods agreement, but he doesn't take his eyes of his wife.
+                                            *if hammer=true
+
+                                                "There is something else."
+
+                                                "Later." grunts Thor.
+                                            *page_break
+                                            *if gungnir=true
+                                                You go to Valhalla next, and 
+                                                *if odin>50
+                                                    you are greeted by Odin as you enter.
+                                                    *goto odingift
+                                                *else
+                                                    you walk up to Odin's throne.
+                                                    *goto odingift
+                                                *label odingift
+
+                                                "I have something for you." you tell him, and you produce the spear, Gungnir.
+
+                                                He raises his eyebrows as hr takes it, and examines
+                                            *comment more here
+
+                    #I'll accept Brokk's offer.
+                        *label brokk
+                        Brokk smiles slightly, and leads you to his brother's studio.
+
+                        "My brother has been planning a gift for Thor for a long time." he tells you, "You made the right choice."
+
+                        First, Eitri, who doesn't say a word and won't meet your eye, takes a block of gold and places it in his forge. He nods at Brokk and moves into a little room around the back where he can access the forge. Brokk takes a hold of the bellows.
+
+                        "My brother doesn't like talking to people." he explains, and there's no hint of apology in his tone. 
+
+                        You watch as he starts to pump, and eventually Eitri comes back. He removes the gold, now shaped like hair, and holds in tongs as it cools. Then he lays it down on a table and examines it, then turns to Brokk and taps the back of his wrist.
+
+                        "It's finished." says Brokk, as Eitri takes an enormous slab of iron and puts it in the forge.
+                        *page_break
+                        This time they work for much longer, and Brokk's face glistens with sweat as he works the bellows.
+
+                        Finally, Eitri returns, and draws a magnificent hammer out of the forge. He plunges it into an ice bath, then raises it and studies it. Then he drops it on the table and taps his wrist again.
+
+                        He walks over to the big shelf where he keeps materials and scans it, while Brokk explains the properties of the hammer.
+
+                        Then Eitri produces another block of gold and carries it to the forge. He meets his brother's eye and touches his forehead, then returns to his work-room.
+
+                        "This one's for Odin." Brokk explains as he takes up the bellows again.
+
+                        This time, when Eitri takes his creation from the forge, it's a beautiful, solid arm-ring. Brokk explains its properties, and then you compliment their skill and return home.
+                        *set hammer true
+                        *set draupnir true
+                        *goto presents
+                    #There's an opportunity here - I'll convince them to compete.
+                        *if diplomacy>70
+                            They exchange glances, and Brokk nods.
+
+                            "Three gifts each then. My brother already has plans for one for Thor." - he nods at Ivaldi's son - "You can do the hair."
+
+                            Ivaldi's son bristles. 
+
+                            "That'll be easy." he says, "So I get to choose the other gods."
+
+                            Brokk nods again and the other dwarf stares upwards.
+
+                            "Frey." he says, "I have a good idea for him… And Odin. Best not to snub the Allfather, eh?"
+
+                            "Alright." says Brokk, "Three gifts. The winner, as judged by $[name], will be known as the greatest craftsman in Svartalfheim."
+
+                            They agree to meet back here in two days, and then they leave to go to their respective smithies.
+                            *label judging
+                            *page_break
+                            *set gungnir true
+                            *set skidbladnir true
+                            Two days later, Brokk and all four of Ivaldi's sons are before you.
+
+                            Ivaldi's sons go first. They start by showing you the golden hair for Sif, which is far more impressive than you expected - it shines beautifuly.
+
+                            Then they place a long spear on the table. It's a masterpice, with delicate runework all along it, and it looks fantastic.
+
+                            "This is Gungnir." one of them explains, "It never misses its target when thrown, and any oath sworn on it is unbreakable. We thought it would suit Odin."
+
+                            Then they take out a folded cloth. It has a pretty, embroidered design - runes of some kind - but it doesn't look like much.
+
+                            "This is Skidbladnir, for the god, Frey." says another one, "When you unfold it, it becomes a ship big enough to carry all of the gods, and wherever it sails it will have a following wind."
+
+                            They exchange satisfied glances, and the one you spoke to first gives Brokk a smug look.
+                            *page_break
+                            *set draupnir true
+                            Brokk ignores Ivaldi's son and places a golden arm-ring on the table.
+
+                            "My brother and I call this Draupnir. Every nine nights, eight golden arm-rings drip from it." - He offers a nasty smile to Ivaldi's sons - "Infinate wealth. Should impress Odin."
+                            
+                            Then he heads outside the tavern and brings in an enormous golden boar on a chain. It snorts furiously and takes a swipe at one of valdi's sons on the way past.
+
+                            "He's called Gullinbursti. The golden-maned." 
+
+                            He pats the animal's back and it snorts.
+
+                            "He can carry a god, and he never tires. He can run across the sky and the sea, and he has glowing bristles in his mane to light his owner's way. We made him for Frey."
+
+                            He wraps the boar's chain around the table leg, then reaches into his pocket.
+
+                            "This is the true masterpiece." he tells you, as he produces a tiny hammer from his pocket. It grows as he lowers it to the table, becomming impressively large.
+
+                            "It's called Mjollnir, and it's for Thor. It never misses a target, it can't be broken, and it will return to the user's hand. You can shrink it to hide it, or so it can be carried by someone other than Thor. A truly fantasic piece."
+
+                            Then he leans forwards, and you can smell his sour breath as he whispers the secret of the hammer's growth into your ear.
+
+                            "Well!" Ivaldi's son interrupts impatiently, "Judge us!"
+                            *choice
+                                #"Brokk and Eitri win."
+                                    Brokk nods in satisfaction, then walks away, smiling dourly.
+
+                                    Ivaldi's sons glare at you, then move to the bar to drink, while you gather up the gifts. Gullinbursti studies you with mad piggy eyes, but allows you to take the end of his chain, and you head for home.
+                                    *goto backtoasgard
+                                #"Ivaldi's sons win."
+                                    Ivaldi's sons high five each other cheerfully, and head to the bar to celebrate, while Brokk simply walks away.
+
+                                    You gather up the gifts. Gullinbursti studies you with mad piggy eyes, but allows you to take the end of his chain, and you head for home.
+                                    *goto backtoasgard
+                        *else
+                            They exchange glances, but Brokk shakes his head.
+
+                            "No." he says, and walks away.
+
+                            Ivaldi's son smirks at his departing back, then turns back to you.
+                            *goto ivaldi
+            #True. I'll ask Loki.
+                *set loki %-10
+                You run after the trickster and he turns to face you, raising elegant eyebrows.
+
+                "Mmm?"
+
+                "Maybe you should talk to them."
+
+                He smirks.
+
+                "What? You need my help? Well, I suppose…"
+
+                He trails off as he catches your expression. 
+
+                "Yeah… I'll deal with it."
+
+                He taps you on the shoulder, then strides off towards the Bifrost, stopping briefly on the way to drag a piece of metal along the edge of Baldur's house.
+                *page_break
+                He stays away for a few days, and Sif stays in her home the whole time, while Thor stamps around starting fights with people.
+                *goto gift_gathering
+    #"Now, I go talk to Sif."
+        svs
+    #"Now, you find a way to fix Sif's hair."
+        *set loki %-10
+        "Do I have to?"
+
+        He looks at your expression and sighs.
+
+        "I suppose I could talk to the dwarfs." he muses, then "Fine. I'll deal with it."
+
+        He strides off towards the B, stopping briefly on the way to drag a piece of metal along the edge of Baldur's house.
+        *page_break
+        He stays away for a few days, and Sif stays in her home the whole time, while Thor stamps around starting fights with people.
+        *goto gift_gathering
+
+*label calmer
+
+*label volunteer
+*page_break
+
+*label gift_gathering
+
+Then Loki returns Asgard, accompanied by a strange dwarf.
+
+He announces loudly that he brings gifts for Odin, Thor and Frey, and that he will present them in Valhalla. He also requests that all of the gods be present.
+
+"The reason," he says, once everyone has gathered, "that I have asked so many of my friends here" -  eyebrows raise around the room at the word - "is to judge a competetion between myseef and this… person, Brokk. We have each prepared three gifts - one each for the Allfather," - Odin gives a slight nod - "the thunder god," - Thor glares at him and grunts - "and my dear friend Frey."
+
+Frey looks surprised, perhaps at his inclusion, or perhaps at being called Loki's friend.
+
+"After the competition, you all get to vote on the victor. If I lose…" - his eyes become incredibly wide - "he gets my head."
+
+"Present them." commands Odin.
+*page_break

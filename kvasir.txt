@@ -1,0 +1,1042 @@
+*disable_reuse
+*if Dream=100
+    Not much has been happening in Asgard for quite a while, when you find yourself struck by a stronger than usual dream.
+
+    You see Kvasir, the wise god, hanging over a large vat with his throat cut. Next to the vat, two dwarves are laughing, while in the background, a giantess cries blood.
+
+    When your eyes fly open, you know that Kvasir's in danger.
+    *gosub kvasir_history
+    So, what are you going to do about your vision of Kvasir's death?
+    *choice
+        #I'll find Kvasir myself.
+            You set off out of Asgard at once.
+
+            *if Heimdall<40
+                Heimdall approaches you as you set foot on Bifrost, the rainbow bridge.
+
+                "Where are you going?"
+                *choice
+                    #Tell him the truth.
+                        *set Heimdall %+10
+                        He calms down, and lets you pass.
+                        *goto saving_kvasir
+                    #Lie to him.
+                        *set Heimdall %-10
+                        He looks suspicious, but he lets you pass.
+                        *goto saving_kvasir
+                    #Tell him it's none of his business.
+                        *set Heimdall %-20
+                        He scowls, and for a few seconds he considers making a fuss. The he steps aside to let you pass.
+                        *goto saving_kvasir
+            *else
+                *goto saving_kvasir
+        #I'll tell Odin.
+            *set Odin %+10
+            *if Odin>80
+                Odin listenes to you, nodding seriously.
+
+                "I shall deal with it." he decides, and he leaves Asgard at once.
+
+                He returns a few weeks later with Kvasir in tow, and the wise god thanks you for the tip off.
+                *set Kvasir 85
+                *finish Get back to work.
+            *else
+                *set kvasir_status 0
+                Odin listens to you, his face impassive.
+
+                "Leave it with me," he instucts you.
+                *page_break
+                A few weeks later, a rumour makes its way around Asgard - 
+                *goto kvasir_dead
+        *selectable_if (Freya>80) #I'll tell Freya.
+            *set Freya %+10
+            She listens to you seriously, then nods.
+
+            "I'll deal with it." she assures you, and she departs Asgard that day.
+
+            She returns a few weeks later, with Kvasir in tow, and both of them thank you for the tip off.
+            *set Kvasir 85
+            *finish Get back to work.
+        #Nothing - it's not my problem.
+            *set kvasir_status 0
+            If you say so.
+
+            A few weeks later, a rumor makes its way around Asgard - 
+            *goto kvasir_dead
+*elseif Odin>75
+    *set kvasir_status 0
+    Not much has been happening in Asgard for quite a while, when Odin comes to see you.
+
+    "${name}, will you do me a favour?"
+    *choice
+        #"No. I won't."
+            *set Odin %-40
+            Odin's face goes stony, and he walks away.
+
+            A few days later, a rumour makes its way around Asgard - 
+            *goto kvasir_dead
+        #"Yes, of course."
+            *set Odin %+10
+            Odin smiles.
+
+            "Thank you."
+            *goto odin_favour1
+        #"That depends on what it is."
+            Odin smiles slightly.
+
+            "Fair enough."
+            *label odin_favour1
+
+            "Kvasir is dead."
+            *gosub kvasir_history
+            But that was all a long time ago. 
+            
+            Now, Odin tells to you how Kvasir died.
+
+            He was spreading his wisdom in Svartalfheim and was asked for a private consult by a pair of dwarves. They brought him back to their house and murdered him, then used his blood to make mead.
+
+            "The mead," Odin explains, "is magical, and it will grant wisdom and skill at poetry to any who drink it. I want your help in getting it from the giant Suttung, who took it from the dwarves as blood money. They killed his parents, you see."
+            *choice
+                #"What do you need me to do?"
+                    "Suttung has a brother - Baugi - who has a farm. I want to gain a favour from him, and I need you to get rid of his nine servants."
+                    *choice
+                        #"I can do that - I'll kill them."
+                            You set out for Jotunheim and arrive at Baugi's farm, where you easily locate his servants, who are out cutting tall grass with scythes taller than houses. 
+
+                            *if strength>70
+                                *set odin %+10
+                                You draw weapons and charge the servants, cutting them all apart in just a few seconds. Then, leaving them dead on the grass, you report back to Odin. He thanks you for your aid, then heads for Baugi's house to offer his services.
+
+                                After that you return to Asgard.
+                                *goto odin_pursued
+                            *elseif magic>70
+                                *set odin %+10
+                                *if fire=100
+                                    You fill yourself with fire, then let it loose, burning all nine servants as they work, and destroying most of the field. Then, leaving them dead on the grass, you report back to Odin. He thanks you for your aid, then heads for Baugi's house to offer his services.
+
+                                    After that you return to Asgard.
+                                    *goto odin_pursued
+                                *elseif death=100
+                                    You extend your hands towards them, and wither them away into nine giant's worth of dust, which covers the great field.
+
+                                    You report back to Odin, who thanks you for your aid, then heads for Baugi's house to offer his services.
+
+                                    Then you return to Asgard.
+                                    *goto odin_pursued
+                                *elseif rain=100
+                                    You blast them with pure magical energy, and they crash to the ground, shaking the farm. Then, leaving them dead on the grass, you report back to Odin. He thanks you for your aid, then heads for Baugi's house to offer his services.
+
+                                    After that you return to Asgard.
+                                    *goto odin_pursued
+                                *else
+                                    You call on thousands and thousands of bees, sending them swarming at the servants, stinging and stinging until they fall. Then, leaving them dead on the grass, you report back to Odin. He thanks you for your aid, then heads for Baugi's house to offer his services.
+
+                                    After that you return to Asgard.
+                                    *goto odin_pursued
+                            *else
+                                You attempt to fight the servants, but they spot you approaching and swing at you with their scythes. You feel yourself cut apart, then it all goes dark.
+                                *goto_scene dead
+                        #"I can do that - I'll persuade them to leave."
+                            You set out for Jotunheim and arrive at Baugi's farm, where you easily locate his servants, who are out cutting tall grass with scythes taller than houses.
+
+                            You approach them, and try to convince them to abandon this job and find work elsewhere. 
+                            *if diplomacy>60
+                                *set odin %+10
+                                Your argument is more then enough to persuade them, and they lay their scythes down and leave.
+
+                                You report back to Odin, who thanks you for your aid, then heads for Baugi's house to offer his services.
+
+                                Then you return to Asgard.
+                                *goto odin_pursued
+                            *elseif charm>60
+                                *set odin %+10
+                                Your charm is more then enough to persuade them, and they lay their scythes down and leave.
+
+                                You report back to Odin, who thanks you for your aid, then heads for Baugi's house to offer his services.
+
+                                Then you return to Asgard.
+                                *goto odin_pursued
+                            *elseif strength>70
+                                *set odin %+10
+                                You try to talk to the servants, but they get angry and attack you. You draw weapons to fight back, cutting them all apart in just a few seconds. Then, leaving them dead on the grass, you report back to Odin. He thanks you for your aid, then heads for Baugi's house to offer his services.
+    
+                                After that you return to Asgard.
+                                *goto odin_pursued
+                            *elseif magic>70
+                                You try to talk to the servants, but they get angry and attack you. 
+                                *set odin %+10
+                                *if fire=100
+                                    You fill yourself with fire, then let it loose, burning all nine servants as they work, and destroying most of the field. Then, leaving them dead on the grass, you report back to Odin. He thanks you for your aid, then heads for Baugi's house to offer his services.
+    
+                                    After that you return to Asgard.
+                                    *goto odin_pursued
+                                *elseif death=100
+                                    You extend your hands towards them, and wither them away into nine giant's worth of dust, which covers the great field.
+    
+                                    You report back to Odin, who thanks you for your aid, then heads for Baugi's house to offer his services.
+    
+                                    Then you return to Asgard.
+                                    *goto odin_pursued
+                                *elseif rain=100
+                                    You blast them with pure magical energy, and they crash to the ground, shaking the farm. Then, leaving them dead on the grass, you report back to Odin. He thanks you for your aid, then heads for Baugi's house to offer his services.
+    
+                                    After that you return to Asgard.
+                                    *goto odin_pursued
+                                *else
+                                    You call on thousands and thousands of bees, sending them swarming at the servants, stinging and stinging until they fall. Then, leaving them dead on the grass, you report back to Odin. He thanks you for your aid, then heads for Baugi's house to offer his services.
+    
+                                    After that you return to Asgard.
+                                    *goto odin_pursued
+                            *else
+                                You attempt to fight the servants, but they spot you approaching and swing at you with their scythes. You feel yourself cut apart, then it all goes dark.
+                                *goto_scene dead
+                        #"I can't do that."
+                            *set Odin %-30
+                            Odin's face goes stony, and he walks away.
+                
+                            A few days later, the rumour makes its way around Asgard - 
+                            *goto kvasir_dead
+                        #"I won't do that."
+                            *set Odin %-40
+                            Odin's face goes stony, and he walks away.
+                
+                            A few days later, the rumour makes its way around Asgard - 
+                            *goto kvasir_dead
+                #"I'm afraid I can't help."
+                    *set Odin %-40
+                    Odin's face goes stony, and he walks away.
+        
+                    A few days later, the rumour makes its way around Asgard - 
+                    *goto kvasir_dead
+*else
+    *set kvasir_status 0
+    It's been a while since the incident with the wall, when a rumour makes its way around Asgard - 
+    *label kvasir_dead
+    Kvasir is dead.
+    
+    The way Bragi tells it, he was killed in Midgard, after he 'choked on his own knowledge.' However it happened, he is sorely missed.
+
+    Shortly after that, Odin departs Asgard without telling anyone where he is going.
+    *page_break
+    *goto odin_pursued
+
+
+*label kvasir_history
+*page_break
+Kvasir…
+
+The wisest of the gods, neither aesir nor vanir, but made of the mingled saliva of both as part of a peace treaty. He has spent the time since travelling the worlds giving people advice, and he has never found a question he couldn't answer.
+
+His creation happened at the end of the last war, a very long time ago.
+
+Talking of that war, what were you doing in it?
+*choice
+    #I was fighting, of course.
+        *if death=100
+            You fought bravely in the war, impressing quite a few gods.
+            *set Thor %+10
+            *set Tyr %+10
+            *set Odin %+10
+            *page_break
+            *return
+        *elseif fire=100
+            You fought bravely in the war, impressing quite a few gods.
+            *set Thor %+10
+            *set Tyr %+10
+            *set Odin %+10
+            *page_break
+            *return
+        *elseif strength >60
+            You fought bravely in the war, impressing quite a few gods.
+            *set Thor %+10
+            *set Tyr %+10
+            *set Odin %+10
+            *page_break
+            *return
+        *elseif magic>60
+            You fought bravely in the war, impressing quite a few gods.
+            *set Thor %+10
+            *set Tyr %+10
+            *set Odin %+10
+            *page_break
+            *return
+        *else
+            You did your best in the war, but fighting isn't your strong suit.
+            *set Thor %-10
+            *set Tyr %-10
+            *set Odin %-10
+            *page_break
+            *return
+    #I was trying to make peace.
+        *if diplomacy>60
+            And you succeeded! You were instrumental in negotiating that final peace treaty, and you made quite a few friends.
+            *set Idunn %+20
+            *set Baldur %+10
+            *set Odin %+10
+            *set Frey %+10
+            *set Frigg %+10
+            *set Fulla %+10
+            *set Kvasir %+20
+            *page_break
+            *return
+        *elseif charm>60
+            And you succeeded! You were instrumental in negotiating that final peace treaty, and you made quite a few friends.
+            *set Idunn %+20
+            *set Baldur %+10
+            *set Odin %+10
+            *set Frey %+10
+            *set Frigg %+10
+            *set Fulla %+10
+            *set Kvasir %+20
+            *page_break
+            *return
+        *else
+            You tried your best to negotiate peace, but Baldur had to take over when you failed.
+            *set Idunn %-10
+            *set Baldur %-10
+            *set Odin %-10
+            *page_break
+            *return
+    #I sat out the war - I was doing my own thing.
+        What was that?
+        *choice
+            #I was travelling.
+                Where?
+                *choice
+                    #Midgard.
+                        Midgard - home of the humans, and protected from the rest of the worlds by a wall of Ymir's eyelashes.
+
+                        What were you doing there?
+                        *choice
+                            #Fighting giants.
+                                *if strength>60
+                                    You patrolled the borders of Midgard, protecting the humans from giant invaders. You were good at it, and you got a name for it.
+                                    
+                                    In fact, you developed a sizable following among the humans, which might come in handy later.
+                                    *set cult true
+                                    *return
+                                *elseif magic<60
+                                    You patrolled the borders of Midgard, protecting the humans from giant invaders. You were good at it, and you got a name for it.
+                                    
+                                    In fact, you developed a sizable following among the humans, which might come in handy later.
+                                    *set cult true
+                                    *return
+                                *else
+                                    You patrolled the borders of Midgard, trying to protect the humans from giant invaders. Unfortunately, you ended up in a fight with a giantess you couldn't beat, and he nearly killed you.
+
+                                    Just before she could kill you, a human leapt past you, impossibly high, and cut her head off with a magic sword. He introduced himself as the 'king of the geats'.
+                                    *choice
+                                        #Then I thanked him.
+                                            He shrugged, then charged off to harrass a small dragon.
+
+                                            A few weeks after that, the war ended, and you returned to Asgard.
+                                            *return
+                                        #Then I gave him a blessing.
+                                            He had saved your life after all…
+
+                                            *if Death=100
+                                                You gave him the ability to see when the people around him where going to die - a useful talent for a king.
+
+                                                *goto beowulf
+                                            *elseif Dream=100
+                                                You gave him the ability to sense treachery in the people around him - a useful talent for a king.
+                                                
+                                                *goto beowulf
+                                            *elseif Animal=100
+                                                You gave him the ability to speak with animals - a useful talent for a king.
+                                                
+                                                *goto beowulf
+                                            *elseif Fire=100
+                                                You gave him the ability to walk through fire - a useful talent for someone who fights dragons.
+                                                
+                                                *goto beowulf
+                                            *else
+                                                You gave him immunity from the weather - it doesn't sound too useful, but it certainly made his life as a hero much more comfortable.
+                                                
+                                                *goto beowulf
+                                            *label beowulf
+                                            Your blessing attached your name to the king's and you picked up a decent following among the humans.
+                                            *set cult true
+                                            *return
+                                        #Then I left Midgard.
+                                            You returned to Asgard, where the war was almost over, and were present at the treaty where Kvasir was created.
+
+                            *selectable_if (Fire=100) #Helping people who were freezing.
+                                Not glamourous work, but it won you a lot of friends.
+
+                                In fact, you developed a sizable following among the humans, which might come in handy later.
+                                *set cult true
+                                *return
+                            *selectable_if (Rain=100) #Preventing droughts.
+                                Not glamourous work, but it won you a lot of friends.
+
+                                In fact, you developed a sizable following among the humans, which might come in handy later.
+                                *set cult true
+                                *return
+                            #Just wandering.
+                                Fair enough.
+                                
+                                You had a nice holiday in Midgard while the war went on, and returned afterwards.
+                                *page_break
+                                *return
+                    #Alfheim.
+                        You spent some time in the home of the light elves.
+
+                        After a while, your hosts came to you and askes you for a favour.
+                        *choice
+                            #I agreed at once.
+                                *goto elf_favour
+                            #I asked what the favour was.
+                                *label elf_favour
+                                "The ice giants in Jotunheim have been invading. Now they've cast some kind of spell, and there's ice spreading across our lands."
+                                *choice
+                                    #I offered to talk to the giants.
+                                        They accepted your offer, and you parlayed with the jotun.
+
+                                        *if diplomacy>60
+                                            You managed to persuade them to retreat, and the elves were very grateful.
+
+                                            As thanks, they taught you some of their magic, and promised you a favour, which might come in useful in the future.
+                                            *set magic%+40
+                                            *set charm %+20
+                                            *set elffavour true
+                                            *page_break
+                                            *return
+                                        *else
+                                            You tried to convince them to retreat, but you failed, and the parlay turned into a fight.
+                                            *choice
+                                                #I fought back physically.
+                                                    *if strength>60
+                                                        You hit them until they fled to Jotunheim.
+
+                                                        Not only did the ice stop, but your display of power persuaded the jotun to retreat entirely.
+
+                                                        The elves were very grateful, and taught you some magic. They also promised you a favour, which might come in useful in the future.
+                                                        *set magic%+40
+                                                        *set charm %+20
+                                                        *set elffavour true
+                                                        *page_break
+                                                        *return
+                                                    *else
+                                                        *set strength %-10
+                                                        You tried to fight them, but you were overpowered, and forced to flee back to Alfheim.
+
+                                                        You didn't stop the ice, but at least you survived.
+
+                                                        You remained in Alfheim for the rest of the war while the elves continued to fight the giants, then returned home to Asgard.
+                                                        *page_break
+                                                        *return
+                                                #I fought back magically.
+                                                    *if death=100
+                                                        You withered them away, and the survivors fled back to Jotunheim.
+
+                                                        Not only did the ice stop, but your display of power persuaded the jotun to retreat entirely.
+
+                                                        The elves were very grateful, and taught you some magic. They also promised you a favour, which might come in useful in the future.
+                                                        *set magic%+40
+                                                        *set charm %+20
+                                                        *set elffavour true
+                                                        *page_break
+                                                        *return
+                                                    *elseif magic>60
+                                                        You threw magic at them until they fled to Jotunheim.
+
+                                                        Not only did the ice stop, but your display of power persuaded the jotun to retreat entirely.
+
+                                                        The elves were very grateful, and taught you some magic. They also promised you a favour, which might come in useful in the future.
+                                                        *set magic%+40
+                                                        *set charm %+20
+                                                        *set elffavour true
+                                                        *page_break
+                                                        *return
+                                                    *else
+                                                        *set magic %-10
+                                                        You tried to fight them, but you were overpowered, and forced to flee back to Alfheim.
+
+                                                        You didn't stop the ice, but at least you survived.
+
+                                                        You remained in Alfheim for the rest of the war while the elves continued to fight the giants, then returned home to Asgard.
+                                                        *page_break
+                                                        *return
+                                                #I fled.
+                                                    You didn't stop the ice, but at least you survived.
+
+                                                    You remained in Alfheim for the rest of the war while the elves continued to fight the giants, then returned home to Asgard.
+                                                    *page_break
+                                                    *return
+                                    #I suggested they lay down salt.
+                                        They took your advice, and it worked.
+
+                                        Of course, they were still fighting a war, but they took the time to teach you some magic.
+
+                                        Eventually, the war between the aesir and vanir came to an end, and you returned home.
+                                        *set magic %+40
+                                        *set charm %+20
+                                        *page_break
+                                        *return
+                                    *selectable_if (Fire=100) #I offered to melt the ice.
+                                        They accepted your offer, and you burned away the ice.
+
+                                        Not only did the ice stop, but your display of power persuaded the jotun to retreat.
+
+                                        The elves were very grateful, and taught you some magic. They also promised you a favour, which might come in useful in the future.
+                                        *set magic%+40
+                                        *set charm %+20
+                                        *set elffavour true
+                                        *page_break
+                                        *return
+                                    #I told them I couldn't help.
+                                        The elves accepted this, and you remained in Alfheim for the rest of the war.
+
+                                        They did eventually drive back the jotun, but they lost a lot of people doing it, and they were weakened by the battles.
+                                        *page_break
+                                        *return
+                            #I told them no.
+                                You refused them. 
+
+                                They took it well, but they did ask that you leave a few weeks later.
+
+                                You returned to Asgard, where the war was almost over, and were present at the treaty where Kvasir was created.
+                                *page_break
+                                *return
+                    #Jotunheim.
+                        You travelled in Jotunheim during the war, enjoying the sharp, cold air and the freedom.
+
+                        After a while, you met a giantess, who greeted you politely, and introduced herself as Aurboda.
+                        *choice
+                            #I was polite to her.
+                                You introduced yourself, and the two of you had a long conversation. Eventually, Aurboda asked whether you would like to accompany her through Jotunheim.
+                                *choice
+                                    #I said yes - she seemed nice.
+                                        *set Aurboda true
+                                        The two of you travelled together for years, becoming close friends.
+
+                                        At one point, your conversations turned to her boyfriend, Gymir, and how she was considering marrying him when she returned home.
+                                        *choice
+                                            #I advised her to do it.
+                                                *set Gerd 70
+                                                She decided she was going to take your advice.
+
+                                                Eventually, the aesir and the vanir made peace, and you departed Jotunheim, but you and Aurboda have remained friends since.
+                                                *page_break
+                                                *return
+                                            #I advised her not to do it.
+                                                *set Gerdborn false
+                                                She decided to take your advice.
+                                                
+                                                Eventually, the aesir and the vanir made peace, and you departed Jotunheim, but you and Aurboda have remained friends since.
+                                                *page_break
+                                                *return
+                                            #I told her it was her choice, and not mine.
+                                                *set Gerd 70
+                                                She decided to do it.
+
+                                                Eventually, the aesir and the vanir made peace, and you departed Jotunheim, but you and Aurboda have remained friends since.
+                                                *page_break
+                                                *return
+                                    #I said no - I wanted alone time.
+                                        She accepted this, and you continued to wander in Jotunheim until the aesir and the vanir had made peace. Then you returned to Asgard.
+                                        *page_break
+                                        *return
+                                    #I said no - I don't trust giants.
+                                        She accepted this, and you continued to wander in Jotunheim alone until the aesir and the vanir had made peace. Then you returned to Asgard.
+                                        *page_break
+                                        *return
+                            #I was rude to her.
+                                She narrowed her eyes and her friendly smile faded.
+
+                                "That was rude. Apologise."
+                                *choice
+                                    #I refused, and we had a fight.
+                                        *if Death=100
+                                            *set Gerdborn false
+                                            You withered her away, then continued your journey through Jotunheim. 
+
+                                            Eventually, the aesir and the vanir made peace, and you returned to Asgard.
+                                            *page_break
+                                            *return
+                                        *elseif Fire=100
+                                            *set Gerdborn false
+                                            You burned her into ash, then continued your journey through Jotunheim. 
+
+                                            Eventually, the aesir and the vanir made peace, and you returned to Asgard.
+                                            *page_break
+                                            *return
+                                        *elseif strength>60
+                                            *set Gerdborn false
+                                            You fatally stabbed her, then continued your journey through Jotunheim. 
+
+                                            Eventually, the aesir and the vanir made peace, and you returned to Asgard.
+                                            *page_break
+                                            *return
+                                        *elseif magic>60
+                                            *set Gerdborn false
+                                            You threw magical energy at her, killing her, then continued your journey through Jotunheim. 
+
+                                            Eventually, the aesir and the vanir made peace, and you returned to Asgard.
+                                            *page_break
+                                            *return
+                                        *else
+                                            You tried to kill her, but she knocked you down easily.
+
+                                            She was raising her fist to finish you off, when a smooth, "If I may…" distracted her. Turning your head, you saw the strangest frost giant you had ever laid eyes on. He was only your size, and he had red hair and unnatural green eyes.
+
+                                            "Loki…" Aurboda growled.
+
+                                            He winked at you as he offered her a bow.
+
+                                            "Just so… I was wondering if you were aware that this… [i] person[/i] is one of the aesir. It may be best not to start a war with the Allfather…mm?"
+
+                                            She scowled at him, then lowered her fist and strode away, leaving you alone with the small giant.
+                                            *choice
+                                                #I thanked him.
+                                                    *set Loki %+10
+                                                    He gave another ironic bow, then cheerfully walked away.
+
+                                                    You continued to wander in Jotunheim until the aesir and the vanir had made peace. Then you returned to Asgard.
+                                                    *page_break
+                                                    *return
+                                                #I walked off.
+                                                    *set Loki %-10
+                                                    You continued to wander in Jotunheim until the aesir and the vanir had made peace. Then you returned to Asgard.
+                                                    *page_break
+                                                    *return
+
+                                    #I apologised, and we went our seperate ways.
+                                        You continued to wander in Jotunheim until the aesir and the vanir had made peace. Then you returned to Asgard.
+                                        *page_break
+                                        *return
+                    *selectable_if (Death=100) #Helheim.
+                        *set magic %+10
+                        You returned to your own realm to sit out the war. Just spending time there invigorated you. 
+                        
+                        What did you do first?
+                        *label running_hel
+                        *choice
+                            #I checked on the new souls.
+                                It was mostly the usual souls dead of old age and illness, but there was on interesting person - a powerful human witch.
+
+                                She told you that that the night she dies, she had dreamed of fires devouring world-tree, while a wolf howled in the background.
+
+                                What did you do after that?
+                                *goto running_hel
+                            #I de-iced my throne.
+                                It took a whole day, but you managed it.
+
+                                What did you do after that?
+                                *goto running_hel
+                            #I negotated with Ran.
+                                Ran, goddess of the drowned, approaches you. Technically giants, she and her husband are also sitting out the aesir/vanir war.
+
+                                She informs you that she is hear to collect a soul who drowned on a raft at sea.
+                                *choice
+                                    #I agreed - he did die at sea, after all.
+                                        *set Ran %+40
+                                        *set Aegir %+20
+                                        She thanked you and departed.
+
+                                        What did you do after that?
+                                        *goto running_hel
+                                    #I told her no. The man didn't drown - he starved.
+                                        *if diplomacy>60
+                                            She wasn't happy, but she departed.
+
+                                            What did you do after that?
+                                            *goto running_hel
+                                        *else
+                                            *set Ran %-40
+                                            *set Aegir %-20
+                                            She wasn't happy, and she cursed you before she left.
+
+                                            What did you do after that?
+                                            *goto running_hel
+                            #I held a feast.
+                                *set strength %+10
+                                You held a massive meal for all of the souls in your charge, rivalling even the daily feasts of boar in Valhalla.
+
+                                What did you do after that?
+                                *goto running_hel
+                            #Nothing. I just rested.
+                                Right. And eventually the aesir and the vanir settled their differences, and you returned to Asgard.
+                                *page_break
+                                *return
+            #I was training.
+                What were you training?
+                *choice
+                    #My magic.
+                        *set magic %+40
+                        I see.
+                        *page_break
+                        *return
+                    #My charm.
+                        *set charm %+40
+                        I see.
+                        *page_break
+                        *return
+                    #My diplomacy.
+                        *set diplomacy %+40
+                        I see.
+                        *page_break
+                        *return
+                    #My strength.
+                        *set strength %+40
+                        I see.
+                        *page_break
+                        *return
+            #I slept through it.
+                A god can sleep for a long time.
+                *if Dream=100
+
+                    While you slept, you dreamed.
+
+                    You heard screaming, and the sounds of wolves howling, and you saw fire surging over Yggdrasil.
+
+                    You knew, even all those centuries ago, that something was coming.
+                    *page_break
+                    *return
+                *else
+
+                    By the time you woke, the war was over.
+                    *page_break
+                    *return
+*label saving_kvasir
+*page_break
+It takes you a few days to track Kvasir using his dreams, but you eventually find him in Svartalfheim, talking to a large group of dwarves.
+
+Before you can speak to him, he is approached by the pair of dwarves from your dream, and the three of them start to walk away.
+*choice
+    #Shout out a warning.
+        *set Kvasir %+60
+        You call out to him, telling him that they're planning to kill him, and he turns. Behind him, the two dwarves exchange glances, then set off running.
+
+        "Let them go." says Kvasir calmly.
+        *choice
+            #Ignore him and go kill the dwarves.
+                *set Kvasir %-10
+                It isn't hard - you are a god, after all. You don't even get any blood on you.
+
+                Nonetheless, as you walk back over to Kvasir he gives you a disapproving look.
+
+                "That was unnecessary." he says, then he sighs, "But I suppose I owe you thanks. Shall we return to Asgard?"
+                *finish Go home.
+            #Let them go.
+                *set Kvasir %+10
+                "Thank you." Kvasir says, "Both for warning me and for sparing them. Shall we return to Asgard?"
+                *finish Go home.
+    #Attack the dwarves.
+        *set Kvasir %+60
+        They aren't hard to kill - you are a god, after all. You don't even get any blood on you.
+
+        As you turn back to Kvasir, you find him staring at you in horror.
+
+        You explain your dream to him, and he sighs.
+
+        "Then I suppose I owe you thanks. I just wish it hadn't been necessary to to kill them. Shall we return to Asgard?"
+        *finish Go home.
+    #Follow them silently.
+        You let yourself fade until you can't be seen, and stalk after them.
+
+        They head to a small house by a lake and go inside. Physical barriers mean little to you, and you drift through the door, invisible.
+
+        The room you're in is small, and made smaller by the two large vats - like the one from you dream - inside it.
+
+        Kvasir studies the vats, and his expression shifts to one of alarm. He takes a few hurried steps backwards, but the dwarves have already picked up clubs.
+        *choice
+            #Appear and fight them.
+                *set Kvasir %+60
+                They aren't hard to kill - you are a god, after all. You don't even get any blood on you.
+
+                Kvasir stares at you silently for a few seconds, then murmurs a stunned "Thank you."
+
+                He takes a few minutes to collect himself, then offers you a smile.
+
+                "Shall we return to Asgard?"
+                *finish Go home.
+            #Appear and scare them.
+                *set Kvasir %+70
+                You appear before them, a nightmare made solid, and they stare at you, then run for the door, shoving each other in their desperation to get away.
+
+                Kvasir stares at you silently for a few seconds, then murmurs a stunned "Thank you."
+
+                He takes a few minutes to collect himself, then offers you a smile.
+
+                "Shall we return to Asgard?"
+                *finish Go home.
+            #Just watch.
+                *set Kvasir_status 0
+                The dwarves set on Kvasir, hitting him over the head while he cries out. Eventually he slumps, and they tie him up and hang him over one of the vats. Then they slit his throat.
+
+                As his blood pumps out, the dwarves start pouring honey into a kettle, snickering together about their good fortune.
+                *choice
+                    #Slip away.
+                        You fade back through the door and return to Asgard. You've only been back a few days when a rumour starts to spread - 
+                        *goto kvasir_dead
+                    #Ask what they're doing.
+                        They jump almost out of their skins when you fade into view behind them. Once you ask your question, they rush to answer.
+
+                        "We're making mead!" they yammer, "We're using the blood of a god to make it magical. We think it will give us his knowledge and wisdom."
+                        *choice
+                            #"It will give[i] all of us[/i] his knowledge and wisdom."
+                                "Yes! Of course! That's fine!"
+
+                                You stay there as they make the mead, and when it is done you drink down several mouthfuls.
+
+                                It tastes better than anything you have tasted before, even better than Idunn's golden apples, which maintain your youth and health. As you drink, you feel power flow through you.
+                                *set Magic 100
+                                *set Charm 100
+                                *set mead_drunk true
+
+                                After that, you return to Asgard, getting back a few days before the news of Kvasir's death reaches them. Fortunately, no-one guesses at your involvement, believing you to have been working on some kind of spell to gain you power. Perhaps Odin suspects something - you catch his eye on you more often than usual over the next few days - but he doesn't say anything, and soon he departs Asgard.
+                                *page_break
+                                *goto odin_pursued
+                            #"It will give [i]me[/i] his knowledge and wisdom."
+                                For a few seconds, the dwarves look like they are going to complain, but they think better of it.
+                                
+                                You stay there as they make the mead, and when it is done you drink down several mouthfuls.
+
+                                It tastes better than anything you have tasted before, even better than Idunn's golden apples, which maintain your youth and health. As you drink, you feel power and song flow through you.
+                                *set Magic 100
+                                *set Charm 100
+                                *set mead_drunk true
+                                *set mead_owned true
+
+                                Then you take the rest of the mead - two vats and most of a kettle - and leave Svartalfheim. Heimdall would see you if you brought it in to Asgard, so you hide it in your dreams. You will be able to fetch it when you need it.
+
+                                After that, you return to Asgard, getting back a few days before the news of Kvasir's death reaches the aesir. Fortunately, no-one guesses at your involvement, believing you to have been working on some kind of spell to gain you power. Perhaps Odin suspects something - you catch his eye on you more often than usual over the next few days - but he doesn't say anything, and soon he departs Asgard.
+                                *page_break
+                                *goto odin_pursued
+                            #"I understand. Good luck with it."
+                                You leave them and return to Asgard, arriving a few days before the news of Kvasir reaches the aesir. Fortunately, no-one guesses at your knowledge of it. Shortly after that, Odin leaves Asgard without telling anyone where he is going.
+                                *page_break
+                                *goto odin_pursued
+
+*label odin_pursued
+Almost six months after Odin leaves, you are woken in the early morning by Heimdall calling for help from his post on the Bifrost.
+*choice
+    #Run out to help.
+        *set Heimdall %+10
+        You spring out of 
+        *if Dream=100
+            your etheral bed of stars 
+            *goto staybed1
+        *elseif fire=100
+            the bonfire you use as a bed 
+            *goto staybed1
+        *elseif death=100
+            the burned out pyre you use as a bed 
+            *goto staybed1
+        *elseif rain=100
+            the raincloud you sleep in 
+            *goto staybed1
+        *else
+            your warm nest of furs 
+            *goto staybed1
+        *label staybed1
+        and run for the edge of Asgard. As you reach Heimdall's side, 
+        *if animal=100
+            your falcon's eyes spot what he saw - a hawk flying frantically towards you, keeping just ahead of an eagle so big it can only be a transformed giant. Something about the eagle seems off, and after a few seconds of staring you figure it out. 
+
+            "Odin." you say, and Heimdall nods.
+
+            *goto odin_flees
+        *else
+            You scan the horizon, but you can't see anything. Heimdall notes your confusion and explains.
+
+            "It's Odin. He's coming back as a hawk and something's chasing him. A giant I think. Changed into an eagle."
+
+            *label odin_flees
+            *choice
+                #Throw something from the ground as the birds approach.
+                    *if strength>50
+                        You pick up a rock from inside Asgard and take aim as the eagle gets closer. Then you hurl it with all of your strength, hitting the creature hard in the head. It crashes into the ground hard, and doesn't get up.
+
+                        Odin lands beside you and thanks you, then explains that the giant was pursuing him because he stole a great treasure from him - a magical mead which gifts the speaker skill at poetry.
+
+                        He grants some to Bragi, who immediately takes up playing the lyre, and some to you, and he saves the rest to give to human skalds in Midgard, as and when they are needed.
+
+                        The mead tastes better than anything you have tasted before, even better than Idunn's golden apples, which maintain your youth and health. As you drink, you feel power and song flow through you.
+                        *set mead_drunk true
+                        *set magic %+40
+                        *set Charm %+40
+                        *finish
+                    *else
+                        You pick up a rock from inside Asgard and take aim as the eagle gets closer. Then you hurl it with all of your strength. Unfortunately, the creature catches it in its talons and hurls it back.
+
+                        You briefly see it flying towards you, and then everything goes dark. You didn't even feel the impact.
+                        *goto_scene dead
+                #Cast something from the ground as the birds approach.
+                    *if magic>50
+                        Just as the eagle is about to seize Odin in its talons, 
+                        *if death=100
+                            you extend a hand to wither it. It's feathers turn grey and crumble, and it starts to fall through the air. By the time it hits the ground, all that remains of it is dust.
+
+                            Odin lands beside you and thanks you, then explains that the giant was pursuing him because he stole a great treasure from him - a magical mead which gifts the speaker skill at poetry.
+
+                            He grants some to Bragi, who immediately takes up playing the lyre, and some to you, and he saves the rest to give to human skalds in Midgard, as and when they are needed.
+
+                            The mead tastes better than anything you have tasted before, even better than Idunn's golden apples, which maintain your youth and health. As you drink, you feel power and song flow through you.
+                            *set mead_drunk true
+                            *set magic %+40
+                            *set Charm %+40
+                            *finish
+                        *elseif animal=100
+                            your avian allies start to fill the air. Birds of every shape and size flock at the giant eagle, raking at its eyes and tearing at its wings. The creature shrieks, then turns and flees, while Odin lands beside you.
+
+                            He thanks you, then explains that the giant was pursuing him because he stole a great treasure from him - a magical mead which gifts the speaker skill at poetry.
+
+                            He grants some to Bragi, who immediately takes up playing the lyre, and some to you, and he saves the rest to give to human skalds in Midgard, as and when they are needed.
+
+                            The mead tastes better than anything you have tasted before, even better than Idunn's golden apples, which maintain your youth and health. As you drink, you feel power and song flow through you.
+                            *set mead_drunk true
+                            *set magic %+40
+                            *set Charm %+40
+                            *finish
+                        *elseif dream=100
+                            you reach into its mind and destroy it, and the eagle plumets out of the sky, dead before it hits the ground.
+
+                            Odin lands beside you and thanks you, then explains that the giant was pursuing him because he stole a great treasure from him - a magical mead which gifts the speaker skill at poetry.
+
+                            He grants some to Bragi, who immediately takes up playing the lyre, and some to you, and he saves the rest to give to human skalds in Midgard, as and when they are needed.
+
+                            The mead tastes better than anything you have tasted before, even better than Idunn's golden apples, which maintain your youth and health. As you drink, you feel power and song flow through you.
+                            *set mead_drunk true
+                            *set magic %+40
+                            *set Charm %+40
+                            *finish
+                        *elseif fire=100
+                            you raise you hands and bathe it in fire.
+
+                            Its feathers charr, then burn away to ash, and it plumets, shrieking, out of the sky. It's dead before it hits the ground.
+                            
+                            Odin lands beside you and thanks you, then explains that the giant was pursuing him because he stole a great treasure from him - a magical mead which gifts the speaker skill at poetry.
+
+                            He grants some to Bragi, who immediately takes up playing the lyre, and some to you, and he saves the rest to give to human skalds in Midgard, as and when they are needed.
+
+                            The mead tastes better than anything you have tasted before, even better than Idunn's golden apples, which maintain your youth and health. As you drink, you feel power and song flow through you.
+                            *set mead_drunk true
+                            *set magic %+40
+                            *set Charm %+40
+                            *finish
+                        *else
+                            you call up a rainstorm, throwing drops of water into the eagle's eyes and slowing it down. With the eagle distracted, Odin manages to slip past it, and lands heavily beside you.
+                            
+                            He thanks you, then explains that the giant was pursuing him because he stole a great treasure from him - a magical mead which gifts the speaker skill at poetry.
+
+                            He grants some to Bragi, who immediately takes up playing the lyre, and some to you, and he saves the rest to give to human skalds in Midgard, as and when they are needed.
+
+                            The mead tastes better than anything you have tasted before, even better than Idunn's golden apples, which maintain your youth and health. As you drink, you feel power and song flow through you.
+                            *set mead_drunk true
+                            *set magic %+40
+                            *set Charm %+40
+                            *finish
+                    *else
+                        You throw magical energy at the eagle, but it spins in the air, throwing the energy back towards you. You try to get up a defense, but you aren't skilled enough, and you feel your flesh melt.
+
+                        Then it all goes dark.
+                        *goto_scene dead
+                *selectable_if (cloak=true) #Put on my falcon feather cloak and fly up to help.
+                    *goto bird_fight
+                *selectable_if (animal=100) #Turn into a hawk and fly up to help.
+                    *label bird_fight
+                    *set Odin %+20
+                    You leap into the air and fly to Odin's aid.
+
+                    How are you planning to help?
+                    *choice
+                        #I'll attack the eagle with my talons.
+                            *if strength>20
+                                You dive at the eagle and rake at his eyes with your claws. He screeches in pain, and slows down to fight you, but you dance around him, taking advantage of your smaller size.
+
+                                Then, when Odin is safely in Asgard, you veer off to follow him. Not tired out from a long flight, you outpace the giant easily and land beside Odin.
+
+                                The Allfather thanks you, and explains that the giant was pursuing him because he stole a great treasure from him - a magical mead which gifts the speaker skill at poetry.
+
+                                He grants some to Bragi, who immediately takes up playing the lyre, and some to you, and he saves the rest to give to human skalds in Midgard, as and when they are needed.
+    
+                                The mead tastes better than anything you have tasted before, even better than Idunn's golden apples, which maintain your youth and health. As you drink, you feel power and song flow through you.
+                                *set mead_drunk true
+                                *set magic %+40
+                                *set Charm %+40
+                                *finish
+                            *else
+                                You dive at the eagle, trying to rake his eyes out. Unfortunately, he catches you in his claws and starts to crush you.
+
+                                You feel your bones - fragile bird bones - shatter, then it all goes dark.
+                                *goto_scene dead
+                        #I'll attack the eagle magically.
+                            *if fire=100
+                                You dive past the eagle, bathing him in fire, and he screeches in pain, starting to tumble through the air. As he burns, he falls faster and faster, and he crashes against the ground hard, and doesn't get up.
+
+                                Once you return to Asgard, Odin thanks you, and explains that the giant was pursuing him because he stole a great treasure from him - a magical mead which gifts the speaker skill at poetry.
+
+                                He grants some to Bragi, who immediately takes up playing the lyre, and some to you, and he saves the rest to give to human skalds in Midgard, as and when they are needed.
+    
+                                The mead tastes better than anything you have tasted before, even better than Idunn's golden apples, which maintain your youth and health. As you drink, you feel power and song flow through you.
+                                *set mead_drunk true
+                                *set magic %+40
+                                *set Charm %+40
+                                *finish
+                            *elseif magic>20
+                                You dive past the eagle, catching hold of the magic inside him and blasting it apart. He regains his giant form, and tumbles through the air, suddenly lacking wings. He hits the ground hard, and doesn't get up.
+                                
+                                Once you return to Asgard, Odin thanks you, and explains that the giant was pursuing him because he stole a great treasure from him - a magical mead which gifts the speaker skill at poetry.
+
+                                He grants some to Bragi, who immediately takes up playing the lyre, and some to you, and he saves the rest to give to human skalds in Midgard, as and when they are needed.
+    
+                                The mead tastes better than anything you have tasted before, even better than Idunn's golden apples, which maintain your youth and health. As you drink, you feel power and song flow through you.
+                                *set mead_drunk true
+                                *set magic %+40
+                                *set Charm %+40
+                                *finish
+                            *else
+                                You dive at the eagle, trying to cast magic at him. Unfortunately, he catches you in his claws and starts to crush you.
+
+                                You feel your bones - fragile bird bones - shatter, then it all goes dark.
+                                *goto_scene dead
+                        #I'll fly at the eagle's head, slowing him down.
+                            You flutter around him, confusing him, and buying Odin the time to reach the safety of Asgard. Then you veer off and enter Asgard yourself.
+
+                            Odin thanks you, and explains that the giant was pursuing him because he stole a great treasure from him - a magical mead which gifts the speaker skill at poetry.
+
+                            He grants some to Bragi, who immediately takes up playing the lyre, and some to you, and he saves the rest to give to human skalds in Midgard, as and when they are needed.
+
+                            The mead tastes better than anything you have tasted before, even better than Idunn's golden apples, which maintain your youth and health. As you drink, you feel power and song flow through you.
+                            *set mead_drunk true
+                            *set magic %+40
+                            *set Charm %+40
+                            *finish
+                #Do nothing - this is Odin's problem, not mine.
+                    *set Heimdall %+10
+                    You go back to bed.
+
+                    When you wake, you discover that Odin got back safely, and that he brought with him a magical mead which gifts the drinker skill at poetry.
+
+                    He grants some to Bragi, who immediately takes up playing the lyre, and he saves the rest to give to human skalds in Midgard, as and when they are needed.
+                    *finish
+
+    #Nope. I'm sleeping.
+        *set Heimdall %-10
+        *set Odin %-10
+        You turn over in 
+        *if Dream=100
+            your etheral bed of stars 
+            *goto staybed
+        *elseif fire=100
+            the bonfire you use as a bed 
+            *goto staybed
+        *elseif death=100
+            the burned out pyre you use as a bed 
+            *goto staybed
+        *elseif rain=100
+            the raincloud you sleep in 
+            *goto staybed
+        *else
+            your warm nest of furs 
+            *goto staybed
+        *label staybed
+        and go back to sleep.
+        
+        When you wake, you discover that Odin has returned. He arrived in the morning, pursued by a giant in the form of an eagle, and he brought with him a magical mead which gifts the drinker skill at poetry.
+
+        He grants some to Bragi, who immediately takes up playing the lyre, and he saves the rest to give to human skalds in Midgard, as and when they are needed.
+        *finish
