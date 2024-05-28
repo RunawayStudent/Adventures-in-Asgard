@@ -1,0 +1,291 @@
+*temp Power
+*if fire=100
+  *set Power "Fire"
+  *goto chart
+*elseif death=100
+  *set Power "Death"
+  *goto chart
+*elseif animal=100
+  *set Power "Animals"
+  *goto chart
+*elseif dream=100
+  *set Power "Dreams"
+  *goto chart
+*elseif rain=100
+  *set power "Rain"
+  *goto chart
+*else
+  *set Power "???"
+*label chart
+    
+*stat_chart
+  text Name
+  text Power Power
+
+  percent Magic
+  percent Diplomacy
+  percent Charm
+  percent Strength
+
+
+*temp Odin_text
+*if odin_status=0
+  *set odin_text "is dead."
+  *goto chart1
+*elseif Odin < 20
+  *set Odin_text "hates you."
+  *goto chart1
+*elseif Odin < 40
+  *set Odin_text "dislikes you."
+  *goto chart1
+*elseif Odin < 60
+  *set Odin_text "doesn't care about you."
+  *goto chart1
+*elseif Odin < 80
+  *set Odin_text "likes you."
+  *goto chart1
+*else
+  *set Odin_text "is your friend."
+*label chart1
+
+*temp Loki_text
+*if loki_angry=0
+  *set loki_text "is dead."
+  *goto chart2
+*elseif Loki < 20
+  *set Loki_text "hates you."
+  *goto chart2
+*elseif Loki < 40
+  *set Loki_text "dislikes you."
+  *goto chart2
+*elseif Loki < 60
+  *set Loki_text "doesn't care about you."
+  *goto chart2
+*elseif Loki < 80
+  *set Loki_text "likes you."
+  *goto chart2
+*else
+  *set Loki_text "is your friend."
+*label chart2
+
+*temp Thor_text
+*if thor_status=0
+  *set thor_text "is dead."
+  *goto chart3
+*elseif Thor < 20
+  *set Thor_text "hates you."
+  *goto chart3
+*elseif Thor < 40
+  *set Thor_text "dislikes you."
+  *goto chart3
+*elseif Thor < 60
+  *set Thor_text "doesn't care about you."
+  *goto chart3
+*elseif Thor < 80
+  *set Thor_text "likes you."
+  *goto chart3
+*else
+  *set Thor_text "is your friend."
+*label chart3
+
+*temp Freya_text
+*if freya_status=0
+  *set freya_text "is in Jotunheim."
+  *goto chart4
+*elseif Freya < 20
+  *set Freya_text "hates you."
+  *goto chart4
+*elseif Freya < 40
+  *set Freya_text "dislikes you."
+  *goto chart4
+*elseif Freya < 60
+  *set Freya_text "doesn't care about you."
+  *goto chart4
+*elseif Freya < 80
+  *set Freya_text "likes you."
+  *goto chart4
+*else
+  *set Freya_text "is your friend."
+*label chart4
+
+*stat_chart
+  text Freya_text Freya
+
+*temp Frey_text
+*if frey_status=0
+  *set frey_text "is dead."
+  *goto chart5
+*elseif Frey < 20
+  *set Frey_text "hates you."
+  *goto chart5
+*elseif Frey < 40
+  *set Frey_text "dislikes you."
+  *goto chart5
+*elseif Frey < 60
+  *set Frey_text "doesn't care about you."
+  *goto chart5
+*elseif Frey < 80
+  *set Frey_text "likes you."
+  *goto chart5
+*else
+  *set Frey_text "is your friend."
+*label chart5
+
+*stat_chart
+  text Frey_text Frey
+
+*temp heimdall_text
+*if heimdall_status=0
+  *set heimdall_text "is dead."
+  *goto chart6
+*elseif heimdall < 20
+  *set heimdall_text "hates you."
+  *goto chart6
+*elseif heimdall < 40
+  *set heimdall_text "dislikes you."
+  *goto chart6
+*elseif heimdall < 60
+  *set heimdall_text "doesn't care about you."
+  *goto chart6
+*elseif heimdall < 80
+  *set heimdall_text "likes you."
+  *goto chart6
+*else
+  *set heimdall_text "is your friend."
+*label chart6
+
+*temp kvasir_text
+*if kvasir_status=0
+  *set kvasir_text "is dead."
+  *goto chart7
+*elseif kvasir < 20
+  *set kvasir_text "hates you."
+  *goto chart7
+*elseif kvasir < 40
+  *set kvasir_text "dislikes you."
+  *goto chart7
+*elseif kvasir < 60
+  *set kvasir_text "doesn't care about you."
+  *goto chart7
+*elseif kvasir < 80
+  *set kvasir_text "likes you."
+  *goto chart7
+*else
+  *set kvasir_text "is your friend."
+*label chart7
+    
+*stat_chart
+    text kvasir_text Kvasir
+
+*temp idunn_text
+*if idunn_status=0
+  *set idunn_text "is dead."
+  *goto chart8
+*elseif idunn < 20
+  *set idunn_text "hates you."
+  *goto chart8
+*elseif idunn < 40
+  *set idunn_text "dislikes you."
+  *goto chart8
+*elseif idunn < 60
+  *set idunn_text "doesn't care about you."
+  *goto chart8
+*elseif idunn < 80
+  *set idunn_text "likes you."
+  *goto chart8
+*else
+  *set idunn_text "is your friend."
+*label chart8
+
+*choice
+  #Relationships
+    *label gods
+    *choice
+      #Aegir
+        Technically giants, Aegir and his wife, Ran, are allies of the aesir. Aegir is god of the sea, and he lives in an immense hall outside of Asgard.
+        *page_break
+        *goto gods
+      #Baldur
+        Baldur is the beloved god - absolutely [i]everyone[/i] likes him, even the giants. He's polite and merry, always in a good mood, and often dances or laughs randomly. He's one of the sons of Frigg and Odin, and unarguably their favourite. From time to time, though, he has prophetic dreams that scare him.
+        *page_break
+        *goto gods
+      #Bragi
+        Bragi is the god of poetry. He is one of the most amiable of the Asgardians, and he is hopelessly in love with Idunn.
+        *page_break
+        *goto gods
+      #Heimdall
+        Heimdall is the watchman of the gods. Smart, quiet, and immensely patient, he prefers watching and learning to taking action. He spends most of his time in Himinbjorg, his hall at the end of the Bifrost, where he keeps watch over all the nine worlds.
+        
+        He ${heimdall_text}
+        *page_break
+        *goto gods
+      #Idunn
+        Idunn is the holder of the Golden Apples - the secret behind the gods' eternal youth. She is exceptionally nice and trusting, and a lot of people take this to mean that she is stupid - Loki says so all the time. In reality, Idunn is perfectly aware of the risks she takes by trusting people, and simply prefers it to the constant intrigue and suspicion the other gods indulge in.
+        
+        She ${idunn_text}
+        *page_break
+        *goto gods
+      #Loki
+        Loki is the trickster god. He is sly, proud, and sometimes spiteful, and collects enemies like a butterfly enthusiast with a giant net. Despite being technically very intelligent, Loki never thinks ahead, which gets both him and the people around him into a lot of trouble. It's possible he'd make a powerful ally, but he's so untrustworthy that no-one dares find out. He's the cause of many of Asgard's problems, and the solver of many, too. For better or worse, he makes things happen.
+
+        He ${Loki_text}
+        *page_break
+        *goto gods
+      #Odin
+        Odin is the leader of the gods, and the father of most of them. He created humanity and the worlds from the corpse of a giant, and now he spends most of his time trying to stop it all from ending. He's extremely powerful and utterly ruthless, and he keeps almost everything he knows secret. He thinks in riddles and watches the future, and he manipulates everyone around him in his attemps to preserve Asgard.
+
+        He ${Odin_text}
+        *page_break
+        *goto gods
+      #Thor
+        Thor is the god of thunder. He is enormous, and very powerful, and giants everywhere are terrified of him. He's not particualrly intelligent, but he's never needed to be; he deals with all of his problems the same way, by hitting them. On the rare occasions he runs into something he can't hit, he outsources the thinking to Odin or Loki. He is happily married to Sif, and they live in the giant hall Bilskirnir with their daughter and two sons. Despite his terrifying temper, he is quite good-natured most of the time.
+
+        He ${Thor_text}
+        *page_break
+        *goto gods
+      #Vor
+        Vor is the goddess of knowledge. She lives in a tower full of smoke, which helps with her magic - given enough time she can access information on almost anything that has happened in any of the nine worlds. Years of inhaling magical smoke have ruined her voice and vision to the point that not even the Golden Apples can cure her, but she considers this an acceptable cost for the knowledge she gains.
+        *page_break
+        *goto gods
+      #I'm finished.
+        *goto chart
+  #Inventory
+    This is a list of all the treasures and items you own.
+    *if death=100
+
+      Naglfari - a ship made of nails that can be as big as you want it to be and can sail on land.
+    *if cloak=true
+
+      Freya's cloak - a beautiful feather cloak which lets you take the form of a falcon.
+    *if Sleipnir=2
+
+      Sleipnir - one of Loki's sons; an eight legged horse which can run over air and water, and moves faster than any other creature in the nine worlds.
+    *if cult=true
+
+      A cult - a large group of humans who worship you in Midgard.
+    *if myhammer=2
+
+      Mjolnir - Thor's magical hammer, and the most powerful weapon in existence. You have it hidden in a cavern.
+    *if myhammer=1
+
+      Mjolnir - Thor's magical hammer, and the most powerful weapon in existence. You wield it.
+    *if strength>97
+
+      Braces - a set of magical braces which give you strength to equal Thor's.
+    *if gold=true
+
+      Gold - a fortune in red gold you got from a giant.
+    *if stabbity=true
+
+      Sword - a magical sword that improves you skill in combat.
+    *if giantarmy=true
+
+      Giant Army - a small army of giants pledged to obey you.
+    *if salve=true
+
+      Healing Salve - a magical salve that can heal any wound. Once.
+    *choice
+      #I'm finished looking.
+        *goto chart
+  #Worlds
+    These are the nine worlds.

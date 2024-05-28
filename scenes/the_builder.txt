@@ -1,0 +1,1115 @@
+*disable_reuse
+You've only been back for a few days when you're called to a meeting of all of the gods.
+
+As you enter Valhalla, you see a strange man beside the throne. He is tall and muscled, and he stands with absolute confidence. You sense an unnatural amount of power from him, 
+*if Animal=100
+  and he smells slightly wrong, although you can't pinpoint exactly how.
+  *goto master_builder_arrives
+*else
+  but he doesn't feel like a god or a giant. You can't be certain, though.
+  *goto master_builder_arrives
+*label master_builder_arrives
+*page_break
+Odin waits, totally still, until everyone has arrived. Then he stands abruptly, and even the chattering einherjar fall silent.
+
+"Asgard," he intones, "is under threat. We have many enemies, and we require better defenses. This man -" he extends an arm towards the stranger - "offers to build us a wall."
+
+His reference to enemies is strange - aside from a few border squabbles with the giants, Asgard is mostly at peace. Whatever the Allfather is afraid of, he probably saw it in the future.
+
+He reseats himself and nods towards the stranger, who steps forwards.
+
+"My wall will keep out any giant, as well as every other enemy you might make." he announces, "And it will only take me eighteen months to build."
+
+His voice has a strange, melodic quality to it, and 
+*if dream=100
+  you frown as you listen. Behind it, you can almost hear another voice - one as deep and booming as an avalanche. Your head is starting to hurt.
+  *goto ihavequestions
+*else
+  it reminds you a little of Kvasir, the wise god.
+  *goto ihavequestions
+*label ihavequestions
+*choice
+  #We do need a wall. I'll stay quiet.
+    Loki emerges from among the other gods, wearing an even smile.
+
+    "This wall," he queries, "what will it cost us?"
+    
+    The stranger grins.
+
+    "I'm not asking that much, considering what I can do." he says, "I want the sun, the moon, and the goddess Freya."
+    *goto freya_rage
+  #I'm suspicious. I'll question the builder.
+    What do you want to ask him?
+    *label asking_the_builder
+    *choice
+      #"What will the wall be like?"
+        "Tall enough and strong enough to keep out any giant. Made of stone to be impervious to fire. Only those with access to the rainbow bridge will be able to enter."
+
+        He stops talking as there's a snicker from Loki.
+        
+        "Uh… Birds? Flies? Literally anything else with wings?"
+
+        The stranger glares, and Loki raies his hands and steps back.
+        *goto asking_the_builder
+      #"Who are you?"
+        *if Animal=100
+          He seems uncomfortable with the question.
+
+        "I am a master builder. My name isn't important."
+
+        A few eyes narrow around the room.
+        *set Tyr %+5
+        *set Odin %+5
+        *set Heimdall %+5
+        *goto asking_the_builder
+      #"What will it cost?"
+        The stranger grins
+
+        "I'm not asking that much, considering what I can do." he says "I want the sun, the moon, and the goddess Freya."
+        *goto freya_rage
+
+*label freya_rage
+*page_break
+"What???"
+
+Freya's reputation is for her unrivalled beauty, but in truth she is one of the scariest gods. She commands as many fallen warriors as Odin, and she has a glare not even Thor will meet. And a temper.
+
+Her glorious hair stands on end like a lionfish's spines, and Vallhalla starts to shake with her shouting. Around her, gods and dead heroes alike edge away.
+
+"You pathetic, wretched little-"
+
+"Enough!" Odin roars from his high seat, and there's silence. He looks down at the builder.
+
+"Outside." he commands.
+*page_break
+The builder winks at Freya, and she hisses in outrage. Then he strides out of the hall.
+
+Odin turns to the rest of you.
+
+"Opinions?"
+*fake_choice
+  #"We can't give up Freya!"
+    *set Freya %+5
+    The other gods seem to agree with you, and 
+  #"We do need a wall…"
+    *set Freya %-10
+    Unfortunately, you are outnumbered, and
+Odin is just about to call the builder in to refuse him, when Loki speaks up.
+*page_break
+"Is it really a good idea to lose this opportunity? Of[i] course[/i] we mustn't lose Lady Freya," he winks at her, and she scowls, "but we really do need a wall."
+
+"You have an idea?" asks Odin.
+
+Loki smiles.
+
+"Well, now you come to mention it…" 
+
+"No." states Freya.
+
+He widens his green eyes at her.
+
+"Hear me out, dear lady. We can accept his terms, but insist he does it in six months, or forfeit his reward. He'll fail, and we'll get part of a wall for free, with no risk at all to dear Freya."
+
+He spreads his hands.
+
+"[i]No risk?[/i]" Freya hisses. "None to [i]you,[/i] you mean."
+
+She turns to Odin.
+
+"You can't do this!"
+*page_break
+Odin meets her eyes, then surveys the other gods. Most of them are murmuring approvingly, although a few of the goddesses look mutinous. 
+*if odin>80
+  You know him well enough to tell that he favours the plan.
+  *goto yourvote
+*elseif dream=100
+  You sense that he favours the plan.
+  *goto yourvote
+*elseif animal=100
+  You suspect that he favours the plan.
+  *goto yourvote
+*elseif diplomacy>70
+  Your diplomatic experience suggests to you that he favours the plan.
+  *goto yourvote
+*else
+  You can't tell what he's thinking.
+  *goto yourvote
+*label yourvote
+*choice
+  #This is a great idea. I'll speak out in favour.
+    *set Loki %+1
+    *set Freya %-40
+    Freya gives you an icy look as the gods agree to try Loki's plan.
+    *goto the_builder_agrees
+  #This could go either way. I'll stay silent.
+    *set Freya %-20
+    You watch as the gods agree to try Loki's plan.
+    *goto the_builder_agrees
+  #They can't do this! I'll try to stop them.
+    *set Freya +20
+    *set Loki %-10
+    You're outnumbered. How will you stop them?
+    *choice
+      #I'll threaten them.
+        *set Threat +1
+        *set Freya %+10
+        *set Loki %-40
+        *set Odin %-40
+        *set Thor %-25
+        *set Tyr %-15
+        *set Heimdall %-15
+        *set Idunn %-10
+        *set Baldur %-10
+        *if Death=100
+          It's risky, but you are a god of death. The hall grows colder and dust rises. For a few seconds your face seems to look like a skull, and low moans start up. 
+
+          "No." you say, in a voice like grinding bones, "We will not risk Freya."
+          *page_break
+          There's absolute silence as you let your power fade. You've annoyed a lot people here, and they won't forget it, but they don't quite dare go against you.
+
+          Freya, on the other hand, is definitely grateful. In fact, she even offers you her falcon-feather cloak as a thank-you.
+          *if Animal=100
+            It won't be of much use to you, since you can turn into a falcon anyway, but you know it's important to her.
+            *page_break
+            *goto your_job_now
+          *else
+            It's magical, and will let you take the form of a falcon.
+            *page_break
+            *goto your_job_now
+        *elseif Strength>80
+          Risky, but you're strong enough to pull it off. You tense your bulging muscles as you speak.
+          "Freya said no."
+          *page_break
+          *set Loki %-10
+          *set Thor %+10
+          You've annoyed a lot people here, and they won't forget it, but they don't quite dare go against you. Thor actually looks a little impressed.
+
+          Freya, on the other hand, is definitely grateful. In fact, she even offers you her falcon-feather cloak as a thank-you.
+          *if Animal=100
+            It won't be of much use to you, since you can turn into a falcon anyway, but you know it's important to her.
+            *page_break
+            *goto your_job_now
+          *else
+            It's magical, and will let you take the form of a falcon.
+            *page_break
+            *goto your_job_now
+        *elseif Magic>80
+          Risky, but you have the power to pull it off. You shake Asgard as you speak.
+
+          "Freya said no."
+          *page_break
+          *set Loki %-10
+          *set Odin %+5
+          You've annoyed a lot people here, and they won't forget it, but they don't quite dare go against you.
+
+          Freya, on the other hand, is definitely grateful. In fact, she even offers you her falcon-feather cloak as a thank-you.
+          *if Animal=100
+            It won't be of much use to you, since you can turn into a falcon anyway, but you know it's important to her.
+            *page_break
+            *goto your_job_now
+          *else
+            It's magical, and will let you take the form of a falcon.
+            *page_break
+            *goto your_job_now
+        *else
+          You try to intimidate them, but you just aren't scary enough. You may have made some enemies here, though, so watch out.
+
+          Loki shoots you a smug look as the other gods agree to use his plan. 
+          *page_break
+          Loki steps forwards as the builder re-enters the room.
+
+          *goto Loki_negotiates
+      #I'll talk them out of it.
+        *set Freya %+10
+        *if Diplomacy>80
+          *set Freya 95
+          *set Loki %-40
+          *set Diplomacy %+5
+          All the practise you have at talking people round pays off, and you succeed. 
+
+          Loki looks pretty annoyed, but Freya is definitely grateful. In fact, she even offers you her falcon-feather cloak as a thank-you.
+          *if Animal=100
+            It won't be of much use to you, since you can turn into a falcon anyway, but you know it's important to her.
+            *page_break
+            *goto your_job_now
+          *else
+            It's magical, and will let you take the form of a falcon.
+            *page_break
+            *goto your_job_now
+        *elseif Charm=80
+          *set Freya 95
+          *set Loki %-30
+          *set Charm %+5
+          Who can say no to you? You're charming enough to convince a majority, much to Loki's annoyance.
+
+          Freya is definitely grateful. In fact, she even offers you her falcon-feather cloak as a thank-you.
+          *if Animal=100
+            It won't be of much use to you, since you can turn into a falcon anyway, but you know it's important to her.
+            *page_break
+            *goto your_job_now
+          *else
+            It's magical, and will let you take the form of a falcon.
+            *page_break
+            *goto your_job_now
+        *else
+          You try, but you aren't quite convincing enough, and the gods agree to try Loki's plan. He shoots you a smug look.
+          Loki steps forwards as the builder re-enters the room.
+          
+          *goto Loki_negotiates
+*label your_job_now
+*set Freya 95
+*set Idunn %+20
+*set Sif %+20
+*set Sigyn %+20
+*set cloak true
+Odin doesn't look too pleased, but he isn't willing to go against the rest of the gods, so he sends the builder away. 
+
+Before you leave, he lays a hand on your shoulder.
+
+"${name}, I would like you to arrange us a wall."
+*choice
+  #"Don't give me orders."
+    *set Odin %-40
+    *set Loki %+10
+
+    His grip tightens.
+
+    "I'm afraid I have to insist."
+
+    A few images flicker in your mind as Odin pours a little of his power into you. A threat, but a quiet one.
+    *if Dream=100
+      You see flashes of future battlefields and raging fires, then sharp teeth clashing together. You probably saw more there than Odin meant to show you.
+      
+    You know you can't take him - not yet, anyway - so it might be wise to give in.
+    *choice
+      #No! I will not be used.
+        Odin's grip tightens further, and your shoulder starts to crumble. Freya shouts, and the hall fills with noise.
+      
+        The last thing you see is the Allfather's one, blazing eye.
+        *goto_scene dead
+      #Okay. For now.
+        Odin smiles coldly, and walks away.
+        *page_break
+        *goto build_a_wall
+  #"Fair enough."
+    Odin nods slightly, then walks away.
+    *set Odin %+10
+    *goto build_a_wall
+*label build_a_wall
+How?
+*choice
+  #I'll ask the women of Asgard to help me.
+    *set Idunn %+20
+    *set Sif %+20
+    *set Sigyn %+20
+    *set Frigg %+20
+    *set Fulla %+20
+    *set Vor %+20
+    *set Freya %+20
+    Smart. After your display with Freya, they'll certainly be on board, and they can help you gather materials.
+
+    You will need a lot of strength to lift the stones for the building, though.
+    *choice 
+      #We'll work together, even if it takes years.
+        *achieve girlpower
+        That's the spirit. And it will.
+
+        Still, years don't mean much to gods, and you achieve it in the end.
+        *set Wall "stone"
+        *set Odin %+2
+        *set Tyr %+5
+        *set Frey %+2
+        *set Heimdall %+2
+        *goto last_builder
+      #I'll ask Thor for help.
+        He has got the strength. Still he's not thrilled to be asked.
+
+        He'll do it though, because Asgard needs a wall, and his workmanship is good. He finishes in just under a year.
+        *set Thor %-10
+        *set Odin %-5
+        *set Wall "stone"
+        *goto last_builder
+      *selectable_if (Animal=100) #I'll call on my animal friends.
+        *achieve girlpower
+        That works. A few flocks of birds easily carry blocks into place, and you and your friends can guide them into place.
+
+        It's still a big job, but you get it finished in only a few months, impressing the other gods.
+        *set Wall "stone"
+        *set Odin %+5
+        *set Tyr %+10
+        *set Frey %+5
+        *set Heimdall %+5
+        *goto last_builder
+
+      *selectable_if (Strength>80) #I'll lift them myself.
+        *achieve girlpower
+        You can do that, although it takes you over a year.
+        *set Wall "stone"
+        *set Odin %+2
+        *set Tyr %+5
+        *set Frey %+2
+        *set Heimdall %+2
+        *goto last_builder
+
+  #I'll flood the plains of Ida and turn Asgard into an island.
+    It's a neat idea, but it'll require a lot of work.
+
+    How will you make the basin?
+    *choice
+      #By building dams between the other nearby hills.
+        It's easier than building a wall, certainly, but it will still take you months, even with help.
+
+        *gosub getting_water
+        *label asgard_island
+
+        It takes a while, but you successfully turn Asgard into an island. It wasn't exactly what Odin had in mind, and he's a little irritated, but Asgard is better defended now. Loki finds it all pretty funny.
+        *set Loki %+5
+        *set Odin %-5
+        *set Tyr %+10
+        *set Heimdall %+5
+        *set Thor %+5
+        *set Njord %+5
+        *set Freya %+5
+        *set Sif %+5
+        *finish Return to my usual duties.
+      #By digging.
+        You can certainly dig around the base of the hill
+        *if strength>80
+          and you have the strength to do it alone.
+
+          *gosub getting_water
+          *goto asgard_island
+        *else 
+          but you aren't strong enough to do it alone.
+          *choice 
+            #I'll ask the women of Asgard for help.
+              *set Frigg %+20
+              *set Fulla %+20
+              *set Vor %+20
+              *set Idunn %+20
+              *set Freya %+20
+              *set Sif %+20
+              *set Sigyn %+20
+              After your display with Freya, they're more than happy to.
+
+              *gosub getting_water
+              *goto asgard_island
+            #I'll ask Thor.
+              He'll do it, because Asgard needs defenses, but he isn't happy.
+
+              *set Thor %-10
+              *set Odin %-5
+              *gosub getting_water
+              *goto asgard_island
+            *selectable_if (Animal=100) #I'll call on my animal friends for help.
+              That works.
+
+              *gosub getting_water
+              *goto asgard_island
+      *selectable_if (Rain=100) #I won't need to; I'm a god of rain.
+        Good point. You walk out of Valhalla and whip up some dark clouds, hanging them in a circle around Asgard. You can't make a lake, because that's outside your domain, but you can bring down waterfalls from the sky that would smash down any invader, and that put Asgard at the center of a raging river.
+
+        Heimdall isn't happy, since he can't see the world as easily now, and this isn't what Odin intended, but Asgard is certainly safe from invasion now.
+        *set Loki %+5
+        *set Odin %-5
+        *set Tyr %+10
+        *set Heimdall %-20
+        *set Thor %+5
+        *set Njord %+5
+        *set Freya %+5
+        *set Sif %+5
+        *finish Return to my usual duties.
+  *selectable_if (death=100) #I'll summon up a bone wall.
+    You walk slowly out of Odin's hall, then raise your arms sharply into the air. Enormous shards of bone burst out of the ground, surrounding Asgard in an impenetrable wall. 
+    
+    The other gods, still nearby, stare.
+    *set Odin %+10
+    *set Tyr %+20
+    *set Heimdall %+10
+    *set Frey %+10
+    *set Freya %+10
+    *set Sif %+10
+    *set Baldur %+10
+    *set Sigyn %+10
+    *set Thor %+10
+    *set Njord %+10 
+    *goto last_builder
+  *selectable_if (DwarfFavour=true) #I'll ask the dwarves.
+    They do owe you a favour.
+
+    The four sons of Ivaldi show up to build you a stone wall. It takes them a few years, but for gods, that isn't much.
+
+    The other inhabitants of Asgard are impressed by the craftsmanship, particularly Tyr, who takes security very seriously.
+    *set Wall "stone"
+    *set Odin %+5
+    *set Tyr %+10
+    *set Frey %+5
+    *set Heimdall %+5
+    *goto last_builder
+*label getting_water
+How are you going to get the water?
+*choice
+  #I'll rechannel a river.
+    That'll take strength.
+    *if strength>70
+      Luckily, you have more than enough.
+      *return
+    *else
+      Unfortunately, you don't have enough.
+      *goto getting_water
+  #I'll convince Njord, the god of the sea, to help.
+    *if (charm>70)
+      *set Njord %+10
+      He's happy to help you.
+      *return
+    *else 
+      *set Njord %-10
+      He refuses to help you.
+      *goto getting_water
+  *selectable_if (Rain=100) #I'll pull it out of the sky.
+    That's easy enough for you.
+    *return
+  #I'll find another way to defend Asgard.
+    *goto build_a_wall
+
+*label the_builder_agrees
+Heimdall goes out to get the builder back in.
+*choice
+  #Offer to present the terms.
+    *if diplomacy>60
+      You present the terms smoothly and concisely, and he agrees.
+
+      All he asks is to be able to use his horse, Svadilfari, to help him haul in stones.
+      *choice
+        #"That's fair enough"
+          "Then we're agreed."
+          *goto building_starts
+        #"No. You must do it completely alone."
+          *set Loki %-10
+          "Then I have to say no."
+
+          "Uh… Let's not be hasty." Loki interjects, "I'm sure the horse is fine, right?"
+
+          He looks around at the other gods, and they murmur agreement.
+
+          "Then I agree. I'll build your wall."
+          *goto building_starts
+    *else
+      You fail to hide your glee as you explain the terms, and the builder balks.
+
+      "If I may interject," Loki says smoothly, throwing you an irritated glance, "I think I might be able to explain it better…"
+
+      He takes over.
+
+      It takes him a little while, but he convinces the builder to attempt the job in six months. The one caveat is that he will keep his horse, Svadilfari, to help him with the work.
+      *page_break
+      *goto building_starts
+  #Offer to present the terms, then screw it up.
+    *set Loki %-10
+    *set Freya %+20
+    You put on a sly air as you explain the terms, and the builder balks.
+
+    "If I may interject," Loki says smoothly, throwing you an irritated glance, "I think I might be able to explain it better…"
+
+    He takes over.
+
+    It takes him a little while, but he convinces the builder to attempt the job in six months. The one caveat is that he will keep his horse, Svadilfari, to help him with the work.
+    *page_break
+    *goto building_starts
+  #Let Loki present the terms.
+    *label Loki_negotiates
+    "We are -" he examines his nails "- considering your proposal. Your price is… acceptable -" Freya hisses again, and the builder grins "- but your timings are not. We need this wall [i]now.[/i]"
+
+    The builder turns his head, thoughtfully.
+
+    "I might be able to do it in twelve months." he muses.
+
+    "Six." says Loki, dropping his sing-song tone, "No more. And you have to do it alone. Otherwise you leave here with no reward."
+
+    The builder frowns. He looks at Loki, and then at Odin, and then at Freya, who can't help looking gorgeous, even when smouldering with rage. Then he turns back to Loki.
+
+    "I'll need my horse, Svadilfari."
+
+    The gods nod their approval, and Loki beams.
+
+    "Agreed!"
+    *goto building_starts
+*label building_starts
+*page_break
+The builder starts digging a trench immediately, and he digs very fast. It only takes him a few weeks to finish.
+
+Then he sets off towards the mountains with his horse, ready to gather stones.
+
+He's back the next morning and starts building. He's frighteningly fast.
+*page_break
+"It's fine." Loki assures everyone. "Building the whole thing alone would be impossible. I'll bet you anything he fails."
+*fake_choice
+  #"I think you already have."
+    His cocky smile fades and he glances across at Freya, who's watching the builder with an expression that could chill the fire giant, Surtr.
+
+    "It's fine." he says again, but he doesn't sound confident.
+  #"I'll take that bet. I think he'll do it."
+    Loki glances at you, looking slightly annoyed and a bit nervous.
+  #"I think you're right."
+    He offers you a cocky smile.
+  #I'll say nothing.
+    Loki looks around, but everyone ignores him.
+
+Then he slips away.
+*page_break
+For the next few months, the builder labours non-stop, and the wall gets higher and higher.
+
+Freya takes to stalking around Asgard glaring at people, accompanied by angry cats, and everyone else tries to keep out of her way.
+
+Finally, on the evening before the builder is due to finish, Odin call everyone back into Valhalla for another meeting.
+*page_break
+"We are going to have to face," he says, "that the wall will be completed on time. We swore to give him his reward, and there is nothing we can do about it."
+
+Freya steps forwards, trembling with fury.
+
+"So I have to marry him. Before I go away with him, and place a curse on all of you for doing this to me, I have a demand…"
+*page_break
+"…I want [i]him[/i] dead."
+
+She points at Loki.
+
+"[i]Painfully.[/i]"
+
+Loki scuttles backwards.
+
+"Uh… let's not be hasty…" he says, looking around in alarm.
+
+"Agreed." decides Odin.
+*set loki_angry +1
+*choice
+  #"That's fair. This is his fault."
+    *set Freya %+10
+    *set Loki %-40
+    *set Odin %+5
+    "Hang on! No!" Loki protests. "We all agreed to do this; it's not just my fault!"
+
+    "Quiet." commands Odin, "When the builder is finished, you die."
+
+    Loki swallows.
+
+    "And… if he doesn't finish?"
+
+    Odin shrugs.
+
+    "Then we will have no reason to kill you."
+
+    Loki nods slowly, then walks out of the room.
+    *goto mare
+
+  #"That's not fair! we all agreed to it!"
+    *set Loki %+25
+    *set Freya %-20
+    *set Odin %-10
+    Odin glares down at you.
+
+    "It's my call to make."
+    *choice
+      #"What if Loki gets rid of the builder?"
+        "Yeah! Sure! I can do that." Loki assures him quickly.
+
+        He stares up at the ceiling for a few seconds, then smirks and heads for the door.
+        *goto mare
+      #"What if I get rid of the builder?"
+        *set Loki %+20
+        Odin thinks about it, then nods slowly.
+
+        "If you get rid of the builder, we'll forget about all of this."
+        *goto giant_volunteer
+      #"No. I won't let you."
+        *goto threaten_gods1
+      #"Right. I'm sorry."
+        Odin nods slowly.
+        *goto bystander
+  #"Whoa! You're going a bit far there, Freya."
+    *set Loki %+20
+    *if Freya<50 
+      She glances at you.
+
+      "No. No, I am not." she states.
+
+      *goto bystander
+    *elseif (charm>79) or (Freya>60)
+      *label Freya_calms
+      She looks over at you and calms down slightly.
+
+      "${name}, I'll have to [i]marry[/i] him." she says, almost pleadingly.
+      *choice
+        #"I know, but you can't do this."
+          "Then what do I do?"
+          *choice
+            #"Get Loki to deal with the builder."
+              Everyone looks at Loki.
+              *set Loki %+5
+              *set Freya %+10
+
+              "Me? Oh. Sure. Yes, I can do that."
+
+              He glances up at the ceiling for a few seconds, thinking, then nods and heads for the door.
+              *goto mare
+            #"I'll deal with the builder."
+              *goto giant_volunteer
+            #"Marry him."
+              *set Freya %-30
+              "You…"
+
+              She stares at you, then spits in your face. Then she turns to Odin.
+
+              "Dead." she repeats.
+              *goto bystander
+        #"I know - I'll sort it out."
+          *set Loki %+20
+          *goto giant_volunteer
+        #"I don't care. I'm not letting you kill him."
+          *set Freya %-20
+          *set Loki %+20
+          She scowls at you.
+
+          "It's not your choice to make."
+          *choice
+            #"I'm making it my choice. You won't touch him."
+              *label threaten_gods1
+              *set Loki %+20
+              *set threat +1
+              *if (strength>80) or (magic>80)
+                For a few seconds, the room grows very tense, and it seems like there might be a fight. Then Loki breaks in.
+
+                "Before anyone does anything violent, I have an idea. I can get rid of the builder. Alright?"
+
+                Odin turns to look at him, then nods slowly.
+
+                "Very well."
+
+                Loki breathes out, then catches your eye briefly as he walks out of the hall.
+
+                Odin turns his head back towards you. He doesn't like being threatened, and he will remember this.
+                *goto mare
+              *if death=100
+                You let your power pulse, reminding them that you're a god of death, and the room grows very tense.
+
+                For a few seconds, it seems like there might be a fight. Then Loki breaks in.
+
+                "Before anyone does anything violent, I have an idea. I can get rid of the builder. Alright?"
+
+                Odin turns to look at him, then nods slowly.
+
+                "Very well."
+
+                Loki breathes out, then catches your eye briefly as he walks out of the hall.
+
+                Odin turns his head back towards you. He doesn't like being threatened, and he will remember this.
+                *goto mare
+              *else
+                Thor walks towards you and towers over you, reaching for the hilt of an axe.
+
+                "Is that a threat?"
+
+                Loki slides into your view
+
+                "Uh, before anyone does anything violent, I have an idea."
+
+                He looks around at everyone.
+
+                "I can get rid of the builder. Alright?"
+
+                Odin narrows his one eye, then nods slowly.
+
+                "Very well."
+
+                Loki breathes out, then catches your eye briefly as he walks out of the hall.
+
+                Odin turns back towards you. He doesn't like being threatened, and he will remember this.
+                *goto mare
+            #"Listen to me - it's wrong."
+              *if (charm>79) or (diplomacy>80)
+                *set Loki %+10
+                *set charm %+5
+                *set diplomacy %+5
+                You talk to them for a while, and you manage to calm them down. Eventually, Loki chips in.
+
+                "If it helps, I could deal with the builder? I thought of something."
+
+                Odin turns to look at him, then nods slowly.
+
+                "Very well."
+
+                Loki catches your eye briefly as he walks out of the hall.
+                *goto mare
+              *else
+                *set Loki %+5
+                You talk to them for a while, trying to calm them down, but you don't quite manage it, and they're still pretty angry when Loki chips in.
+
+                "If it helps, I could deal with the builder? I thought of something."
+
+                Odin turns to look at him, then nods slowly.
+
+                "Very well."
+
+                Loki catches your eye briefly as he walks out of the hall.
+                *goto mare
+            #"That's true."
+              *goto bystander
+    *else
+      She glances at you.
+  
+     "No. No, I am not." she states.
+  
+     *goto bystander
+      
+  #Stay silent.
+    *label bystander
+    "You can't do this!" Loki protests. "We all agreed to do it; it's not just my fault!"
+
+    "Quiet." commands Odin, "When the builder is finished, you die."
+
+    Loki swallows.
+
+    "And… if he doesn't finish?"
+
+    Odin shrugs.
+
+    "Then we will have no reason to kill you."
+
+    Loki nods slowly, then walks out of the hall.
+    *goto mare
+
+*label mare
+*page_break
+That night, as the builder arrives with his last cartful of stones, all of the gods gather to watch him finish.
+
+He's just coming over the plains of Ida towards the last section of the wall, when his horse, Svadilfari, suddenly stops. It turns it's head towards the trees lining the edge of the plains as another horse trots out.
+*if Animal=100
+  Looking with the eyes of an owl, you can clearly see that the animal is a mare, and that its eyes are an intense green. 
+Svadilfari stares for a few seconds, then kicks itself clear of its cart and gallops towards the newcomer. 
+
+The builder shouts and runs after it, but he isn't fast enough, and Svadilfari and the mare easily keep ahead of them. They run all night, while the builder tries and fails to catch them, and when dawn breaks, he turns towards the gods watching him.
+
+"You!" he shouts, trembling with rage, "You did this!"
+
+His shaking increases until it starts to make the earth shake, too. Then parts of him start to bulge, and he grows bigger and bigger towering first over the gods, then over all of Asgard.
+
+A mountain giant. 
+
+He takes a few steps forwards, violent intentions strung out all over him.
+*choice
+  #I'll calm him down.
+    *if charm=80
+      You succeed, but only barely. You manage to calm him down, and he leaves Asgard without his reward.
+      *set Idunn %+10
+      *set Freya %+10
+      *set Odin %+10
+      *set Tyr %+10
+      *set Frigg %+10
+      *set Fulla %+10
+      *goto wall_built
+    *elseif diplomacy=80
+      You point out that if he attacks the gods, he will certainly be killed. He isn't happy, but he leaves Asgard without his reward.
+      *set Idunn %+10
+      *set Freya %+10
+      *set Odin %+10
+      *set Tyr %+10
+      *set Frigg %+10
+      *set Fulla %+10
+      *goto wall_built
+    *else
+      *set Thor %-10
+      You try to talk to him, but he raises a foot to stamp on you.
+
+      Before it can come down, a lightning flash of motion surges into the giant, knocking him over. Thor stands on top of him, holding an axe, then smashes it down on the giant's head breaking his skull.
+      *goto wall_built
+  #I'll kill him with magic.
+    *if Death=100
+      You skin grows see through, and your eyes turn pale and rotten as you reach out towards him. He jerks, then screams, then starts to wither. Finally, he collapses into dust.
+
+      The other gods look impressed.
+      *set Odin %+10
+      *set Tyr %+10
+      *set Thor%+10
+      *set Freya %+10
+      *set Heimdall %+10
+      *goto wall_built
+    *elseif magic>80
+      *if fire=100
+        He may be a giant, but you are a god.
+  
+        Fire surges across you as you ready yourself. Then you hurl it at him, and he burns away, covering you with ash.
+        *set Odin %+10
+        *set Tyr %+10
+        *set Thor%+10
+        *set Freya %+10
+        *set Heimdall %+10
+  
+        The other gods look impressed.
+        *goto wall_built
+      *if Dream=100
+        You reach into his mind and crush it, and he crumples to the ground, causing Asgard to shake.
+
+        The other gods look impressed.
+        *set Odin %+10
+        *set Tyr %+100
+        *set Frigg%+10
+        *set Freya %+10
+        *set Frey %+10
+        *goto wall_built
+      *elseif animal=100
+        You let your body ripple as you change form, becoming a dragon. It's a difficult one to keep up, but you're strong enough.
+
+        You spring forwards and tear the giant apart, then let the form collapse.
+
+        The other gods look impressed.
+        *set Odin %+10
+        *set Tyr %+10
+        *set Thor%+10
+        *set Freya %+10
+        *set Heimdall %+10
+        *goto wall_built
+      *else 
+        You blast him with magical power, throwing him backwards. He crashes hard against the ground, and doesn't get up.
+
+        The other gods look impressed.
+        *set Odin %+10
+        *set Tyr %+100
+        *set Frigg%+10
+        *set Freya %+10
+        *set Frey %+10
+        *goto wall_built
+    *else
+      *set Thor %-10
+      You blast him with magical power, throwing him backwards, and he roars in rage and charges at you.
+
+      He's only a few feet away, when a lightning flash of motion surges into him. It's Thor, and he's angry and armed with an axe. He smashes it into the giant's skull, killing him.
+      *goto wall_built
+  #I'll fight him.
+    *if strength>79
+      You pick up a jagged rock and hurl it at him, hitting him hard in the head.  He staggers, then falls hard and doesn't get up.
+
+      The other gods look impressed.
+      *set Odin %+10
+      *set Tyr %+10
+      *set Thor%+20
+      *set Freya %+10
+      *set Heimdall %+10
+      *goto wall_built
+    *else
+      *set Thor %-10
+      You pick up a jagged rock and hurl it at him, but it falls short, bouncing lightly off his stomach. You've got his attention though, and he charges you.
+
+      He's only a few feet away, when a lightning flash of motion surges into him. It's Thor, and he's angry and armed with an axe. He smashes it into the giant's skull, killing him.
+      *goto wall_built
+  #I'll stay back.
+    The giant charges at the gods, roaring in rage.
+
+    He's only a few feet away, when a lightning flash of motion surges into him. It's Thor, and he's angry and armed with an axe. He smashes it into the giant's skull, killing him.
+    *goto wall_built
+*label wall_built
+*page_break
+With the giant gone, the gods do the best they can to fill in the rest of the wall, but they can't do it as well as the builder did.
+
+No-one is surprised when Loki doesn't turn up to help with the wall, but he stays away for longer than that. In fact, it takes him a year to return, accompanied by a beautiful grey foal with eight legs.
+*page_break
+He introduces it as Sleipnir, and claims that when it is grown, it will run faster than any other creature alive.
+
+*if Loki>60
+  He presents the foal to you as a gift.
+  *choice
+    #"Thank you!"
+      *set Loki %+5
+      He winks at you, then sidles away.
+      *set Sleipnir 2
+      *goto last_builder
+    #"Uh... did you..."
+      He smirks at you, then sidles away.
+      *set Sleipnir 2
+      *goto last_builder
+    #"Uh... No thanks."
+      *set Sleipnir 3
+      He laughs, then heads off to present Sleipnir to Odin instead.
+      *goto last_builder
+*else
+  He presents the foal to Odin as a gift.
+  *set SLeipnir 3
+  *goto last_builder
+*label giant_volunteer
+How are you planning to deal with the builder?
+*choice
+  #I'll challenge him to a duel.
+    "Why should I accept?" he asks, "What do I gain if I win?"
+    *fake_choice
+      #"You can have me."
+        He looks you over.
+      #"You can have Idunn and her golden apples."
+        He thinks about it.
+      #"You can have Fulla, Frigg's handmaid."
+        He thinks about it.
+      #"You can have Vor, the goddess of knowledge."
+        He thinks about it.
+
+    "All right." he decides.
+    *if magic>75
+      You beat him in the duel.
+
+      He isn't happy, but he leaves Asgard.
+      *goto last_builder
+    *elseif strength>75
+      You beat him in the duel.
+
+      He isn't happy, but he leaves Asgard.
+      *page_break
+      With the giant gone, the gods do the best they can to fill in the rest of the wall, but they can't do it as well as the builder did.
+      
+      *goto last_builder
+    *else
+      You lose the duel.
+      
+      Asgard now owes the giant even more.
+      *choice
+        *selectable_if (Dream=100) #I'll use his dreams to manipulate him.
+          You see into his mind, and find out that he is a mountain giant.
+    
+          You send him dreams of his home in Jotunheim, and of his family, and you fill him with a yearning to return. 
+    
+          When he wakes, he sets off at once, and doesn't return, leaving most of the wall finished.
+          *set Odin %+20
+          *set Loki %+10
+          *set Frigg %+10
+          *set Idunn %+10
+          *set Freya %+10
+          *page_break
+          With the giant gone, the gods do the best they can to fill in the rest of the wall, but they can't do it as well as the builder did.
+          
+          *goto last_builder
+        #I'll ask Loki for help.
+          *set Loki %-5
+          Loki gives you a look.
+          
+          "Right. Fine. I'll think of something."
+          
+          He walks out.
+          *goto mare
+  #I'll persuade him to leave.
+    *if Diplomacy>75
+      You go out to talk to the builder, and you point out that even if he marries Freya, that doesn't mean she will love him, and that there's nothing to stop Thor from hunting him down after the deal is complete.
+
+      He's far from happy, and he curses you, but he leaves Asgard.
+      *page_break
+      With the giant gone, the gods do the best they can to fill in the rest of the wall, but they can't do it as well as the builder did.
+      
+      *goto last_builder
+    *else
+      You try to talk him out of claiming his reward, but you aren't persuasive enough.
+
+      What will you try next?
+      *choice
+        #I'll challenge him to a duel.
+          "Why should I accept?" he asks, "What do I gain if I win?"
+          *fake_choice
+            #"You can have me."
+              He looks you over.
+            #"You can have Idunn and her golden apples."
+              He thinks about it.
+            #"You can have Fulla, Frigg's handmaid."
+              He thinks about it.
+            #"You can have Vor, the goddess of knowledge."
+              He thinks about it.
+      
+          "All right." he decides.
+          *if magic>75
+            You beat him in the duel.
+      
+            He isn't happy, but he leaves Asgard.
+            *page_break
+            With the giant gone, the gods do the best they can to fill in the rest of the wall, but they can't do it as well as the builder did.
+
+            *goto last_builder
+          *elseif strength>75
+            You beat him in the duel.
+      
+            He isn't happy, but he leaves Asgard.
+            *page_break
+            With the giant gone, the gods do the best they can to fill in the rest of the wall, but they can't do it as well as the builder did.
+            
+            *goto last_builder
+          *else
+            You lose the duel.
+            
+            Asgard now owes the giant even more.
+            *choice
+              *selectable_if (Dream=100) #I'll use his dreams to manipulate him.
+                You see into his mind, and find out that he is a mountain giant.
+          
+                You send him dreams of his home in Jotunheim, and of his family, and you fill him with a yearning to return. 
+          
+                When he wakes, he sets off at once, and doesn't return, leaving most of the wall finished.
+                *set Odin %+20
+                *set Loki %+10
+                *set Frigg %+10
+                *set Idunn %+10
+                *set Freya %+10
+                *page_break
+                With the giant gone, the gods do the best they can to fill in the rest of the wall, but they can't do it as well as the builder did.
+                
+                *goto last_builder
+              #I'll ask Loki for help.
+                *set Loki %-5
+                Loki gives you a look.
+                
+                "Right. Fine. I'll think of something."
+                
+                He walks out.
+                *goto mare
+        *selectable_if (Dream=100) #I'll use his dreams to manipulate him.
+          You see into his mind, and find out that he is a mountain giant.
+    
+          You send him dreams of his home in Jotunheim, and of his family, and you fill him with a yearning to return. 
+    
+          When he wakes, he sets off at once, and doesn't return, leaving most of the wall finished.
+          *set Odin %+20
+          *set Loki %+10
+          *set Frigg %+10
+          *set Idunn %+10
+          *set Freya %+10
+          *page_break
+          With the giant gone, the gods do the best they can to fill in the rest of the wall, but they can't do it as well as the builder did.
+          
+          *goto last_builder
+        #I'll ask Loki for help.
+          *set Loki %-5
+          Loki gives you a look.
+        
+          "Right. Fine. I'll think of something."
+        
+          He walks out.
+          *goto mare
+      
+  *selectable_if (Dream=100) #I'll use his dreams to manipulate him.
+    You see into his mind, and find out that he is a mountain giant.
+
+    You send him dreams of his home in Jotunheim, and of his family, and you fill him with a yearning to return. 
+
+    When he wakes, he sets off at once, and doesn't return, leaving most of the wall finished.
+    *set Odin %+20
+    *set Loki %+10
+    *set Frigg %+10
+    *set Idunn %+10
+    *set Freya %+10
+    *page_break
+    With the giant gone, the gods do the best they can to fill in the rest of the wall, but they can't do it as well as the builder did.
+    
+    *goto last_builder
+  #I'll ask Loki for help.
+    *set Loki %-5
+    Loki gives you a look.
+
+    "Right. Fine. I'll think of something."
+
+    He walks out.
+    *goto mare
+
+*label last_builder
+*page_break
+Now that Asgard has a wall, it should be harder for anyone to invade. This isn't the end of all its security issues, but it certainly makes everyone a lot safer.
+*finish Return to my usual duties.

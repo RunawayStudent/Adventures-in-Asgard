@@ -1,0 +1,954 @@
+*disable_reuse
+*if brisingamen=false
+    *if freya>80
+        It's less than a century later, and you're spending some quiet time in Idunn's garden, enjoying the deliciously clean air, and fending off her occasional attempts to decorate you in flowers. 
+        *if death=100
+            She gets very upset when they wither away.
+        
+        You're on the verge of  
+        *if dream=100
+            untangling a particularly knotty dream,  
+        *if animal=100
+            figuring out why you can't communicate with Odin's ravens, 
+        *if rain=100
+            finally finding a way to make rain useful in combat, 
+        *if death=100
+            putting together a new plan for running Helheim, 
+        *if fire=100
+            working out how to create just smoke, 
+        when Freya glides up beside you.
+
+        "${name}!" she says, in an exited half-whisper, "${name}, look!"
+
+        Your concentration breaks, and it's all gone. You curse, and Freya recoils.
+
+        "Sorry." you say, "I was thinking. What is it?"
+        
+        She smiles, and runs her fingers along a new necklace she's wearing. It's an incredible golden piece, set with jewels which could technically be called topaz, but which look more like someone has caught fire in a prismatic cage.
+
+        Lying across her pale neck, it sets off her red hair perfectly; it might be the only thing in the world that could possibly make her more beautiful.
+
+        She sits down next to you and whispers in your ear.
+
+        "It's called Brisingamen. I got it from the sons of Ivaldi, in exchange for one night with each of them."
+        *choice
+            #"Are you okay?"
+                *set Freya%+10
+                "Of course! It was fun."
+
+                She seems slightly confused by the question, but still glad you asked.
+
+                "And isn't it gorgeous?"
+
+                "It is." you admit.
+
+                *goto necklace
+            #"It [i]is[/i] lovely."
+                *set Freya %+5
+                *label necklace
+                She beams, then her smile fades slightly and she leans in to whisper again.
+
+                "Don't tell anyone, though. Especially Odin. I have no desire to justify myself to a man who turned the whole world into a gallows."
+                *goto promise
+            #"Was that a good idea?"
+                *set freya%-10
+                She scowls.
+
+                "Yes." she states, then her face falls a little, "But don't tell Odin. He might get jealous, and I have no desire to justify my decisions to a man who turned the whole world into a gallows."
+                *label promise
+                *choice
+                    #Promise not to tell him.
+                        *set freya%+10
+                        "I promise." you assure her, and she grins again.
+
+                        "Thank you, ${name}."
+
+                        She raises an arm, but leaves you the choice.
+                        *fake_choice
+                            #Hug her.
+                                You lean in, and she lays the arm around your shoulders.
+                            #Duck away - I don't like touch.
+                                She gets that, and is happy to just sit there.
+                            
+                        The two of you enjoy the garden together for a while, before eventually going home.
+                        *page_break
+                        A few days later, you're lying in bed when 
+                        *goto robbery
+                    #Pretend I won't tell him.
+                        *if (diplomacy>70) or (charm>70)
+                            *set Freya %+10
+                            "I promise." you assure her, and she grins again.
+
+                            "Thank you, {name}."
+    
+                            She raises an arm, but leaves you the choice.
+                            *fake_choice
+                                #Hug her.
+                                    You lean in, and she lays the arm around your shoulders.
+                                #Duck away - I don't like touch.
+                                    She gets that, and is happy to just sit there.
+                                
+                            The two of you enjoy the garden together for a while, before you eventually leave.
+                            *page_break
+                            *goto narc
+                        *else
+                            *set Freya %-40
+                            "I promise." you assure her, and she leans back immediately, her hazel eyes narrowing.
+
+                            "Oh." she says, softly, then she gets up and walks away without looking back. She's deeply hurt by your lie. Perhaps she'll forgive you, perhaps not.
+
+                            You spend a little more time in the garden, but the mood has been ruined, and you soon leave.
+                            *page_break
+                            *goto narc
+                    #Tell her I have to tell him.
+                        *set Freya %-10
+                        "I have to, Freya."
+
+                        She slumps slightly, disappointed.
+
+                        "I understand." she says, then she gets up and walks away.
+
+                        You spend some more time enjoying the garden, then finally leave.
+                        *page_break
+                        *goto narc
+    *elseif dream=100
+        It's less than a century later and you're exploring your dreams. Suddenly, you see several quick flashes. Images of… Freya? She's somewhere dark and smoky.
+        *fake_choice
+            #A chimney?
+                No, this is more like a smithy.
+            #Helheim?
+                It's not that smoky down there.
+
+                No, this is more like a smithy.
+            #A smithy?
+                Yes.
+            *if (fire=100) #My bed?
+                It's not that dark in there.
+
+                No, this is more like a smithy.
+            
+        The next image is in the same place, but there's four dwarves there. Then you see a beautiful, golden necklace, set with jewels which could technically be called topaz, but which look more like someone has caught fire in a prismatic cage.
+
+        The next one is lewd, and vanishes mercifully quickly, leaving awake, and aware of just how Freya payed for the necklace. Which is her choice, of course, but it's a little awkward that you know about it.
+        *choice
+            #Try to forget the images.
+                You've done it before, and it doesn't take you long to erase them from your mind, keeping only the knowledge of what you learned. You go back to sleep, but not long afterwards 
+                *goto robbery
+            #Tell Odin - he'll definately want to know.
+                *goto narc
+            #Apologise to Freya - I feel guilty about knowing.
+                This probably won't be a fun conversation.
+
+                You find her quite quickly - the dream is fresh in your mind, and you track the necklace easily.
+
+                She turns as you approach, and raises elegant eyebrows. You take a deep breath, then explain.
+
+                "I wanted to apologise. I saw how you got the necklace. Accidentally."
+
+                She stares at you, 
+                *if freya>60
+                    *set freya%+10
+                    then sighs.
+
+                    "It's okay. I know you can't control them. Just don't tell Odin."
+
+                    "I won't." you assure her, and she nods.
+
+                    "Thank you."
+                    *page_break
+                    You return home and go back to bed, but you are soon interrupted when 
+                    *goto robbery
+                *else
+                    *set freya%+10
+                    then starts to shake. Her hair rises to its ends, and you can hear the distant sound of hissing cats. She opens her mouth to shout, and you wisely flee back home.
+                    *page_break
+                    Your attempts to sleep are soon interrupted, when 
+                    *goto robbery
+    *else
+        It's less than a century later, and you're lying in bed when 
+        *goto robbery
+        
+*else
+    *goto idunn
+*label narc
+*set odin%+20
+You go to Valhalla for an audience with Odin, and 
+*if odin>60
+    he lets you in at once, happy to see you.
+*if odin<61
+    you don't have to wait long.
+
+"Allfather." you say, searching for the words.
+*fake_choice
+    #Tell him bluntly.
+        "Freya slept with four dwarves in exchange for a necklace."
+
+        His face, always impassive, turns to stone.
+
+        "Out." he commands, and you flee the room.
+    #Tell him tactfully.
+        "I have some information about Freya." you tell him, "She has a new necklace. She paid for it by… spending a few nights with the makers."
+
+        His face, always impassive, freezes.
+
+        "Leave me." he commands, and you walk from the room.
+*page_break
+You return home and attempt to sleep, but you're disturbed 
+*if dream=100
+    by a new dream. You see Loki before Odin's throne, looking like he'd much rather be at home asleep, and then you see him outside Sessrumnir, Freya's hall. You're woken from the dream 
+when 
+*goto robbery
+*label robbery
+you hear a scream from outside. It sounds like Freya, and you can tell that she's absolutely furious.
+*choice
+    #Go investigate.
+        You get up and you're heading for the sound when 
+        *goto squabble
+    #Go get Odin.
+        You get up and head straight for Valhalla, hoping to ask Odin to intervene. 
+        
+        You're on the way when 
+        *label squabble
+        *if dream=100
+            you sense something big and dangerous hurtling towards you.
+        *if dream=0
+            you spot something huge hurtling towards you.
+        
+        It's an enormous chariot, drawn by giant, angry cats and carrying a furious goddess. You barely duck out of the way in time as Freya drives wildly towards Valhalla.
+
+        Concerned, you follow.
+        *page_break
+        By the time you enter the hall, Freya and Odin are screaming at each other like foxes in heat. The place is absolutely empty - even the einherjar are staying well away from this.
+        
+        "…stole my necklace!" Freya screams, and the long tables start to splinter.
+
+        "Maybe I wouldn't have stolen it," Odin bellows back, "if I didn't know how you'd got it!"
+
+        Freya spits on a nearly bench, which catches fire.
+
+        "Who I choose to sleep with, and why, are none of your business!"
+
+        A chandelier explodes.
+
+        "I rule Asgard! It is [i]all[/i] my business!"
+
+        Odin's swords detatch themselves from the wall start to slice through the air, one of them nearly taking out your eye.
+        *choice
+            #Get between them magically.
+                *if magic>97
+                    You call on the magical power granted to you by drinking the mead of poetry, and 
+                    *if dream=100
+                        drag all three of you into unconciousness, where you can talk safely. The sudden transition shocks them out of their fury, and their attention turns to you. You carefully ease them back into the physical world.
+                        *goto letstalk
+                    *elseif animal=100
+                        surge forwards as a dragon, putting yourself easily between them. Your sudden appearence shocks them out of their fury, and they stare up at you. You carefully regain your usual form.
+                        *goto letstalk
+                    *elseif rain=100
+                        call up a mist, keeping them from seeing each other. The sudden change shocks them out of their fury, and you let it fade, leaving both of them staring at you.
+                        *goto letstalk
+                    *elseif fire=100
+                        raise a wall of fire between them, consuming the ancient, wooden tables. Shocked out of their fury, they stare at you, and you carefully let the fire die.
+                        *goto letstalk
+                    *else
+                        send a sudden, deathly chill through the room, sapping their power, and their will to fight. Numb, they turn to stare at you, and you carefully let life back into the hall.
+                        *goto letstalk
+                *else
+                    You call on all the power you have at your disposal, and try to stop them, but you're interrupted by an exploding pillar. Stone shrapnel shoots outwards, peppering you, and you fall to the ground. You're briefly aware of the pain, and of a shout from Freya, and then everything goes dark.
+                    *goto_scene dead
+            #Get between them physically.
+                You step between them and shout, "Stop!"
+                
+                A pillar, ripped up by the force of Freya's rage, crashes towards you, ready to crush you.
+                *if dream=100 
+                    Reflexively, you abandon physical form and let it thunder through you.
+
+                    "Stop!" you shout again, and this time Odin and Freya turn to look at you.
+                    *goto letstalk
+                *elseif strength>79
+                    You set your stance and block it with you forearms, skinning them, but protecting the rest of you.
+
+                    *goto ow
+                *elseif magic>80
+                    In the last few seconds you manage to call up a magical shield, and it bounces off you, but the impact still throws you backwards, and you feel your bones rattle.
+
+                    "Stop!" you shout again, through chattering teeth, and this time Odin and Freya turn to look at you.
+                    *goto letstalk
+                *elseif odin>60
+                    At the last second, a furry blur slams into you, teeth close on your shoulder and you're yanked out of the way. It's one of Odin's wolves, Geri. You can't help crying out as the two of you hit the ground, getting the attention of the combatants.
+
+                    *goto ow
+                *elseif freya>60
+                    At the last second, a golden lasso yanks it aside, as Freya scrambles to protect you. Shocked out of their fury, she and Odin stare at you.
+                    *goto letstalk
+                *else
+                    You try to jump aside, but you're too slow, and the last thing you feel is your bones shattering.
+
+                    Then it all goes dark.
+                    *goto_scene dead
+                    
+            #Call out from behind a pillar.
+                You duck behind one of the pillars and shout, "Stop!"
+
+                "What???" roars Odin, and the pillar explodes, studding you with shrapnel. 
+
+                *if odin>60
+                    Guilt crosses his features, and he jerks his hand, tearing the stone splinters out of you. 
+                    *if freya>60
+                        Freya glares at him, then makes her own hand movements, closing your wounds.
+
+                        *goto ouch
+                    *else
+                        You collapse to the ground, bleeding from thousands of little cuts, and the Allfather curses, then closes his eye in concentration. Slowly, painfully, you feel your skin press together and heal.
+
+                        *goto ouch
+                *elseif freya>60
+                    Freya jerks her arm, throwing the Allfather backwards, then runs to your side, cursing. She moves her hands, her fingers an inch away from you, and weaves a magical net around the splinters of stone. Then she carefully teases them out of your skin, casting occasional death glares at Odin. Finally, she brings her fingers together, sealing the wounds.
+
+                    *label ouch
+                    *set scars "Shrapnel"
+                    *label ow
+                    That was a painful experience, but at least the arguing has stopped. Odin and Freya stare at you.
+                    *label letstalk
+
+                    "Let's talk about this." you gasp, "What happened?"
+
+                    *if freya>80
+                        Freya scowls.
+
+                        "Remember the necklace I showed you? [i]He[/i] stole it!"
+
+                        Odin smiles mirthlessly.
+
+                        "Did she tell you how she got it?" he asks.
+
+                        "Yes, I did." snaps Freya, and it starts to look like they're going to fight again.
+                        *goto enough
+                    *else
+                        Freya scowls.
+
+                        "[i]He[/i] stole my necklace!"
+
+                        Odin smiles mirthlessly.
+
+                        "Because she slept with four random dwarves to get it." he announces.
+
+                        "Yes, I did." snaps Freya, "And it was [i]fun[/i]. And [i]my choice to make.[/i]"
+
+                        It's starting to look like they're going to fight again.
+                        *label enough
+                        *choice
+                            #"Odin, she's right. Give her necklace back."
+                                *set freya%+20
+                                *if odin>80
+                                    *set odin%+10
+                                    *label odinhelps
+                                    Odin narrows his eyes briefly, then reaches into his pocket and pulls out the necklace. He holds it in his hand for a few seconds, perhaps admiring the light flickering across the amber jewels, then tosses it to Freya.
+
+                                    She catches it, and immediately puts it on. Then she gives you a curt nod and strides out of the hall. Odin looks down at you, and for a momrny you can see real pain in his grey eye.
+
+                                    Then he sighs.
+
+                                    "I suppose I was out of line." he admits - a rarity for Odin.
+                                    
+                                    Then he exhales through his nose and his face goes stoic again. He gives you a slight nod, then dismisses you.
+                                    *goto thanks
+                                *elseif odin>50
+                                    *if charm>70
+                                        *goto odinhelps
+                                    *else
+                                        Odin narrows his eyes.
+
+                                        "Trade me for it." he says, suddenly wearing a nasty smile, 
+                                        *goto trade
+                                *else
+                                    *if charm>70
+                                        Odin narrows his eyes.
+
+                                        "Trade me for it." he says, suddenly wearing a nasty smile.
+                                        *goto trade
+                                    *else
+                                        *set Odin %-10
+                                        Odin narrows his eyes at you.
+
+                                        "Do not give me orders." he snaps, "Get out!"
+
+                                        Faced with the Allfather's fury, you have no choice but to leave his hall, and return home.
+                                        *goto sleep
+                            #"Freya, can you understand why he might be upset?"
+                                *set odin%+10
+                                *if freya>80
+                                    *label ihatewritingthis
+                                    The goddess stares at you, then softens.
+
+                                    "Yes." she admits, grudgingly, "But it doesn't matter. My choices are not his to control."
+
+                                    Odin's expression shifts slightly, but he wisely decides to stay silent.
+
+                                    "Perhaps you should talk about it later?" you suggest, and Freya nods.
+
+                                    "No." says Odin, and he reaches into his pocket and pulls out the necklace. He holds it in his hand for a few seconds, perhaps admiring the light flickering across the amber jewels, then tosses it to Freya.
+
+                                    She catches it, and immediately puts it on. Then she gives you a curt nod and strides out of the hall.
+
+                                    Odin stares at you briefly, wearing an unreadable expression. Then he waves a hand, dismissing you.
+                                    *goto thanks
+                                *elseif freya>50
+                                    *if charm>70
+                                        *goto ihatewritingthis
+                                    *else
+                                        *label careful
+                                        *set freya%-10
+                                        "No." she scowls, "And I don't particularly care."
+
+                                        Odin's expression changes suddenly, to an nasty, uncharacteristic smile.
+
+                                        "Trade me for it." he says, 
+                                        *goto trade
+                                *elseif charm>70
+                                    *goto careful
+                                *else
+                                    *set freya%-20
+                                    She turns on you, her hair rising to its ends.
+
+                                    "Get. Out." she spits, and then, "Out!"
+
+                                    Faced with her fury, you have no choice but to leave Valhalla, and to return home.
+                                    *goto sleep
+                            #"Maybe you can make a trade for it?"
+                                "Like what?" Freya spits.
+
+                                Odin gives her a nasty smile.
+
+                                *label trade
+                                "There is a human king, Hogni, who hates a human king called Hedinn. Make them fight forever in your name, and I shall return your precious necklace."
+                                *choice
+                                    #Agree - they're only humans.
+                                        "That seems fair." you say, and Freya scowls again.
+                                        *label agreed
+
+                                        "Fine. Now give it back."
+
+                                        Odin's cruel smile widens, and he reaches into his pocket and pulls out the necklace. He holds it in his hand for a few seconds, perhaps admiring the light flickering across the amber jewels, then tosses it to Freya.
+
+                                        She catches it, and immediately puts it on. Then she gives you a curt nod and strides out of the hall. Odin dismisses you with a wave, and you follow.
+                                        *goto thanks
+                                    #Object - that's cruel.
+                                        "Leave the humans out of it; they have nothing to do with this."
+                                        *label negotiations
+
+                                        *if diplomacy>70
+                                            Odin frowns and reaches into his pocket to pull out the necklace. He holds it in his hand for a few seconds, perhaps admire the light flickering across the amber jewels, then looks across at the fuming goddess.
+
+                                            "One thousand warriors." he decides, "From your armies at Folkvangr."
+
+                                            Freya scowls again.
+                                            *goto agreed
+                                        *else
+                                            Odin glares.
+
+                                            "Take the trade or don't." he commands, and Freya scowls.
+                                            *goto agreed
+                                    #Object - that's too much.
+                                        "That's way too much for a necklace."
+                                        *goto negotiations
+                *else
+                    You're briefy aware of agonising pain, and the coppery taste of blood, then it all goes dark
+                    *goto_scene dead
+            #Go home - this is out of my league.
+                You edge out of the room and carefully shut the door, then hurry back home, while explosions echo behind you.
+                *label sleep
+                
+                By the time you get up, everything has been resolved and Freya is wearing her new necklace again. Still, she continues to shoot Odin poisonous looks at every opportunity. Fortunately, it doesn't look like last night's events will be affecting you.
+                *goto idunn
+    #Go back to sleep.
+        *set sleepcount+1
+        *if sleepcount=3
+            *achieve zzz
+        Content in the knowledge that this isn't your problem, you go back to sleep.
+        *label nope
+
+        Some time in the next few weeks, you notice that Freya is wearing a beautiful new necklace, and shooting Odin murderous glances - something definitely happened while you were asleep.
+        *goto idunn
+*label thanks
+*page_break
+You sleep in a little the next day, making up for the lost time, and it's nearly noon when you emerge to find Freya outside your home.
+
+*if freya<80
+    "I wanted to thank you." she says, "Last night could have gone badly. I owe you."
+
+    This said, she turns and walks away, 
+    *if idunn>80
+        adding over her shoulder, "Oh, and Idunn's looking for you."
+
+        This turns out to be accurate, because Idunn bounces up to you soon afterwards.
+        *goto favour
+    *else
+        leaving you alone by your house.
+        *goto wedding
+*else
+    "Will you walk with me?" she asks, "I want to talk to you."
+    *choice
+        #"Sure."
+            She smiles, and the two off you set off on a stroll through Asgard.
+
+            "You've been a very good friend to me." she says as you walk, "And last night it could have gone very badly if you hadn't been there. So I wanted to ask…" she pauses, then blurts it out, "Do you like women? And… more than that, do you like [i]me?[/i]"
+            *choice
+                #"Yes. To both."
+                    *set relationship "Freya"
+                    *achieve freya
+                    She beams, and her beauty seems to light up the world. Then she leans gently towards you.
+                    *fake_choice
+                        #Kiss her.
+                            *set touch "yes"
+                            The two of you spend a few blissful seconds kissing, and then she draws back.
+                        #Lean back.
+                            *set touch "no"
+                            "But I still don't like touch." you warn her.
+
+                            She laughs - a wonderful sound.
+
+                            "I can live with that." she says, and then suddenly turns her head.
+                    
+                    *if idunn>80
+                        "Look." she murmurs, "We have a spectator."
+
+                        You follow her gaze and spot Idunn watching you.
+
+                        "I think she wants to talk to you." Freya guesses, and then she sighs, "I'll leave you to it."
+
+                        She leans in to whisper into your ear as she departs, "Come and see me in my hall tonight, if you want."
+                        *fake_choice
+                            #I will!
+                                It's something to look forward to, then.
+                            #No. I prefer not to do… [i]that[/i].
+                                Understandable.
+                        
+                        Meanwhile, Idunn is hurrying up to you.
+                        *goto favour
+                    *else
+                        "How about we go back to my hall?" she whispers.
+                        *fake_choice
+                            #"That's a good idea."
+                                She grins, and the two of you head to Sessrumnir.
+
+                                You spend a delightful day with Freya, and depart her hall in the morning, with the promise of more.
+                                *goto wedding
+                            #"Okay, but I prefer not to do…[i] that[/i]."
+                                "That's fine." she grins, and the two of you head to Sessrumnir.
+
+                                You spend a delightful day with Freya, and depart in the evening with the promise of more.
+                                *goto wedding
+                #"Women, yes, but not you personally."
+                    She nods slowly, looking slightly surprised.
+
+                    "Fair enough…" she sighs, "I hope we can still be friends."
+
+                    Abrupty, she smiles again.
+                    *if idunn>80
+
+                        "We have a spectator." she murmurs.
+
+                        "I think she wants to talk to you." Freya guesses, "So I'll leave you to it. See you around."
+
+                        She glides away as Idunn approaches you.
+                        *goto favour
+                    *else
+
+                        "I'll see you around, ${name}." she says, then glides away, leaving you enjoying your walk alone.
+                        *goto wedding
+                #"No… I don't."
+                    She nods slowly.
+
+                    "Fair enough…" she sighs, "I hope we can still be friends."
+
+                    Abrupty, she smiles again.
+                    *if idunn>80
+
+                        "We have a spectator." she murmurs.
+
+                        "I think she wants to talk to you." Freya guesses, "So I'll leave you to it. See you around."
+
+                        She glides away as Idunn approaches you.
+                        *goto favour
+                    *else
+
+                        "I'll see you around, ${name}." she says, then glides away, leaving you to enjoy your walk alone.
+                        *goto wedding
+        #"No."
+            She nods slowly.
+
+            "I see."
+
+            She turns to walk away, 
+            *if idunn>80
+                then pauses to add, "Oh, Idunn's looking for you."
+
+                This turns out to be accurate, becuase Idunn bounces up to you soon afterwards.
+                *goto favour
+            *else
+                leaving you alone outside your house.
+                *goto wedding
+*label idunn
+*if Idunn>80
+    You sleep in a little the next day, making up for the interruption, and you emerge to find Idunn outside.
+    *label favour
+
+    "${name}!" she trills cheerfully, "Will you do me a massive favour?"
+
+    She takes your hand and gazes at you with massive eyes.
+
+    "I'm getting married!" she exclaims, "And I need someone to help me plan the wedding. I talked to Bragi, and we both think you'd be brilliant at it."
+
+    She pauses, looking suddenly worried.
+
+    "Oh! But you don't have to, of course!"
+
+    Bragi is the god of poetry, and everyone knows he adores Idunn; he spends hours and hours in her garden, playing his harp while she weaves flowers into his enormous beard. Like his betrothed, Bragi is one of the more peaceful gods of Asgard, quick to step into a conflict and try to de-escalate it. Once he tried to stop Loki and Heimdall from fighting as seals, and would have drowned if Njord hadn't dived in to save him.
+    *choice
+        #Tell her I'll help.
+            *set idunn%+20
+            "Of course I'll help!" you tell her, and she beams.
+
+            "Right! I'm planning to hold it in my garden, but I haven't got any more than that."
+
+            "Leave it with me." you instruct her.
+            *label planning
+            *temp planning 0
+            *choice
+                #Arrange clothes for Idunn.
+                    *set planning +1
+                    She'll need a dress, a train, and a bridal crown.
+
+                    What colour dress?
+                    *choice
+                        *if (dress=true) #The one Ivaldi's sons made for her.
+                            *set weddingdress "silver"
+                            A beautiful silver, then. You can attach a train easily enough.
+                            *goto crown
+                        #White.
+                            Unusual, but very Idunn.
+                            *goto crown
+                        #A light blue one with a flowery pattern.
+                            *set weddingdress "blue"
+                            Traditional, and very Idunn.
+                            *goto crown
+                        #Pink, with a swirly pattern.
+                            *set weddingdress "pink"
+                            Traditional, and very Idunn.
+                            *label crown
+
+                            She'll need a floral crown, too. What kind of flowers will you use?
+                            *choice
+                                #Roses.
+                                    *set crown "roses"
+                                    They're hard to weave into a crown, but they[i] are[/i] beautiful.
+                                    *goto planning
+                                #Daises.
+                                    They're easy to weave, and very pretty. Idunn also adores them.
+                                    *goto planning
+                                #Bluebells.
+                                    *set crown "bluebells"
+                                    They're small enough to be easily woven, but they have a lovely blue colour. Idunn will love them.
+                                    *goto planning
+                                #Berries.
+                                    *set crown "berries"
+                                    It's an unusual choice, but they should look fantastic with some dark leaves against Idunn's blond hair.
+                                    *goto planning
+                                #Just leaves.
+                                    *set crown "deep green leaves"
+                                    It's a smart, simple choice, and it should look good against Idunn's blond hair.
+                                    *goto planning
+                #Arrange clothes for Bragi.
+                    *set planning +1
+                    Traditionally, the groom wears a fur coat or cloak, and carries his sword, but Bragi isn't a big fighter.
+                    *choice
+                        #Stick with the sword anyway.
+                            It[i] is[/i] very traditional.
+                            *goto planning
+                        #Go with an instrument.
+                            *set clothes "lyre"
+                            His harp is too big, but you can get him a lyre to carry.
+                            *goto planning
+                        #Carve him some wooden flowers.
+                            *set clothes "flowers"
+                            You can certainly do that.
+                            *goto planning
+                #Arrange entertainment.
+                    *set planning+1
+                    You'll need something outdoors-friendly to do.
+                    *choice
+                        #A swordfighting competition.
+                            *set entertainment "competititon."
+                            Not really Idunn or Bragi's kind of thing, but the guests will enjoy themselves.
+                            *goto planning
+                        #Music.
+                            It's the obvious choice.
+                            *goto planning
+                        #Drinking games.
+                            *set entertainment "games"
+                            Not really Idunn's kind of thing, but the guests should enjoy themselves.
+                            *goto planning
+                #Arrange food.
+                    *set planning+1
+                    What food will there be?
+                    *choice
+                        #An enormous feast with lots of mead.
+                            *set food "big feast"
+                            That's probably wise - Thor eats a lot.
+                            *goto planning
+                        #A small feast with lots of mead.
+                            That's reasonable.
+                            *goto planning
+                        #A hog-roast with lots of mead.
+                            *set food "hog_roast"
+                            You'll have to borrow Saehrímnir, Odin's giant ressurecting boar, but that shouldn't be a problem. The einherjar can have vegetables for a day.
+                            *goto planning
+                        #A vegetable roast with lots of mead.
+                            *set food "veg_roast"
+                            Idunn will certainly approve.
+                            *goto planning
+                #Arrange a guest list.
+                    *set planning+1
+                    The inhabitants of Asgard are coming. Is there anyone you want to snub or invite?
+                    *label guests
+                    *choice
+                        #I'm not inviting Loki - he might make trouble.
+                            *set lokihere false
+                            Here's hoping he doesn't take offense.
+                            *goto guests
+                        #I'll invite sons of Ivaldi - they're Idunn's half brothers.
+                            *set sons true
+                            That's a nice idea.
+                            *goto guests
+                        #I'll invite Aegir and Ran - they're allies of Asgard.
+                            *set AR true
+                            You can do that.
+                            *goto guests
+                        #I'm happy with the guest list.
+                            Okay.
+                            *goto planning
+                *selectable_if (planning>3) #I'm finished - time to set a date.
+                    When will you hold it?
+                    *choice
+                        #On a Friday - the day of marriage.
+                            Perfect! 
+
+                            The next Friday, you attend the wedding.
+                            *goto hurrah
+                        #On Monday - it'll be a full moon.
+                            *set day "monday"
+                            Perfect!
+                            
+                            The next Monday you attend the wedding.
+                            *goto hurrah
+                        #On Wednesday - it'll please Odin.
+                            *set day "wednesday"
+                            Perfect!
+
+                            The next Wednesday you attend the wedding.
+                            *goto hurrah
+                    *label hurrah
+                    As you enter Idunn's garden, which is even more beautiful than usual, 
+                    *if day!="friday"
+                        *set Bragi%-10
+                        *set Frigg%-10
+                        you hear the guests muttering amongst themselves. It seems that, even for gods, the idea of a wedding held on a non-Friday is alarming.
+                        *goto venue
+                    *elseif relationship="Freya"
+                        Freya joins up with you.
+                        *goto venue
+                    *else
+                        you take a deep breath full of lovely clear air - this is a wonderful place to hold it.
+                        *label venue
+
+                        The bride and groom aren't around yet, so the guests are just mingling, speculating about the couple's future and 
+                        *if entertainment="competition"
+                            making bets on the outcome of the swordfighting contest. From what you overhear Baldur saying, Frey is the favourite. 
+                            *goto food
+                        *elseif entertainment="music"
+                            listening to the harp music that's filling the air. 
+                            *goto food
+                        *else
+                            playing drinking games. It's all very friendly for now, but that's probably because no-one's drunk yet.
+                            *goto food
+                    *label food
+                    You 
+                    *if relationship="Freya"
+                        and Freya
+                    wander over to the 
+                    *if food="small feast"
+                        tables in the middle of the garden, where a small feast has been set up. Only a few minutes in, Thor has already eaten most of it, but you manage to grab some for yourself, and there's plenty of mead.
+                        *goto guest
+                    *elseif food="big feast"
+                        *set thor %+10
+                        *set bragi %+10
+                        *set idunn %+10
+                        tables in the middle of the garden, where you set up a giant feast. Thor has been eating solidly since he arrived, but even he can't make a real dent in this much food. You scoop yourself up a serving, and fill your cup with mead.
+                        *goto guest
+                    *elseif food="hog-roast"
+                        hog-roast, where Thor is doing his best to consume the amount of boar that normally feeds all of the einherjar. Fortunately, not even he can eat more than half of it, so there's plenty left for everyone else. You carve yourself a serving, and fill your cup with mead.
+                        *goto guest
+                    *else
+                        tables in the middle of the garden, where you set up a vegetable feast. You know idunn will be thrilled, but right now Thor is looking less than impressed. You collect yourself a serving and fill your cup with mead.
+                        *set thor%-10
+                        *set idunn %+10
+                        *goto guest
+                    *label guest
+
+                    As you wait for Idunn's arrival, you look around at the other guests. 
+                    *if lokihere=true
+                        Loki is over by the mead barrel, 
+                        *if entertainment="competition"
+                            taking bets for the swordfighting contest. 
+                            *goto loki
+                        *elseif entertainment="music"
+                            flicking small bits of stone at the musicians. 
+                            *goto loki
+                        *else
+                            dominating the drinking games. 
+                            *goto loki
+                        *label loki
+                        He sees you looking, and winks at you cheerfully. 
+                    *if sons=true
+                        Ivaldi's sons are gathered together by a patch of deep red geraniums, eyeing the other guests suspiciously. One of them gives you a brief nod. 
+                    *if ar=true
+                        Ran and Aegir are sitting together under a cherry tree, talking quietly and watching the more lively guests move around. 
+                    Odin and Frigg are in deep conversation with their son, Baldur, and both of them look happier than you've seen them in ages.
+                    *page_break
+                    Just as Thor finally steps away from the food, the bride and groom arrive.
+
+                    Idunn is wearing a stunning 
+                    *if weddingdress="silver"
+                        silver dress, which ripples beautifully as she walks. 
+                        *goto head
+                    *elseif weddingdress="white"
+                        white dress which, unusually for a viking wedding, is totally plain. She [i]has[/i] always loved white, though. 
+                        *goto head
+                    *elseif weddingdress="blue" 
+                        blue dress, with embroidered flowers decorating it. In the sunny outdoor setting, it looks absolutely fantastic. 
+                        *goto head
+                    *else
+                        pink dress, with embroidered swirls. The patterns seem to dance as she walks, createing a mesmerising effect.
+                        *goto head
+                    *label head
+                    Her long, blond hair is decorated by a beautiful crown, wound with 
+                    *if crown="daises"
+                        daisies. The same flowers peek out of 
+                        *goto bragi
+                    *elseif crown="roses"
+                        roses. One big pink one on the left is surrounded by smaller, lighter ones around the rest of it. More rosebuds peek out of 
+                        *goto bragi
+                    *elseif crown="bluebells"
+                        bluebells. The same flowers peek out of 
+                        *goto bragi
+                    *elseif crown="berries"
+                        dark purple berries. Amidst the bright flowers of the garden, they look spectacular, yet distinguished. More berries peek out from 
+                        *goto bragi
+                    *else
+                        dark green leaves. They're simple compared to the bright, flowery garden, yet striking against Idunn's light hair. More leaves entwine throughout 
+                        *goto bragi
+                    *label bragi
+                    Bragi's beard, a little bit of her for him to carry. He's wearing a big, fur-lined cloak, and carrying 
+                    *if clothes="sword"
+                        his sword.
+                        *goto marriage
+                    *elseif clothes="lyre"
+                        a gilded harp.
+                        *goto marriage
+                    *else
+                        a wooden bouquet.
+                        *goto marriage
+                    *label marriage
+
+                    The ceremony goes off perfectly, which is to be expected when the goddess of marriage is one of the guests. 
+                    *if lokihere=false
+                        *page_break
+                        *set loki %-20
+                        The two of them have just joined everyone else, when 
+                        *if entertainment="competition"
+                            there's a roar of rage from the resuming swordfighting.
+
+                            There's a rustle as everyone turns to look. Tyr and Thor had just started a duel after the ceremony, but something seems to have happened to Thor. 
+                            *label smash
+                            He looks angry, unfocused, and his swings at Tyr are definately not aimed to disarm. Getting closer, you can see sweat glistening on his skin, and flecks of foam at the sides of his mouth, both very unusual for Thor, who typically expends no real effort in friendly duels.
+
+                            Tyr is fighting frantically and defensively, all of his attention on keeping Thor's sword away from his head. He's taking it all fairly calmly, but you can tell he's in trouble.
+
+                            Odin shouts at them to stop, but Thor takes no notice, and Tyr can barely spare an alarmed glance. 
+
+                            You see Bragi kiss Idunn, then run for his magical harp, while his wife makes her way towards the fight. As the poet's calming, quiet music starts up, she steps in between the combatants.
+
+                            Tyr stumbles backwards, getting his sword away from her, but Thor's sword plunges down towards her. She doesn't move, just meets his eyes, and at the last second the weapon jerks aside. 
+                            *if animal=100
+                                Just before it does, you hear a distant curse, and turn you head in time to catch a flash of red hair disappearing behind a bush. 
+                            Thor breathes heavily, the madness retreating from his eyes. Sif runs out to her husband's side and clutches his arm while he apologises profusely to Idunn and Tyr.
+
+                            "I'm sorry," he gasps, "I don't know what happened. I'm sorry."
+
+                            Sif frowns.
+
+                            "Hang on." she says, and reaches up behind her husband's beard, pulling out a little wooden dart.
+
+                            "Did you feel this?" she asks her husband.
+
+                            "No." says Thor, confused.
+
+                            Tyr snatches it from her and sniffs it, then hands it to Odin.
+
+                            "Poison." he says, "Something to make him angry."
+
+                            Odin examines it.
+
+                            "This wedding is over." he declares, "Enjoy your honeymoon."
+                            *page_break
+                            The guests depart, muttering together about what happened. Idunn and Bragi stay behind to talk to Odin, and you hear later that they asked Odin not to look to far into what happened. As a result, not much happens for the next few years.
+                            *finish
+                        *else
+                            there's a roar of rage from by the mead barrels.
+
+                            Thor has picked up a nearby god's sword 
+                            *if hammer=true
+                                - thankfully he isn't using his hammer - 
+                            and is attacking Tyr. Something strange seems to have happened to the thunder god. 
+                            *goto smash
+                    *else
+                        *page_break
+                        The celebration goes on through the night, and finally breaks up the next morning. The guests head home, chattering happily in some cases, and nursing headaches in others, while the bride and groom grab vast quantities of mead for their honeymoon.
+
+                        It's been a pretty good wedding overall.
+                        *finish
+        #Tell her no - I'm no good at wedding planning.
+            *goto no
+        #Tell her no - I think this wedding is a mistake.
+            *goto no
+        #Tell her no - I don't like her.
+            *label no
+            "I understand." she says cheerfully, "You'll come though, right?"
+            *choice
+                #Yes.
+                    She beams.
+
+                    "I'll see you then!" she trills happily.
+                    *label yay
+
+                    A few days later, you go to the wedding.
+                    *goto hurrah
+                #No.
+                    She offers you a sad smile.
+
+                    "Oh, well."
+
+                    She hurries of to get on with her planning, leaving you to yourself.
+                    *finish
+*else
+    *label wedding
+    *page_break
+    After a week or so, Idunn makes an announcement. She's getting married to Bragi, and would like to invite you to her wedding. 
+    
+    Bragi is the god of poetry, and everyone knows he adores Idunn; he spends hours and hours in her garden, playing his harp while she weaves flowers into his enormous beard. Like his betrothed, Bragi is one of the more peaceful gods of Asgard, quick to step into a conflict and try to de-escalate it. Once he tried to stop Loki and Heimdall from fighting as seals, and would have drowned if Njord hadn't dived in to save him.
+    *choice
+        #I'll go.
+            *goto yay
+        #I'll skip it.
+            You decide to stay home, and you have a nice time on your own.
+            *finish

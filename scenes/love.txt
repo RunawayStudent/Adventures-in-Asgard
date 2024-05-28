@@ -1,0 +1,31 @@
+*disable_reuse
+*if gerdborn=true
+    *if myhammer !=1
+    *elseif freya>90
+        A few years later, there's an incident in Asgard. Still angry with you for stealing the hammer, the other gods try to exclude you. Unfortunately for them, Freya is not onboard.
+
+        She hurries up to you one day, buzzing with excitement. 
+        *if (relationship="Freya") and (touch="yes")
+            She greets you with a kiss.
+        
+        "You know what my brother did?" she asks, in an unusually giddy tone.
+
+        Freya's brother, Frey, is the vanir god of fertility. Like her, 
+    *else
+        A few years later, there's an incident in Asgard. Still angry with you for stealing the hammer, the other gods deliberately exclude you.
+
+        You hear later that Frey, Freya's brother, is getting married to a giantess named Gerd. 
+        *if Aurboda=true
+            *set gerd +40
+            She comes up to you after the wedding and introduces herself as the daughter of Aurboda, your friend from your travels in Jotunheim. At least you have one friend here.
+        
+        Some time later, after Freya gets into a fight with a giant called Beli using a antler instead of his prized sword, you find out the rest of the story. Frey traded the sword - quite possibly the most powerful weapon in existance, rivaling even Mjolnir - to the father of the bride. Odin, concerned above all with Asgard's security, was understandably annoyed, but there was nothing he could do about it.
+        *page_break
+        *goto kvasir
+
+*else
+    *goto kvasir
+
+*label kvasir
+A few decades after [i]that[/i] incident,
+*comment brokk favour here?

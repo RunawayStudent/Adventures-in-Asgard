@@ -1,0 +1,91 @@
+*comment Copyright 2010 by Dan Fabulich.
+*comment 
+*comment Dan Fabulich licenses this file to you under the
+*comment ChoiceScript License, Version 1.0 (the "License"); you may
+*comment not use this file except in compliance with the License. 
+*comment You may obtain a copy of the License at
+*comment 
+*comment  http://www.choiceofgames.com/LICENSE-1.0.txt
+*comment 
+*comment See the License for the specific language governing
+*comment permissions and limitations under the License.
+*comment 
+*comment Unless required by applicable law or agreed to in writing,
+*comment software distributed under the License is distributed on an
+*comment "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+*comment either express or implied.
+
+Now that situation is dealt with, let's hear a bit about you. I know you're a god, but what are you a god of?
+*choice
+  #Dream
+    *set Dream +100
+    Existing on the edge between reality and imagination, you are ethereal, graceful, and sometimes almost invisible. Magic comes easily to you, and sometimes you can sense people's thoughts and desires, or see glimpses of the future.
+
+    It comes at a cost though, as many of Asgard's tougher warriors mistrust you. Odin finds you useful though, and respects your abilities.
+    *set Magic %+20
+    *set Charm %+10
+    *set Odin +10
+    *set Frey -5
+    *set Heimdall -5
+    *set Thor -20
+    *set Tyr -10
+    *goto Name
+  #Animals
+    *set Animal +100
+    A shapeshifter with incredible senses, you're as likely to be seen soaring on updrafts as an eagle, as walking four-legged down the streets of Asgard. Even when you keep to a human form, your eyes sometimes seem a little slitted, and strange shadows might give the impression of fur. 
+    *comment other gods can't get as big
+    You can also call on other animals as spies or as soldiers, making you a scary foe.
+    *set Strength %+20
+    *set Charm +10
+    *set Freya +10
+    *set Sigyn +10
+    *goto Name
+  #Fire
+    *set Fire +100
+    A god of fire, you crackle with power constantly. You're never too cold and never too hot, and you have an overwhelming advantage in a fight. 
+
+    Your displays of anger can be terrifying, and most of the gods keep out of your way, but Loki loves to taunt you.
+    *set Magic %+10
+    *set Thor +5
+    *set Frey +5
+    *set Loki -5
+    *goto Name
+
+  #Death
+    *set Death +100
+    A god of death, you rule over Helheim, and the dishonourable dead. You are capable of withering your enemies into dust, and you can call up skeletons to aid you.
+
+    Your presence demands respect, and not even Thor starts fights with you. You live in Asgard at Odin's invitation, and he values your abilities a great deal.
+    *set Charm %-10
+    *set Diplomacy %+20
+    *set Loki -1
+    *set Idunn -10
+    *set Odin +15
+    *goto Name
+  #Rain
+    *set Rain +100
+    Lacking in the dramatic powers of most of the gods, you don't get much respect from the tougher gods. On the other hand, the women of Asgard get on with you quite well.
+    *set Freya +10
+    *set Idunn +10
+    *set Sigyn +10
+    *set Sif +10
+    *set Charm %+20
+    *goto Name
+
+*label Name
+*page_break
+What about your name?
+*input_text name
+Your name is ${name}, right?
+*choice
+  #Yes
+    Got it.
+    *finish Enter Odin's hall.
+  #No
+    *goto Name
+
+
+
+
+
+

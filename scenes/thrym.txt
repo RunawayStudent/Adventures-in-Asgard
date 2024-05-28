@@ -1,0 +1,1707 @@
+*if hammer=true
+    *if relationship="Freya"
+        You're spending the day with Freya, watching her warriors wrestle, when a furious shout shakes Asgard.
+
+        "[i]My hammer![/i]"
+
+        Freya shuts her eyes and sighs.
+
+        "That doesn't sound good." she says.
+        *choice
+            #"Let's go check on him."
+                *set sif%+10
+                She nods reluctantly, and the two of you go to find Thor: a task made quite easy by by his continuous, loud raging.
+
+                As you approach Thor's hall, Sif runs over to you. 
+                *if sifhair="content"
+                    She looks good, her head shining and her face natural, but she's clearly very worried. 
+                    *goto uhoh
+                *elseif sifhair=false
+                    She looks very worried - she hasn't even put on her headscarf to cover her baldness - and she's breathing fast. 
+                    *goto uhoh
+                *else
+                    She looks very worried, and she's breathing fast. 
+                    *goto uhoh
+                *label uhoh
+
+                "He's panicking." she gasps, "Tearing up the hall. He thinks Mjollnir's been stolen."
+
+                Freya takes her hands gently.
+
+                "It'll be alright." she says, "We'll find it."
+
+                Sif nods, taking a deep breath, then jumps in alarm as Thor crashes through the door and storms off.
+                *label thor
+                *choice
+                    #Go try and talk to him.
+                        
+                        You step in front of Thor and raises your hands, stopping him.
+
+                        "What happened?" you ask him.
+                        *if (charm>70) or (thor>70)
+                            He breathes out, 
+                            *goto explain
+                        *else
+                            He opens his mouth to yell, then catches sight of his wife and breathes out, 
+                            *goto explain
+                        *label explain
+                        making a sound like an angry ox.
+
+                        "My hammer has been[i] stolen.[/i]" he growls, "I'm going to get Loki to get it back."
+                        *choice
+                            #"I'll come with you."
+                                He nods, then resumes his furious walk.
+
+                                *if relationship="Freya"
+                                    You leave Freya to comfort Sif and follow Thor.
+                                    *goto loki
+                                *else
+                                    You hurry to keep up with him as he looks for Loki.
+                                    *goto loki
+                            #"Fair enough."
+                                You step out of his way and go to 
+                                *if relationship="Freya"
+                                    help Freya 
+                                comfort Sif.
+                                *goto meeting
+                            #"I'll find the hammer."
+                                Thor stares at you, then nods.
+
+                                "Be fast." he commands.
+                                *goto volunteer
+                    #Follow him.
+                        You hurry after him, and you soon realise he's going to find Loki.
+                        *label loki
+
+                        It doesn't take long to find him, and Thor handles it with his usual decorum.
+
+                        "Find my hammer!" he bellows, lunging for the trickster.
+
+                        Loki jumps aside, and throws you a questioning look.
+                        *fake_choice
+                            #"Someone stole it."
+                                He shuts his eyes for a second, then nods.
+                            #"He lost it."
+                                He shuts his eyes for a second, then nods.
+                            #"Don't ask me."
+                                "It was stolen!" Thor growls, and Loki shuts his eyes for a second. Then he nods.
+                        
+                        "I'll find it." he decides.
+
+                        Thor stops pacing, surprised, and Loki shrugs.
+
+                        "[i]I[/i] don't want this place smashed up by giants either." he explains.
+
+                        *if cloak=true
+                            He turns to look at you.
+
+                            "I'll need to borrow your cloak." he says, his tone deadly serious.
+                            *choice
+                                #"Sure."
+                                    *set loki %+5
+                                    You hand it over immediately, and he puts it on, then flies off.
+                                    *goto meeting
+                                #"If you don't give it back…"
+                                    *set loki%-10
+                                    He rolls his eyes.
+
+                                    "Yep. Got it." he says, then puts it on immediately. He takes a last, thoughful look at Thor, then flies off.
+                                    *goto meeting
+                                #"No chance."
+                                    He raises his eyebrows, then turns to Thor.
+
+                                    "I'll need it." he says, and Thor turns on you.
+
+                                    "Give it." he orders, bunching his fists.
+                                    *choice
+                                        #"Fine."
+                                            You grudgingly hand it over, and Loki puts it on immediately, and flies off.
+                                            *goto meeting
+                                        #"No."
+                                            *set thor %-10
+                                            *set loki%-10
+                                            You pull the cloak on and fly upwards, easily avoiding both of them. As you fly away, you hear Loki curse.
+                                            *goto meeting
+                        *else
+                            He drums his fingers on the front of his leg for a few seconds, then abruptly turns and walks off, leaving you and Thor standing in worried silence.
+                            *goto meeting
+                    #Stay and comfort Sif.
+                        *set sif%+10
+                        You watch him go, but you stay with his wife. 
+                        *if relationship="Freya"
+                            Freya nods goodbye to you, then heads after him. 
+
+                        "He'll find it." you assure her.
+                        *goto meeting
+            #"I bet it's Loki's fault."
+                *set loki%-10
+                She scowls, clearly remembering one of the many times Loki has wronged her.
+
+                "Let's go see him." she says.
+
+                The two of you find 
+                *label found
+                him quite quickly, aided by the enormous fire he's set in a nearby field. As you approach, he turns away from it and gives you an innocent smile.
+
+                "Can I help?" he asks.
+
+                *if relationship="Freya"
+                    "What did you do?" Freya asks.
+
+                    He widens his eyes and looks around at the fire.
+
+                    "This? Just a little project of mine."
+
+                    There's a sudden crash, and the fire spits out some particularly noxious black smoke.
+
+                    "No." scowls Freya, "What did you do to Thor's hammer?"
+
+                    He draws back, a perfectly manufactured expression of hurt on his face.
+
+                    "Nothing! Why would I touch his hammer?"
+                    *goto denial
+                *else
+                    He follows your gaze to the fire.
+
+                    "That's just a little project of mine." he assures you.
+
+                    There's a sudden crash, and the fire spits out some particularly noxious black smoke.
+
+                    "Did you have anything to do with Thor shouting about his hammer?" you ask him, bluntly.
+
+                    He draws back, a perfectly manufactured expression of hurt on his face.
+
+                    "Of course not. Why would I touch his hammer?"
+                    *goto denial
+                *label denial
+                *fake_choice
+                    #"To annoy him."
+                        He rolls his eyes.
+
+                        "I'm not that stupid." he says, "He'd kill me."
+
+                        Then he pauses, looking suddenly alarmed.
+
+                        "Uh, oh."
+                    #"For fun."
+                        He rolls his eyes.
+
+                        "I'm not that stupid." he says, "He'd kill me."
+
+                        Then he pauses, looking suddenly alarmed.
+
+                        "Uh, oh."
+                    #"Fair point."
+                        "[i]Thank[/i] you." he says.
+
+                        Then he pauses, looking suddenly alarmed.
+
+                        "Uh, oh."
+                
+                You follow his line of sight, and see Thor storming towards you. Loki glances around quickly, but there's nowhere to hide in such an open field, and trying to outrun Thor is like racing lightning. Sometimes literally.
+                *choice
+                    #"I'll talk to him."
+                        *set loki%+10
+                        You stride towards the thunder god, and he stops as you approach.
+
+                        "What happened?" you ask him.
+
+                        "Someone [i]stole my hammer.[/i]" he growls.
+
+                        "And you think it was Loki?"
+
+                        He shakes his head, sending tangled russet-brown hair whipping around.
+
+                        "No. But he's going to find it for me."
+                        *choice
+                            #"I'll find it."
+                                *set loki%+10
+                                Thor knits his bushy eyebrows, then nods decisively.
+
+                                "Be fast." he commands, and then he turns around and stamps away.
+
+                                You throw Loki a thumbs up, and he returns it, then looks back at the fire.
+                                *goto volunteer
+                            #"I'll tell him."
+                                Thor eyes you.
+
+                                "Fine. But make him be fast." he commands, and then he turns around and stamps away.
+
+                                You walk back over to Loki.
+
+                                "The hammer was stolen." you tell him.
+
+                                He closes his eyes for a second, then nods.
+
+                                "I'll find it." he decides, "If the giants learn it's gone they could attack."
+                                *label 1
+
+                                *if cloak=true
+                                    He turns to look at you.
+        
+                                    "I'll need to borrow your cloak." he says, his tone deadly serious.
+                                    *choice
+                                        #"Sure."
+                                            *set loki %+5
+                                            You hand it over immediately, and he puts it on, then flies off.
+                                            *goto meeting
+                                        #"If you don't give it back…"
+                                            *set loki%-10
+                                            He rolls his eyes.
+        
+                                            "Yep. Got it." he says, then puts it on immediately. He takes a last, thoughful look at Thor, then flies off.
+                                            *goto meeting
+                                        #"No chance."
+                                            "${name}…" Freya says, "This is important."
+                                            *choice
+                                                #"Fine."
+                                                    You hand it over grudgingly, and he puts it on at once and flies off.
+                                                    *goto meeting
+                                                #"No!"
+                                                    You fold you arms, and Loki rolls his eyes.
+
+                                                    "Fine." he snaps, "I'll find some other way to save all our lives."
+
+                                                    He drums his fingers on the front of his leg for a few seconds, then abruptly turns and walks off, leaving you 
+                                                    *if relationship="Freya"
+                                                        and Freya 
+                                                    standing in worried silence.
+                                                    *goto meeting
+                                *else
+                                    He drums his fingers on the front of his leg for a few seconds, then abruptly turns and walks off, leaving you 
+                                    *if relationship="Freya"
+                                        and Freya 
+                                    standing in worried silence.
+                                    *goto meeting
+                            #"That seems fair."
+                                Leave him to it, heading home. Still, you can't shake a feeling of concern.
+                                *goto meeting
+                    *if (relationship="Freya") #"Freya, will you talk to him?"
+                        *set loki %+10
+                        Freya nods, then strides over to the thunder god. They talk together for a little while, then Thor turns to walk away, and Freya returns.
+
+                        "He says the hammer was stolen." she tells you, "I said we'd find it."
+
+                        Loki frowns.
+
+                        "When you say 'we…'"
+                        *choice
+                            #"Freya and I will do it."
+                                *set loki%+10
+                                He smiles.
+
+                                "Fine by me." he says, then he turns back to his fire.
+                                *goto volunteer
+                            #"You'll do it."
+                                *set loki%-10
+                                He nods.
+
+                                "Okay."
+
+                                Freya raises her eyebrows in surprise, and he shrugs.
+
+                                "[i]I[/i] don't want this place smashed up by giants either." he explains.
+                                *goto 1
+                    #"Good luck."
+                        You 
+                        *if relationship="Freya"
+                            and Freya 
+                        withdraw, leavinf Loki and Thor to sort things out.
+                        *goto meeting
+            #"Not our problem."
+                "I suppose you're right." she says, and the two of you settle down again.
+                *goto meeting
+    *else
+        You're spending the day sorting out your godly duties, when a furious shout shakes Asgard.
+
+        "[i]My hammer![/i]"
+        *choice
+            #Go check on Thor.
+                Finding him is easy, thanks to his continuous, loud raging.
+
+                As you approach his hall, Sif runs over to you. 
+                *if sifhair="content"
+                    She looks good, her head shining and her face natural, but she's clearly very worried. 
+                    *goto uhoh1
+                *elseif sifhair=false
+                    She looks very worried - she hasn't even put on her headscarf to cover her baldness - and she's breathing fast. 
+                    *goto uhoh1
+                *else
+                    She looks very worried, and she's breathing fast. 
+                    *goto uhoh1
+                *label uhoh1
+
+                "He's panicking." she gasps, "Tearing up the hall. He thinks Mjollnir's been stolen."
+
+                She jumps in alarm as Thor crashes through the door and storms off.
+                *goto thor
+            #Go find Loki.
+                You find 
+                *goto found
+            #Ignore it.
+                You have work to do. 
+                *goto meeting
+*else
+    Decades pass…
+    *finish
+*label volunteer
+*page_break
+How are you planning to find the hammer?
+*choice
+    #Ask around.
+        Someone might have seen something.
+        *label who
+
+        Who are you asking?
+        *choice
+            #Sif - she's Thor's wife.
+                You ask Sif, but she tells you she didn't see anything.
+                *goto volunteer
+            #Heimdall - he watches things.
+                You question Heimdall, and he frowns, thinking, then drops his head into his hands with a curse.
+
+                "There was an eagle." he groans, "It didn't look natural. I didn't say anything because I thought it was Odin. Thinking back, it could have been a giant."
+
+                "Do you have any idea who?" you ask.
+
+                He stares into the distance, scanning the worlds.
+
+                "Thrym." he says abruptly.
+
+                You recognise the name - it belongs to a powerful giant, and this wouldn't be the first time he's made trouble for Asgard.
+
+                "He's sitting on a hill nearby." Heimdall explains, "He's looking towards us."
+                
+                You thank him, and take your leave.
+                *goto nowwhat
+            #Sigyn - she hears things from Loki.
+                You ask Sigyn, but she says she hasn't heard anything.
+                *goto volunteer
+            #Bragi - he spends a lot of time walking around.
+                You ask Bragi, but he tells you he can't help you.
+                *goto volunteer
+            #Vor - she's the goddess of knowledge.
+                Vor invites you into her tower 
+                *if veil=true
+                    witha smile, 
+                and listens as you explain what happened, coughing slightly from the unnatural smokiness of her home.
+
+                Once you're finished, she turns away from you and starts to move her hands through the smoke, making swirls and patterns that only she can read. Then she turns back towards you.
+
+                "It was Thrym." she tells you, in her weak, scratchy voice that has never known uncertainty, "He plans to ransom it in exchange for marriage to Freya."
+
+                You thank her and flee her tower.
+                *set whopresents "you"
+                *goto meeting
+            *if (kvasir_status!=0) #Kvasir - he knows things.
+                Kvasir listens to you in silence as you explain what happened, then nods slowly.
+
+                "A giant." he says decisively, "Because no-one else could lift it. But one smart enough and powerful enough to sneak past Heimdall."
+
+                He taps the side of his jaw.
+
+                "My guess is Thrym. He's powerful, with a lot of followers, and he's very interested in Asgard. He shouldn't be hard to find."
+                
+                You thank him, and take your leave.
+                *goto nowwhat
+        *label nowwhat
+        *choice
+            #Go find Thrym.
+                *if sleipnir=2
+                    You saddle Slepnir and ride off, galloping through the sky so fast that, if you weren't a god, you would be torn apart by the whooshing air. You ride towards Jotunheim, until abruptly, Sleipnir stops. He tilts his head down towrds the ground and whinnies, drawing your attention to a giant, sitting on a mound far below. At your urging, Sleipnir trots down through the air and lands beside him, and he smiles and lays down the golden dog-lead he was plaiting.
+                    *goto thrym
+                *elseif (animal=100)
+                    You spread eagle's wings and take off, soaring high above Asgard on airy currents, then swoop down over the worlds. You fly towards Jotunheim, and your sharp eyes quickly pick out an ice giant waiting on the route. He peers up at you, squinting against the light, then waves cheerfully. As you fly down to land beside him, he smiles widely, and lays down the golden dog-lead he was plaiting.
+                    *goto thrym
+                *elseif death=100
+                    You summon your ship, Naglfari - made of the nails of the dead, and always the right size for any number of passengers - and sail through the earth towards Jotunheim. Before long, you spot a giant sitting on a mound. As you sail up to him and leap out of your ship, he smiles widely and lays down the golden dog-lead he was plaiting.
+                    *goto thrym
+                *elseif rain=100
+                    You summon a rain cloud to carry you, and drift swiftly towards Jotunheim. Before long - seeing effortlessly through the fog - you spot a giant sitting on a mound. As you drift towards him and let your cloud sink into a mist, then disappate, he smiles widely and lays down the golden dog-lead he was plaiting.
+                    *goto thrym
+                *elseif cloak=true
+                    You slip on your falcon feather cloak and take off into the air. You soar high above Asgard on airy currents, then swoop down over the worlds. You fly towards Jotunheim, and your sharp eyes quickly pick out an ice giant waiting on the route. He peers up at you, squinting against the light, then waves cheerfully. As you fly down to land beside him, he smiles widely, and lays down the golden dog-lead he was plaiting.
+                    *goto thrym    
+                *else
+                    Lacking your own form of transport, you have to borrow Freya's cloak. Fortunately, this is enough of an emergency that she is willing to lend it. You slip it on and take off, soaring high above Asgard on airy currents, then swooping down over the worlds. You fly towards Jotunheim, and your sharp eyes quickly pick out an ice giant waiting on the route. He peers up at you, squinting against the light, then waves cheerfully. As you fly down to land beside him, he smiles widely, and lays down the golden dog-lead he was plaiting.
+                    *goto thrym    
+                *label thrym
+
+                "Hail!" he grins, "I am Thrym, Lord of the Jotun! Tell me, how [i]are[/i] things in Asgard?"
+                *fake_choice
+                    #"Thor's hammer is missing."
+                        Thrym chuckles.
+
+                        "Is it?"
+
+                        He stands up and stretches, towering over you.
+
+                        "I might be able to help. Of course, I'd need something in return. Say… Freya's hand in marriage?"
+                        *label ultimatum
+                        *choice
+                            #Present the option to the gods.
+                                You return to Asgard.
+                                *set whopresents "you"
+                                *goto meeting
+                            #Persuade him to return the hammer.
+                                "Perhaps we can negotiate," you say, but he just laughs again.
+
+                                "Freya or no hammer." he states.
+                                *goto ultimatum
+                            #Threaten him.
+                                You let your power pulse.
+
+                                "Are you sure it's wise to start trouble with [i]gods?[/i]"
+
+                                He laughs again.
+
+                                "Go ahead. Kill me. Won't get you the hammer. It's hidden somewhere where it will never be found."
+                                *choice
+                                    #Kill him anyway.
+                                        *if death=100
+                                            You reach out for him and wither him. His smirking lips draw back from blackening teeth, and his skin greys and cracks. Then he collapses into dust.
+                                            *goto thrymdead
+                                        *elseif (magic>75) and (rain=0)
+                                            *if fire=100
+                                                You extend a hand, and fire billows out of it, enveloping him. He bellows in pain, a sound so loud that it makes the earth shudder. You're thrown off your feet by the impact as the burning giant hits the ground.
+                                                *goto thrymdead
+                                            *elseif animal=100
+                                                You spring into your dragon form and rake claws through Thrym's torso, then throw him easily to the ground, where he gurgles desperately as his life drains out of him.
+                                                *goto thrymdead
+                                            *else
+                                                You reach into his mind and flood it with nightmares. He howls in terror, clawing at his own eyes, then drops to his knees as his heart gives out. You're thrown off your feet by the impact as the dying giant hits the ground.
+                                                *goto thrymdead
+                                        *elseif strength>75
+                                            You spring up at him and punch him hard in the forehead, and he staggers backwards, eyes rolling. You seize the chance the pull a knife and jump for the throat, and you're just strong enough to cut through the skin. He gurgles desperately as his life drains away, and you're thrown off your feet by the impact as the dying giant hits the ground.
+                                            *goto thrymdead
+                                        *else
+                                            You draw a knife and charge him, but he catches you easily in a gargantuan hand. He starts to squeeze and you feel you bones scream,
+                                            *if sleipnir=2
+                                                but then he jerks in surprise, and drops you. You fall to the ground, and Sleipnir flashes in front of you. The horse rears up on his hind legs, striking out with six sharp hooves. The giant swings for him, but he moves impossibly fast, kicking at him from another direction.
+
+                                                With the giant's attention off you, you scramble up and run away. When you get far enough, Sleipnir flashes to your side, and you mount him and dash away. As you ride for Asgard, Thrym calls out to you.
+
+                                                "Tell Freya I'm waiting!"
+                                                *set whopresents "you"
+                                                *goto meeting
+                                            then shatter. Then everything goes dark.
+                                            *goto_scene dead
+                                    #Hurt him anyway.
+                                        *if fire=100
+                                            You extend a hand, and fire billows out of it, enveloping him. He bellows in pain, a sound so loud that it makes the earth shudder, and you wrench the flames off him before they can kill him.
+
+                                            "Very clever." he gasps, "But you still can't find the hammer."
+
+                                            You blow a last flicker of flame at him, then return to Asgard.
+                                            *set whopresents "you"
+                                            *goto meeting
+                                        *elseif (magic>75) and (Rain=0)
+                                            *if death=100
+                                                You reach out for him and start wither him. His smirking lips draw back from blackening teeth, and his skin greys and cracks. Then you pull back your magic.
+
+                                                "Very clever." he chokes out, "But you still can't find the hammer."
+
+                                                You scowl at him, then return to Asgard.
+                                                *set whopresents "you"
+                                                *goto meeting
+                                            *elseif dream=100
+                                                You reach into his mind and flood it with nightmares. He howls in terror, clawing at his own eyes, then drops to his knees. You release his mind, and he gasps frantically.
+
+                                                "Very clever." he whimpers, "But you still can't find the hammer."
+
+                                                You send one last terror into his mind, then return to Asgard.
+                                                *set whopresents "you"
+                                                *goto meeting
+                                            *else
+                                                You spring into your dragon form and rake claws through Thrym's torso, then throw him easily to the ground, where he gasps in pain.
+                                                
+                                                "Very clever." he whimpers, "But you still can't find the hammer."
+
+                                                You scowl at him, then return to Asgard.
+                                                *set whopresents "you"
+                                                *goto meeting
+                                        *elseif strength>75
+                                            You spring up at him and punch him hard in the forehead, and he staggers backwards, eyes rolling.
+
+                                            "Very clever." he groans, "But you still can't find the hammer."
+
+                                            You scowl at him, then return to Asgard.
+                                            *set whopresents "you"
+                                            *goto meeting
+                                        *else
+                                            You draw a knife and charge him, but he catches you easily in a gargantuan hand. He starts to squeeze and you feel you bones scream,
+                                            *if sleipnir=2
+                                                but then he jerks in surprise, and drops you. You fall to the ground, and Sleipnir flashes in front of you. The horse rears up on his hind legs, striking out with six sharp hooves. The giant swings for him, but he moves impossibly fast, kicking at him from another direction.
+
+                                                With the giant's attention off you, you scramble up and run away. When you get far enough, Sleipnir flashes to your side, and you mount him and dash away. As you ride for Asgard, Thrym calls out to you.
+
+                                                "Tell Freya I'm waiting!"
+                                                *set whopresents "you"
+                                                *goto meeting
+                                            then shatter. Then everything goes dark.
+                                            *goto_scene dead
+                                    #Give in.
+                                        You return to Asgard.
+                                        *set whopresents "you"
+                                        *goto meeting
+                    #"There's been a bit of trouble."
+                        He chuckles.
+
+                        "Has there now? Have you perhaps lost a hammer? Because if you have…" he winks a gigantic eye, "Perhaps I could help? Of course, I'd need something in return. Say… Freya's hand in marriage?"
+                        *goto ultimatum
+                    #"What do you know?"
+                        He chuckles.
+
+                        "Oh, this and that. If, for instance, you's lost a hammer, I might be able to help. Of course, I'd need something in return. Say… Freya's hand in marriage?"
+                        *goto ultimatum
+                    #"Very good."
+                        He laughs.
+
+                        "You haven't lost a hammer, then?" he asks, with an audacious innocence that could impress even Loki.
+
+                        "Because if you have…" he winks a gigantic eye, "Perhaps I could help? Of course, I'd need something in return. Say… Freya's hand in marriage?"
+                        *goto ultimatum
+
+            #Ask Loki to go.
+                In light of the present crisis, Loki is perfectly willing to help.
+
+                "Leave it with me." he says.
+                *goto meeting
+            *selectable_if (odin>80) #Ask Odin to go.
+                With the safety of Asgard on the line, Odin takes the form of an eagle and flies off at once.
+                *set whopresents "Odin"
+            *selectable_if (freya>80) #Ask Freya to go.
+                She's happy to help, and she gets in her cat-drawn chariot and rides away.
+                *set whopresents "Freya"
+                *goto meeting
+    *selectable_if (dream=100) #Search dreams.
+        You close your eyes and abandon the constricting world of solid reality, dancing from dream to dream, searching for the name Thrym.
+
+        You find it quickly, through the dreams of one of his servants. Picking out the reality from amongst the fantasy with practiced ease, you dicover that Thrym does indeed have the hammer. He has hidden it, and his servant doesn't know where. He plans to ransom it in exchange for Freya's hand in marriage. Then the servant wakes, and you are thrust back into your body.
+        *set whopresents "you"
+        *goto meeting
+    *selectable_if ((animal=100) or (cloak=true)) #Search as a falcon.
+        You turn into a falcon and take off into the air. You soar high above Asgard on airy currents, then swoop down over the worlds. You fly towards Jotunheim, and your sharp eyes quickly pick out an ice giant waiting on the route. He peers up at you, squinting against the light, then waves cheerfully. As you fly down to land beside him, he smiles widely, and lays down the golden dog-lead he was plaiting. You see his name on his silver necklace - Thrym.
+        *goto thrym    
+    *if (relationship="Freya") #Ask Freya for help.
+        *if touch="yes"
+            You touch Freya on the arm and 
+            *goto freya
+        *else
+            You walk up to Freya and 
+            *goto freya
+        *label freya
+        ask her to help you find the hammer, and she smiles at you.
+
+        "Levae it with me." she says, and
+        *if touch="yes"
+            kisses you, "I'll be back soon."
+
+            Then she heads home to harness her cats, and departs Asgard later that day.
+            *set whopresents "Freya"
+            *goto meeting
+        *else
+            then she heads home to harness her cats. She departs Asgard later that day.
+            *set whopresents "Freya"
+            *goto meeting
+    #Ask Loki for help.
+        He nods.
+
+        "Okay."
+
+        He notes your surprise at his uncharacteristic helpfulness, and shrugs.
+
+        "[i]I[/i] don't want this place smashed up by giants either." he explains.
+
+        He drums his fingers on the front of his leg for a few seconds, then abruptly turns and walks off, leaving you and Thor standing in worried silence.
+        *goto meeting
+*label thrymdead
+*page_break
+Thrym is dead, but you still don't have the hammer. What are you going to do now?
+*choice
+    *selectable_if (dream=100) #Trace it through dreams.
+        You close your eyes and plunge back into the comfortable, confusing world of dreams. It takes you a long time to find the right dream, but you [i]are[/i] a god, and you eventually glean the location of the hammer from one of the giants who hid it. Triumphant, you rush to collect it from a cavern deep underground.
+        *goto foundit
+    *selectable_if (animal=100) #Send animals to search for it.
+        You put a call out to all animals everywhere, telling them to seek the hammer. All over the world, wolves raise their heads and prick their ears, hawks scan the ground with amazing eyes, and swarms of insects take off from their grassy homes, buzzing through the air.
+
+        Eventually, you receive a message from a colony of bats, whose cavern was disturbed by giants. You fly there at once, and find the hammer.
+        *goto foundit
+    #Admit defeat.
+        *set hammer false
+        *set thor%-20
+        *set sif%-15
+        *set tyr%-10
+        *set odin%-10
+        *set loki%-10
+        *set idunn%-10
+        *set heimdall%-10
+        *set sigyn%-10
+        *set vor%-10
+        *set frey%-10
+        *if freya<95
+            *set freya%-10
+        *set baldur%-10
+        *set njord%-10
+        *set fulla%-10
+        *set bragi%-10
+        Reluctantly, you return to Asgard and announce that the hammer is lost.
+
+        Thor curses you at a volume loud enough to deafen a non-god, and Odin stares right through you with his one eye, and shakes his head. Even your friends among the gods are disappointed, and this is one incident they will not forget.
+        *finish
+*label foundit
+*page_break
+You have the hammer. What are you going to do with it?
+*choice
+    #Tell Thor where it is, of course.
+        *set thor %+60
+        *set sif%+20
+        *set tyr%+10
+        *set odin%+10
+        *set loki%+10
+        *set idunn%+10
+        *set heimdall%+10
+        *set sigyn%+10
+        *set vor%+10
+        *set frey%+10
+        *if freya<95
+            *set freya%+10
+        *set baldur%+10
+        *set njord%+10
+        *set fulla%+10
+        *set bragi%+10
+        *set frigg%+10
+        You return to Asgard and inform Thor, and he charges off at once. He returns only an hour later, joyfully waving his hammer, and wraps you up in a hug that makes your bones yelp.
+
+        "Thank you!" he booms, "Thank you!"
+
+        He isn't the only one, either; over the next few days you are approached by every inhabitant of Asgard, as they take the time to compliment you for retrieving the hammer.
+
+        This incident will stick in their minds for a very long time, and you came out of it well.
+        *finish
+    #Tell Odin where it is.
+        *set odin%+40
+        *set frigg%+15
+        *set vor%+10
+        You return to Asgard and tell Odin in secret, allowing him to take the credit for recovering it. It strengthens his position among his children a great deal, and he definitely appriciates it.
+
+        With the hammer back, Asgard calms down and everyone is very grateful to Odin, although at least two of the goddesses - Frigg and Vor - thank you in private.
+        *finish
+    #Keep it hidden for later use.
+        *set hammer false
+        *label hammerhidden
+        *set myhammer 2
+        *set thor%-20
+        *set sif%-15
+        *set tyr%-10
+        *set odin%-10
+        *set loki%-10
+        *set idunn%-10
+        *set heimdall%-10
+        *set sigyn%-10
+        *set vor%-10
+        *set frey%-10
+        *if freya<95
+            *set freya%-10
+        *set baldur%-10
+        *set njord%-10
+        *set fulla%-10
+        *set bragi%-10
+        You return to Asgard and announce that the hammmer is lost; you may be able to trade the location at some point.
+
+        Thor curses you at a volume loud enough to deafen a non-god, and Odin stares right through you with his one eye, and shakes his head. Even your friends among the gods are disappointed, and this is one incident they will not forget.
+        *finish
+    #Sell it in secret.
+        *set odin%-40
+        *set hammer false
+        You put out a secret call to a few powerful players amongst the giants, and you get a few offers.
+        *choice
+            #A fortune in red gold.
+                *set gold true
+                *set thor%-20
+                *set sif%-15
+                *set tyr%-10
+                *set odin%-10
+                *set loki%-10
+                *set idunn%-10
+                *set heimdall%-10
+                *set sigyn%-10
+                *set vor%-10
+                *set frey%-10
+                *if freya<95
+                    *set freya%-10
+                *set baldur%-10
+                *set njord%-10
+                *set fulla%-10
+                *set bragi%-10
+                You trade it to a giant for more gold than you will ever be able spend. The giant isn't strong enough to use it, but he doesn't want Thor to get it back.
+
+                Then you return to Asgard and announce that the hammmer is lost; you may be able to trade the location at some point.
+
+                Thor curses you at a volume loud enough to deafen a non-god, and Odin stares right through you with his one eye, and shakes his head. Even your friends among the gods are disappointed, and this is one incident they will not forget.
+                *finish
+            #A magical sword.
+                *set stabbity true
+                *set thor%-20
+                *set sif%-15
+                *set tyr%-10
+                *set odin%-10
+                *set loki%-10
+                *set idunn%-10
+                *set heimdall%-10
+                *set sigyn%-10
+                *set vor%-10
+                *set frey%-10
+                *if freya<95
+                    *set freya%-10
+                *set baldur%-10
+                *set njord%-10
+                *set fulla%-10
+                *set bragi%-10
+                You trade it to a giant for a magical sword to aid you in combat. The giant isn't strong enough to use it, but he doesn't want Thor to get it back.
+
+                Then you return to Asgard and announce that the hammmer is lost; you may be able to trade the location at some point.
+
+                Thor curses you at a volume loud enough to deafen a non-god, and Odin stares right through you with his one eye, and shakes his head. Even your friends among the gods are disappointed, and this is one incident they will not forget.
+                *finish
+            #An army of giants.
+                *set giantarmy true
+                *set thor%-20
+                *set sif%-15
+                *set tyr%-10
+                *set odin%-10
+                *set loki%-10
+                *set idunn%-10
+                *set heimdall%-10
+                *set sigyn%-10
+                *set vor%-10
+                *set frey%-10
+                *if freya<95
+                    *set freya%-10
+                *set baldur%-10
+                *set njord%-10
+                *set fulla%-10
+                *set bragi%-10
+                You trade it to a lord of the giants, in exchange for his pledge to come to your aid in battle, with all the giants who work for him. The giant isn't strong enough to use the hammer, but he doesn't want Thor to get it back.
+
+                Then you return to Asgard and announce that the hammmer is lost; you may be able to trade the location at some point.
+
+                Thor curses you at a volume loud enough to deafen a non-god, and Odin stares right through you with his one eye, and shakes his head. Even your friends among the gods are disappointed, and this is one incident they will not forget.
+                *finish
+            #A magical healing salve.
+                *set salve true
+                *set thor%-20
+                *set sif%-15
+                *set tyr%-10
+                *set odin%-10
+                *set loki%-10
+                *set idunn%-10
+                *set heimdall%-10
+                *set sigyn%-10
+                *set vor%-10
+                *set frey%-10
+                *if freya<95
+                    *set freya%-10
+                *set baldur%-10
+                *set njord%-10
+                *set fulla%-10
+                *set bragi%-10
+                You trade it to a giant in exchange for a salve that can heal any wound. The giant isn't strong enough to use the hammer, but he doesn't want Thor to get it back.
+
+                Then you return to Asgard and announce that the hammmer is lost; you may be able to trade the location at some point.
+
+                Thor curses you at a volume loud enough to deafen a non-god, and Odin stares right through you with his one eye, and shakes his head. Even your friends among the gods are disappointed, and this is one incident they will not forget.
+                *finish
+            #Hide it for later.
+                *goto hammerhidden
+    *selectable_if (strength>97) #Wield it myself.
+        *set hammer false
+        *set myhammer 1
+        You lift the hammer, the magical braces on your wrists giving you the strength, and feel its weight and power. There's no way you're giving this up.
+
+        You return to Asgard, holding the hammer, and ready for a very difficult conversation.
+        *page_break
+        *achieve mjolnir
+        *set thor%-60
+        *set sif%-40
+        *set tyr%-40
+        *set odin%-40
+        *set loki%+10
+        *set idunn%-20
+        *set heimdall%-40
+        *set sigyn%-40
+        *set vor%-40
+        *set frey%-40
+        *if freya<95
+            *set freya%-40
+        *set baldur%-40
+        *set njord%-40
+        *set fulla%-40
+        *set bragi%-40
+        Thor approches you joyfully, reaching out for his hammer, but you raise it and warn him to stay back.
+
+        "I'm keeping it." you tell him, "If you want to try and take it…"
+
+        You smash the hammer through a nearby wall and stare at him. For a moment, it looks like he might take you up on that, but then Sif runs forwards and catches his arm.
+
+        "Don't…" she pleads, and he snorts in rage, then throws back his head and bellows, "ODINNN!"
+
+        As the shout reverberates around Asgard, gods start to emerge. They whisper between themselves, working out what's going on, then cast you hateful glares. Even Baldur and Idunn, chronically nice people, look furious, although you notice that Loki seems mostly amused.  
+        *if relationship="Freya"
+            Freya steps to your side, loyal even in the face of the anger of all of Asgard. If it turns into a fight, she will back you. 
+        
+        The muttering dies down as Odin strides down from Valhalla. He's his full, terrifying self today, twelve feet tall with fire in his eye and shadows dancing around him. His ravens, Huginn and Muninn perch on his shoulders, glaring at you with black eyes, and Geri and Freki pad beside him, their wolf's teeth bared.
+
+        "Explain." the Allfather commands, in a voice that has sent thousands to their deaths, and knows it.
+
+        You gaze at him calmly.
+
+        "I am keeping this hammer." you tell him, "I can be just as effective with it as Thor."
+
+        Odin frowns, and you can almost see the thoughts rumbling through his mind. He cannot fight you without losing too many people. He cannot send you away, because you would take the hammer and leave Asgard undefended. All he can do it accept your ultimatum, and plot fot the future.
+
+        He nods, slowly and decisively, and ther's an explosion of noise, headed by Thor booming, "No!"
+
+        Odin quiets his son with a fiery look, then returns his attention to you.
+
+        "Keep it." he says, then turns and walks back to Valhalla.
+
+        You've won this battle, but you know that from now on, [i]everyone[/i] will be out to get you.
+        *finish
+*label meeting
+*page_break
+*if whopresents="Loki"
+    The next day, Loki calls a meeting of the gods. Once everyone is in Valhalla, he starts to speak.
+
+    "Thor's hammer has been stolen." he announces, and the hall explodes with noise. Even the einherjar stop feasting and stare in horror. Without Thor's hammer, the giants could see the gods as weaker and press the advantage, threatening Midgard, and maybe even Asgard itself.
+
+    Loki grins.
+
+    "Calm down, calm down." he chides, "The giant who has it, Thrym, is perfectly willing to give it back. He just asks one tiny favour…"
+
+    His cruel smile widens, "Freya."
+    *goto shouts
+*elseif whopresents="Odin"
+    Later that day, Odin calls a meeting of the gods. Once everyone has gathered, he speaks in a solemn tone.
+
+    "Thor's hammer has been stolen." he intones, and the hall explodes with noise. Even the einherjar stop feasting and stare in horror. Without Thor's hammer, the giants could see the gods as weaker and press the advantage, threatening Midgard, and maybe even Asgard itself.
+
+    "Enough!" the Allfather roars, and then he drops his voice as the sound stops, "It was taken by the giant Lord, Thrym. He wants Freya's hand in marriage."
+    *goto shouts
+*elseif whopresents="Freya"
+    Later that day, Freya storms back into Asgard in a fiery rage.
+
+    "Valhalla, now!" she screams as she drives her chariot into Asgard.
+
+    The gods rouse themselves and hurry to Odin's hall, and by the time they get there Freya is a little calmer.
+
+    "Thor's hammer is missing." she scowls, once everyone has gathered, and the hall explodes with noise. Even the einherjar stop feasting and stare in horror. Without Thor's hammer, the giants could see the gods as weaker and press the advantage, threatening Midgard, and maybe even Asgard itself.
+
+    Freya glares at them.
+
+    "[i]Quiet![/i]" she snaps, "It was taken by Thrym. He wants to marry me, which is impossible, so we need to find another way."
+
+    The gods look back and forth at each other, but no-one dares disagree.
+    *goto anotherway
+*else
+    You call a meeting of the gods to explain what you discovered.
+
+    Once everyone has gathered in Valhalla, you start to talk.
+
+    "Some of you may not know this yet, but Thor's hammer has been stolen." you tell them, and the hall explodes with noise. Even the einherjar stop feasting and stare in horror. Without Thor's hammer, the giants could see the gods as weaker and press the advantage, threatening Midgard, and maybe even Asgard itself.
+
+    You 
+    *if death=100
+        send a deathly chill through the hall, getting their attention back. 
+        *goto ispeak
+    *elseif rain=100
+        send a sprinkling of rain through the hall, getting their attention back.
+        *goto ispeak
+    *elseif fire=100
+        blaze up in a rush of fire, getting their attention back.
+        *goto ispeak
+    *else
+        shout for their attention, but you only get it when Odin intercedes.
+
+        "Enough!" he roars, then nods to you are silence floods the room.
+        *goto ispeak
+    *label ispeak
+
+    "It was taken by the giant Thrym. He wants to marry Freya in return for it."
+    *label shouts
+
+    Sound takes over the hall again, and 
+    *if (relationship="Freya") and (touch="yes")
+        Freya takes a tight grip on your hand, and you can feel her shaking with rising rage. 
+        *goto freyarages
+    *elseif (relationship="Freya")
+        Freya steps to your side, and you realise she is shaking with rising rage.
+        *goto freyarages
+    *elseif freya>80
+        Freya shoots you an alarmed look, and you see that she's shaking with rising rage.
+        *goto freyarages
+    *else
+        Freya's hair starts to stand on end.
+        *goto freyarages
+    *label freyarages
+    *choice
+        #Tell them no.
+            *set freya%+20
+            You fold your arms.
+
+            "We won't do it." you state, calmly.
+
+            *if odin>60
+                Odin meets you eye briefly, then nods.
+
+                "I agree." he decides, "It is quite impossible. We must find another way."
+                *goto anotherway
+            *else
+                Odin glances at you.
+
+                "We should not make quick decisions about this." he warns.
+                *goto welp
+        #Calm her down.
+            *if (freya>90) or (charm>70)
+                You step closer to Freya, and whisper her name soothingly, and she relaxes a little.
+
+                "I won't go with him." she says, and you nod.
+
+                "I know."
+
+                You turn to Odin.
+
+                "We need to find another way."
+                *goto anotherway
+            *else
+                You step over to Freya and whisper her name soothingly. She gives a look out of the corner of her eye that 
+                *if death=100
+                    throws you automatically into your skeletal form.
+
+                    You move backwards as she turns on Odin.
+                    *goto welp
+                *elseif dream=100
+                    sends you into the safety of intagability.
+
+                    You move away from her as you regain your corporeal form. Meanwhile, she turns on Odin.
+                    *goto welp
+                *elseif fire=100
+                    scares away the little flickers of flame that cling to you.
+
+                    You move backwards as she turns on Odin.
+                    *goto welp
+                *elseif animal=100
+                    makes fur rise defensively from your skin.
+
+                    You scuttle backwards as she turns on Odin.
+                    *goto welp
+                *else
+                    sends you hurrying backwards into a misty shroud.
+
+                    You peek out of it as she turns on Odin
+                    *goto welp
+        #Try to convince her.
+            *set freya%-60
+            *if relationship="Freya"
+                *set freya 5
+                *set relationship "None"
+                *set freya_status 0
+                *achieve jerk
+                *achieve idunncross
+                *set odin%+20
+                *set idunn 5
+                *set sif 5
+                *set frigg 5
+                *set fulla 5
+                *set frey 5
+                *set sigyn 5
+                *set vor 5
+                *set njord 5
+                "Freya…" you say, "I think you should do it."
+
+                She jumps away from you and spins around, shocked.
+
+                "${name}?"
+
+                "I'm serious." you tell her, "We really need the hammer."
+
+                Her beautiful eyes water and her mouth hangs open. Her anger is gone, replaced by confusion and grief. She slumps, silent tears trickling down her face, and nods weakly.
+
+                "Okay." she murmurs at last, her perfect voice empty, "I'll do it."
+
+                As she prepares herself and then departs Asgard, you recieve a proud nod from Odin and a joyful hug from Thor.
+
+                The women of Asgard, though, are furious with you. Every time you see one of them from now on, their eyes narrow. Even Fulla, intensely shy, glares at you, and Idunn comes up to you to tell you that she thinks you are 'absolute scum.'
+
+                They won't forget this, and even the return of Thor's hammer doesn't stop their hate for you.
+                *finish
+            *elseif charm=100
+                *achieve idunncross
+                *set freya 5
+                *set freya_status 0
+                *set odin%+20
+                *set idunn 5
+                *set sif 5
+                *set frigg 5
+                *set fulla 5
+                *set frey 5
+                *set sigyn 5
+                *set vor 5
+                *set njord 5
+                You use the charm and the silver tongue you gained when you drank the mead of poetry and talk at her, making her feel selfish and cruel for refusing. Even before you finish you know it will work; there's a brokenness to the way her shoulders slump, and for the first time you can remember, she won't meet your eyes.
+
+                "Okay." she murmurs at last, her perfect voice empty, "I'll do it."
+
+                As she prepares herself and then departs Asgard, you recieve a proud nod from Odin and a joyful hug from Thor.
+
+                The women of Asgard, though, are furious with you. Every time you see one of them from now on, their eyes narrow. Even Fulla, intensely shy, glares at you, and Idunn comes up to you to tell you that she thinks you are 'absolute scum.'
+
+                They won't forget this, and even the return of Thor's hammer doesn't stop their hate for you.
+                *finish
+            *else 
+                "Freya…" you plead, "We really need this."
+
+                She gives a look out of the corner of her eye that 
+                *if death=100
+                    throws you automatically into your skeletal form.
+
+                    You move backwards as she turns on Odin.
+                    *goto welp
+                *elseif dream=100
+                    sends you into the safety of intagability.
+
+                    You move away from her as you regain your corporeal form. Meanwhile, she turns on Odin.
+                    *goto welp
+                *elseif fire=100
+                    scares away the little flickers of flame that cling to you.
+
+                    You move backwards as she turns on Odin.
+                    *goto welp
+                *elseif animal=100
+                    makes fur rise defensively from your skin.
+
+                    You scuttle backwards as she turns on Odin.
+                    *goto welp
+                *else
+                    sends you hurrying backwards into a misty shroud.
+
+                    You peek out of it as she turns on Odin
+                    *goto welp
+        #Stay silent.
+            You duck behind a pillar as the shouting starts.
+            *goto welp
+*label welp
+"If you [i]dare[/i] ask me to do this, I will [i]tear down Asgard[/i] with my hate for you." the goddess hisses.
+
+You can tell that everyone in the room believes her.
+
+Odin nods slowly.
+
+"We shall need another way." he decides.
+*label anotherway
+*choice
+    *selectable_if (dream=100) #"I might be able to trace it through dreams."
+        *set thor %+60
+        *set sif%+20
+        *set tyr%+10
+        *set odin%+20
+        *set loki%+10
+        *set idunn%+10
+        *set heimdall%+10
+        *set sigyn%+10
+        *set vor%+10
+        *set frey%+10
+        *if freya<95
+            *set freya%+10
+        *set baldur%+10
+        *set njord%+10
+        *set fulla%+10
+        *set bragi%+10
+        *set frigg%+10
+        "Attempt it." Odin commands.
+
+        You close your eyes and plunge back into the comfortable, confusing world of dreams. It takes you a long time to find the right dream, but you [i]are[/i] a god, and you eventually glean the location of the hammer from one of the giants who hid it.
+        *label yay
+
+        "It's in a cavern." you announce, "I can direct you to it."
+
+        Thor jumps victoriously, and smashes a pillar with his fist.
+
+        "Yes!" he booms, amd Sif laughs.
+        *page_break
+        You and Thor fetch the hammer the next day, and you are surrounded by smiles when you return. This incident won't be forgotten for a while, and came out of it well.
+        *finish
+    *selectable_if (animal=100) #"I could send animals to search for it."
+        *set thor %+60
+        *set sif%+20
+        *set tyr%+10
+        *set odin%+20
+        *set loki%+10
+        *set idunn%+10
+        *set heimdall%+10
+        *set sigyn%+10
+        *set vor%+10
+        *set frey%+10
+        *if freya<95
+            *set freya%+10
+        *set baldur%+10
+        *set njord%+10
+        *set fulla%+10
+        *set bragi%+10
+        *set frigg%+10
+        "Do so." Odin commands.
+
+        You reach to all animals everywhere, telling them to seek the hammer. All over the world, wolves raise their heads and prick their ears, hawks scan the ground with amazing eyes, and swarms of insects take off from their grassy homes, buzzing through the air.
+
+        Almost immediately, you receive a message from a colony of bats, whose cavern was disturbed by giants a few hours ago.
+        *goto yay
+    #"I can't think of anything."
+        There's silence in the hall, and then Heimdall coughs.
+
+        "I have one idea." he says, in the wry tones of someone who knows that what he's about to say will start a massive argument.
+
+        "Speak it." commands Odin.
+
+        "Thor goes to the wedding. He puts on a dress and a veil and goes in Freya's place, then when they bring out the hammer, he kills everyone."
+
+        "You know," says Loki, "I am seriously rethinking my utter and unbiding hatred for you."
+        
+        Silence as everyone anticipates Thor's burst of fury.
+        *choice
+            #Volunteer to accompany Thor.
+                *if diplomacy>70
+                    You beat Loki to the offer by a milisecond, and he makes a rude gesture at you.
+
+                    "I could go with you?" you say.
+                    *set withthor "you"
+                    *goto okay
+                *else
+                    You open you mouth to volunteer, but Loki beats you to it; there's no way he's missing this.
+
+                    "I'll go with you as a handmaid." he tells Thor
+                    *goto okay
+            *selectable_if (strength>97) #Volunteer to do it myself.
+                "I could do it." you offer, tapping a finger against one of your bracers, "I'm strong enough with these."
+
+                "Do so." Odin commands.
+                *goto me!
+            #Stay quiet.
+                *label okay
+                "Okay." says Thor, cheerfully, then looks around at the surprised faces, "Am I meant to be cross? I don't care what clothes I wear."
+
+                There's another drawn out silence as a few of the more old school gods recalibrate, Loki looks faintly disappointed and Frey nods appreciatively.
+
+                "Good." says Odin, "Have him prepared at once."
+                *page_break
+                The more fashion conscious Asgardians take Thor into Vingolf - the hall of the goddesses - and start to dress him. Since Freya is a beauty standard in the eyes of whoever looks at her, the giants would see her enormous, with lots of curves and ice-blue eyes. Thor… is enormous.
+
+                In the past, Asgard had a strict separation between the men and the women. The men would meet in the hall of Gladsheimr, and the women in Vingolf.
+
+                When Loki, the consumate shapeshifter, arrived in Asgard, the line between 'man' and 'woman' were blurred. When he gave birth the first eight times, it was demolished. These days, which hall a particular god spends time in is purely down to their interests.
+
+                Do you think you will be of help in dressing Thor?
+                *choice
+                    #Yes.
+                        You accompany them to help, and you donate some lovely earrings you keep for special occasions.s
+
+                        The gods start by letting out a dress. Sif is a particularly big woman, with a lot of curves, but even[i] her[/i] dresses have no chance of containing Thor, and there's no way his impressive gut is fitting into a corset, so Fulla alters one.
+
+                        "He has very wide shoulders." Sigyn worries, but Loki, who's already become a pretty woman, just laughs.
+
+                        "So does Sif. And every pretty giantess. That's not a problem. Trust me."
+
+                        "And the beard?" Sif asks, "They probably won't be expecting one on [i]Freya[/i] of all people."
+
+                        "I'm not shaving." Thor warns, and the gods break off into a gaggle.
+
+                        *if veil=true
+                            "Vor has a beautiful veil." Baldur suggests, "It would cover the beard [i]and[/i] look stunning."
+
+                            He turns to nod at Fulla, and she scurries off to fetch it.
+
+                            "It kind of smells of smoke." she whispers, concered, but Thor shrugs.
+
+                            "That's fine."
+                            *goto veil
+                        *else
+                            "We need a veil." Baldur decides, "It'll cover the beard."
+
+                            "I have a few." offers Frigg, and Fulla scurries off to fetch it.
+                            *goto veil
+                        *label veil
+
+                        You hang the veil on him, and it hides the beard, but Thor's eyes still look like they're smouldering.
+
+                        "His eyes are bit fiery." you comment, and Loki snickers.
+
+                        "And Freya's aren't?"
+
+                        "Not like that. And giants like cold blue eyes."
+
+                        "We can put big flowers in the headress," says Idunn, "and pull it down low. It'll draw the attention off his eyes, and cover them a bit."
+                        *page_break
+                        You continue for hours until everyone is pleased with the result. 
+                        
+                        Thor has been completely transformed. His mad red hair has been tamed and woven into an enormous flowery headdress, pulled down low over his eyes. His beard is covered by a silky veil, and he's wearing a gorgous dress. He looks genuinely beautiful.
+                        *if withthor="you"
+
+                            Once you are also ready to attend, you turn to him.
+                            *goto away
+                        *else
+                            *goto thorgoes
+                    #No.
+                        You watch them go, and 
+                        *if withthor="you"
+                            set about dressing yourself as an attendant.
+                            *goto awaywiththor
+                        *else 
+                            then wait patiently to see the results.
+                            *goto thorheadsoff
+*label awaywiththor
+When Thor emerges from Vingolf, he's been completely transformed. His mad red hair has been tamed and woven into an enormous flowery headdress, pulled down low over his eyes. His beard is covered by a silky veil, and he's wearing a gorgous dress. He looks genuinely beautiful.
+*label away
+
+"Shall we go?" you ask him, "Odin arranged a time and place for the wedding."
+
+He nods decisively and prepares his sled - a comfortable thing full of furs and drawn by goats - ready to leave. The two of you get in it and drive to Jotunheim for the wedding.
+*page_break
+You have to admit as you enter Thrym's hall, it's an impressive place. Towering ice sculptures loom beside enormous doors, and every inch of the walls has been decorated with blooms bigger than your head. As you enter, well-dressed giants gather to watch you, and the sound of their muttering is like a distant avalanche. Thrym really has pulled out all the stops.
+
+The Lord himself strides out and peers down at you. There's a flicker of confusion in his eyes - perhaps he's wondering why he isn't feeling the rush of infatuation and lust that normally accompanies Freya. Then he shakes his head and smiles with a mouth that could fit you, Thor, and the chariot inside it, and still have room for a few humans.
+
+"I welcome the goddess Freya to my hall!" he announces, proudly.
+
+"She is honoured by your invitation!" you call up to him, a polite response.
+
+"Come! I have prepared a feast."
+
+Beside you, you feel Thor straighten up in anticipation. He smiles under his veil as you climb out of the sled and head into the feasting hall. As you walk there, Thrym leans down to get a little closer to Thor, and you hear his gargantuan whisper.
+
+"Eat fast. The sooner we're married, the sooner we can go to my bedroom."
+
+Thor tenses, and you can tell that he's about to lose control.
+*choice
+    #Calm him down.
+        You put a hand on his arm and give him a warning look, 
+        *if (charm>70) or (thor>70)
+            and he simmers down.
+            *goto meal
+        *else
+            but he shake you off and leaps up at Thrym. His veil falls away as he punches the giant, hard enough to kill.
+            *goto bloodbath
+    #Let him.
+        Thrym leans a little closer, and Thor leaps up. His veil falls away as he punches the giant, hard enough to kill. 
+        *goto bloodbath
+*label meal
+*page_break
+The two of you sit down on terrifyingly high stools, clearly made specially for the occasion, and food is placed before you by giant servants.
+
+"Eat!" booms Thrym, "And enjoy!"
+
+Thor does.
+
+He starts with the sweetmeats, shoving them under his veil like a hungry monkey that's broken into a kitchen. It takes him less then a minute to finish all of them, to the shock of the other giants. Then he starts on the food, scoffing an entire oxen - one of the enormous ones the giants breed. As Thor moves onto the casks of mead, Thrym leans over to you.
+
+"The gorgeous Freya has a big appetite." he says, sounding like he can't decide whether to be confused or impressed.
+*choice
+    #Talk our way out of it.
+        *if diplomacy>70
+            "She does." you tell him, "She's been very low lately, and hasn't eaten in weeks. She's only eating now because she's so happy to be here with you."
+
+            Thrym smiles.
+            
+            "Really?"
+            *goto gotit!
+        *else
+            "Er… yes." you say, trying frantically to think of something, "She's… like that?"
+
+            He narrows his eyes, 
+            *label damn
+            and you can almost see him thinking things over. The food, the goats, the lack of infatuation.
+
+            "She's not Freya…" he murmurs, and then he leaps to his feet in rage, "She's not Freya!"
+
+            Thor springs up from the table and strikes him over the head with a giant lamb bone. The bone shatters, and Thrym drops to the ground, dead.
+            *goto bloodbath
+    #Distract him magically.
+        *if fire=100
+            You smile at him, and call up a fountain of flame behind him, burning the wooden walls. Therre are shouts of alarm, and Thrym jumps up from the table. He and his servants rush to put out the fire, and they manage it quickly.
+
+            Thrym scowls as he returns to sit by you.
+
+            "On a wedding… That's bad luck."
+
+            He thinks for a few seconds, then nods decisively.
+
+            "We'll do the ceremony now, before anything else can happen."
+            *goto gotit!
+        *elseif magic>70
+            *if death=100
+                You send an unnatural chill through the room, making the guests murmur. Thrym scowls.
+
+                "Do you feel that?" he asks, "It's a bad omen. We do the ceremony [i]now.[/i]"
+                *goto gotit!
+            *elseif rain=100
+                You send a sprinking of rain through the room, making the guests murmur. Thrym scowls.
+
+                "Do you feel that?" he asks, "It's a bad omen. We do the ceremony [i]now.[/i]"
+                *goto gotit!
+            *else
+                You search for a way to distract him, but your magical talents don't go that way.
+
+                Thrym studies your face, narrowing his eyes, 
+                *goto damn
+        *else
+            You search for a way to distract him, but your magical talents don't go that way.
+
+            Thrym studies your face, narrowing his eyes, 
+            *goto damn
+*label gotit!
+
+He stands up.
+
+"Bring the hammer!" he shouts, "It's time!"
+
+His servants hurry from the hall, and he gives Thor a toothy grin.
+
+"Almost ready, my sweet." he leers, and Thor stews but stays silent.
+*page_break
+A few minutes later, the servants return, struggling to carry Mjolnir between them, and Thor brightens under his veil.
+
+"Place it on Freya's lap!" Thrym orders, and the servants do as they're told.
+
+For a second it sits there, and everything is still. Then Thor gives a joyous bellow, seizes the handle of the hammer, and throws it hard, striking Thrym in the skull.
+
+It's back in his hand before the shocked silence is over, and he charges one of Thrym's sisters with a roar.
+
+It doesn't take him long to clear the room, and by the time he's done, both of you are covered with blood.
+
+Thor looks down at his dress with a satisfied smile, and then lowers his hammer to his side.
+
+"Come on." he says cheerily, wandering back towards his sled, "Let's get back home."
+*page_break
+As you get back to Asgard, Thor waves his hammer victoriously, and the waiting gods chatter with relief. Sif comes haring out of the gates, and Thor picks her up and spins her around, getting blood all over her dress.
+
+There are celebrations in Asgard that night, and they go on well into the next day. Everyone is intensely relieved, and this incident will stick in their minds for a while. You and Heimdall came out of it pretty well.
+*finish
+*label bloodbath
+*set hammer false
+
+There's a stunned silence, then one of Thrym's sisters gives a roar of rage, and charges in. Her actions rouse the others, and soon there are dozens of giants trying to kill the two of you.
+*choice
+    #Fight beside Thor.
+        *if (death=100) and (magic>70)
+            You reach out for them and wither them, turning them to dust, which mingles with Thrym's blood on the ground. 
+            *goto hidden
+        *elseif magic>97
+            *if animal=100
+                You spring forth into your dragon form and whizz through the hall, using the power you gained from Kvasir's blood to tear apart the other giants. When you finally finish, and drop back into your natural form, covered in gore. 
+                *goto hidden
+            *elseif dream=100
+                You reach out and flood their minds with nightmares, blowing out their hearts with terror, then duck into the safety of the incorporeal world as the bodies hit the ground. Once the shockwaves are over, you fade back into existance. 
+                *goto hidden
+            *elseif fire=100
+                You spring upwards on fiery jets, getting just enough height to keep Thor safe, then throw a blast in all directions, setting the giants on fire. You pull away the flames as the bodies hit the ground, carefully keeping yourself in the air until the shockwaves are over, and then lowering youself down.
+                *goto hidden
+            *else
+                You raise your hands and bring down the ceiling on the farthest giants with a torrent of rainwater, letting Thor handle the closer ones. 
+                *goto hidden
+        *elseif strength>75
+            You pick up a handful of rocks and start hurling them at giants, smashing some skulls and letting Thor take care of the rest. Once they're all dead, you drop the remaining rocks and take a deep breath. 
+            *goto hidden
+        *else
+            You pick up a handful of rocks, planning to hurl them at the giants, but an enormous foot comes down on top of you. You are briefly aware of the crushing pain, and then it all goes dark.
+            *goto_scene dead
+    #Hide.
+        *if dream=100
+            You fade out of the corporeal world while Thor does his work, and re-emerge when he's done. 
+            *goto hidden
+        *else
+            You dive behind a table leg while Thor does his work, and re-emerge when he's done. 
+            *goto hidden
+        *label hidden
+        You look around at the bloody mess, rethinking the necessity of recovering Mjolnir. Which will be hard now, anyway.
+
+        "You've lost the hammer." you tell him, "Thrym hid it, remember?"
+
+        Thor slumps as he realises you're right. He looks around, as if hoping the hammer will be up on one of the walls, then starts to trudge towards his sled. You take as last look at the carnage before you follow him. You have a feeling that Asgard is about to be at war with the giants again.
+        *page_break
+        *set thor%-40
+        *set sif%-25
+        *set tyr%-10
+        *set odin%-10
+        *set loki%-10
+        *set idunn%-10
+        *set heimdall%-10
+        *set sigyn%-10
+        *set vor%-10
+        *set frey%-10
+        *if freya<95
+            *set freya%-10
+        *set baldur%-10
+        *set njord%-10
+        *set fulla%-10
+        *set bragi%-10
+        As you drive back into Asgard, the other gods can tell from your faces, and from the blood that stains your clothes, what happened. Odin shakes his head in disappointment, and Loki shoots you a venomous look; he blames you.
+
+        With Asgard less defended and a handful of dead giants whose families will want blood, this has been a disaster.
+        *finish
+*label thorheadsoff
+
+When Thor emerges from Vingolf, he's been completely transformed. His mad red hair has been tamed and woven into an enormous flowery headdress, pulled down low over his eyes. His beard is covered by a silky veil, and he's wearing a gorgous dress. He looks genuinely beautiful.
+*label thorgoes
+
+He prepares his sled - a comfortable thing full of furs and drawn by goats - and calls Loki. Then he sets off for Jotunheim for his wedding.
+*page_break
+He returns later that day, wielding his hammer and covered in blood. He's still wearing the dress, but he's taken off the veil and headress, and his hair is its usual mess. Apart from the gore, he still looks pretty good, and Sif rushes out to greet him.
+
+He lifts her up and spins her around as Loki steps delicately out of the sled.
+
+Unlike Thor, there isn't a speck of blood on his dress - his? hers? You can never tell with Loki, and he certainly doesn't[i] care[/i] what you call him - and only a little in his hair. He smiles widely and strides into Asgard. 
+*if dream=100
+    You can sense the pride in him.
+
+"Nice wedding." he comments, "The entertainment was a bit intense for my tastes, but you can't have everything."
+
+He pauses and picks a small piece of bone out of his hair.
+
+"Mmm…"
+*page_break
+There are celebrations in Asgard that night, and they go on well into the next day. Everyone is intensely relieved, and this incident will stick in their minds for a while. Loki and Heimdall came out of it pretty well.
+*finish
+*label me!
+
+You bow to him, then retreat with the more fashion conscious gods to Vingolf, the hall of the goddesses.
+
+In the past, Asgard had a strict separation between the men and the women. The men would meet in the hall of Gladsheimr, and the women in Vingolf.
+
+When Loki, the consumate shapeshifter, arrived in Asgard, the line between 'man' and 'woman' were blurred. When he gave birth the first eight times, it was demolished. These days, which hall a particular god spends time in is purely down to their interests, and Vingolf is the place for getting dressed up for a wedding.
+
+What kind of clothes do you usually wear?
+*fake_choice
+    #Armour and furs.
+        Not the sort of thing Freya wears then, at least on official occasions.
+
+        Luckily, you have other gods around to help you. They doll you 
+    #Whatever's comfortable.
+        Not the sort of thing Freya wears then, at least on official occasions.
+
+        Luckily, you have other gods around to help you. They doll you 
+    #Simple dresses.
+        Not the sort of thing Freya wears then, at least on official occasions.
+
+        Luckily, you have other gods around to help you. They doll you 
+    #Ostentatious dresses and makeup.
+        Dressing like Freya is easy then, and you don't really need the help of the others. You get dolled 
+up in a dress, and a tight corset, giving yourself the figure of a giantess - curves and muscles and fat; Freya always looks like the beauty standard of whoever is looking at her. They give you a beautiful headress, too - always the most important part of a bride's outfit - and hang jewelry all over you.
+
+Then you head out to the gates of Asgard, where Odin has arranges a sled to carry you and Loki to Jotunheim.
+*if sleipnir=2
+    Sleipnir stands in the harness, and he nickers affectionately as you climb in.
+
+    Then he rears up, kicking happily with his six front hooves, and plunges forwards. You'll be at Thrym's home in only a few minutes.
+    *goto thrymheim
+*elseif animal=100
+    Six white wolves stand there in harness, obedient only because this sled is for [i]you.[/i] They wait patiently for you to climb in, then set off running. With their incredible stamina and drive, you'll be at Thrym's home in only a few hours.
+    *goto thrymheim
+*else
+    Geri and Freki - Odin's wolves - stand in the harness, huffing impatiently. They wait until you and Loki have climbed in, then take off running. You'll be at Thrym's home in a couple of days.
+    *goto thrymheim
+*label thrymheim
+*page_break
+You have to admit as you enter Thrym's hall, it's an impressive place. Towering ice sculptures loom beside enormous doors, and every inch of the walls has been decorated with blooms bigger than your head. As you enter, well-dressed giants gather to watch you, and the sound of their muttering is like a distant avalanche. Thrym really has pulled out all the stops.
+
+The Lord himself strides out and peers down at you. There's a flicker of confusion in his eyes - perhaps he's wondering why he isn't feeling the rush of infatuation and lust that normally accompanies Freya. Then he shakes his head and smiles with a mouth that could fit you, Loki, and the chariot inside it, and still have room for a few humans.
+
+"I welcome the goddess Freya to my hall!" he announces, proudly, and Loki replies instantly.
+
+"She is honoured to be here."
+
+Thrym nods at the polite reply.
+
+"Come!" he says "I have prepared a feast."
+
+Beside you, you feel Thor straighten up in anticipation. He smiles under his veil as you climb out of the sled and head into the feasting hall. As you walk there, Thrym leans down to get a little closer to Thor, and you hear his gargantuan whisper.
+
+"Eat fast. The sooner we're married, the sooner we can go to my bedroom."
+*choice
+    #Flirt back.
+        You smile up at him.
+
+        "I look forward to it." you murmur, and he grins.
+        
+        *goto feast
+    #Scowl at him.
+        *set loki%-10
+        You snap your head up towards him, and give him your best approximation of Freya's icy glare.
+
+        Thrym laughs at you, a sound that nearly deafens, and Loki rolls his whole head along with his eyes, his face a picture of exasperation.
+        *choice
+            #Threaten Thrym.
+                *set loki %-40
+                "Don't laugh at me." you warn him, tensing your muscles, and Thrym scowls.
+
+                "Are you… threatening me? In [i]my[/i] hall?"
+
+                "No!" says Loki, just as you take a menacing step towards Thrym.
+
+                You stare the giant down for a few seconds, while Loki makes frantic hand signals from behind him. Then one of the giantesses - perhaps Thrym's sister? - gives a frustrated shout, and hurls a spear at you. You step out of its way, but that doesn't really matter. Now that violence has started, it has no intention of stopping.
+
+                Loki lets out a string of curses, then ducks behind a giant table leg, leaving you to deal with the raging giants.
+
+                *if (death=100) and (magic>70)
+                    You reach out for them and wither them into dust, then brush your dress clean.
+                    *goto twit
+                *elseif magic>97
+                    *if animal=100
+                        You spring forth into your dragon form and whizz through the hall, using the power you gained from Kvasir's blood to tear apart the giants. When you finally finish, and drop back into your natural form, covered in gore. 
+                        *goto twit
+                    *elseif dream=100
+                        You reach out and flood their minds with nightmares, blowing out their hearts with the terror, then duck into the safety of the incorporeal world as the bodies hit the ground. Once the shockwaves are over, you fade back into existance. 
+                        *goto twit
+                    *elseif fire=100
+                        You spring upwards on fiery jets, getting just enough height to keep Loki safe, then throw a blast in all directions, setting the giants on fire. You pull away the flames as the bodies hit the ground, carefully keeping yourself in the air until the shockwaves are over, and then lowering youself down.
+                        *goto twit
+                    *else
+                        You raise your hands and bring down the ceiling on the giants with a torrent of rainwater, ducking under the table to prevent being crushed. The water surges past you, but you easily direct it around you and Loki. Then you flow out of the rubble that's all that remains of Thrym's magnificent hall.
+                        *goto twit
+                *else
+                    You pick up a handful of rocks and start hurling them at giants, smashing in skulls. Once they're all dead, you drop the remaining rocks and take a deep breath. 
+                    *goto twit
+                *label twit
+
+                Loki emerges from his hiding place, giving you an expression that could best be described as contemptous.
+
+                "Well done." he drawls sardonically, "We won't find the hammer now."
+
+                He shakes his head.
+
+                "Let's go back to Asgard."
+                *page_break
+                *set thor%-40
+                *set sif%-25
+                *set tyr%-20
+                *set odin%-20
+                *set loki%-10
+                *set idunn%-10
+                *set heimdall%-10
+                *set sigyn%-10
+                *set vor%-10
+                *set frey%-10
+                *if freya<95
+                    *set freya%-10
+                *set baldur%-10
+                *set njord%-10
+                *set fulla%-10
+                *set bragi%-10
+                As you arrive back at Asgard, the waiting gods glare at you. They already seem to know what happened - perhaps Huginn and Muninn were following you? - and they're angry. 
+                *if freya>95
+                    Freya walks over to you, silently supportive amidst the glowering. 
+                Odin glares down at you and shakes his head, and the gods retreat to their individual homes. 
+
+
+                With Asgard less defended and a handful of dead giants whose families will want blood, this has been a disaster, and you in particular have come off badly.
+                *finish
+            #Stay quiet.
+                "Let's eat first, shall we?" Loki suggests, and Thrym nods, still smirking.
+
+                *goto feast
+    #Stay quiet.
+        You smile at him, but stay quiet, letting Loki do the talking.
+
+        "Yes, you can." he says.
+
+        *goto feast
+*label feast
+The three of you, along with a few dozen other giants, sit down at the high table. Some terrifyingly tall and thin stools have been prepared for you and Loki, and you gingerly balance on one, then start on the food. Thrym has spared no expense; the table is stacked high with meat and fish and sweetmeats and every kind of bread, and huge casks of mead - big enough to make a ship out of - sit nearby.
+
+You eat and drink for a while, and then Thrym stands up.
+
+"Bring the hammer!" he shouts, "It's time!"
+
+His servants hurry from the hall, and he gives you a toothy grin.
+
+"Almost ready, my sweet." he leers.
+*page_break
+A few minutes later, the servants return, struggling to carry Mjolnir between them, and you feel your hand itching to grab it.
+
+"Place it on Freya's lap!" Thrym orders, and the servants do as they're told.
+
+You caress the handle, knowing how easy it would be to spring up and slaughter them all. Still, that isn't your only option.
+*choice
+    #Kill them all.
+        You spring off your impossibly tall chair and charge for Thrym's head, easily smashing it, and you've killed two more before any of them can react. As the others roar in rage and attack you, you spot Loki slithering behind a giant table leg.
+
+        It takes you under a minute to kill every giant in the hall, and Loki looks faintly impressed as he emerges daintily from his hiding place.
+
+        "Not bad." he comments.
+
+        The two of you walk out to the sled, and set off back towards Asgard.
+        *page_break
+        *goto hurrah
+    #Incapacitate them.
+        You spring off your impossibly tall chair and charge for Thrym's knees, easily smashing them, and you've crippled two more before any of them can react. As the others roar in rage and attack you, you spot Loki slithering behind a giant table leg.
+
+        It takes you under a minute to incapacitate every giant in the hall, and Loki looks impressed as he emerges daintily from his hiding place.
+
+        "Not bad." he comments.
+
+        The two of you walk out to the sled, and set off back towards Asgard.
+        *page_break
+        *goto hurrah
+    #Intimidate them.
+        You stand up, throwing off you veil and headress and revealing yourself in all you power.
+
+        There are gasps of shock and anger and fear from the giants, and Thrym bellows, "What???"
+
+        "I am ${name}, ruler of 
+        *if death=100
+            the dead! 
+            *goto scare
+        *elseif animal=100
+            the animals! 
+            *goto scare
+        *elseif rain=100
+            the rain! 
+            *goto scare
+        *elseif fire=100
+            fire! 
+            *goto scare
+        *else
+            dreams!
+            *goto scare
+            *label scare
+            Let us leave in peace, or [i]die.[/i]"
+
+            There's silence in the hall, as the giants galre at you, minds working, and Loki slips away behind a giant table leg.
+
+            Then Thrym steps backwards. He looks around at his extended family, and at you, then nods slowly. The giants back up, clearing a path to the door, and you stride out of the hall. A few seconds later, Loki joins you.
+
+            "Not bad." he comments, as you climb back into the sled and set off for Asgard.
+            *page_break
+            *label hurrah
+            *set thor %+60
+            *set sif%+20
+            *set tyr%+10
+            *set odin%+10
+            *set loki%+10
+            *set idunn%+10
+            *set heimdall%+10
+            *set sigyn%+10
+            *set vor%+10
+            *set frey%+10
+            *if freya<95
+                *set freya%+10
+            *set baldur%+10
+            *set njord%+10
+            *set fulla%+10
+            *set bragi%+10
+            *set frigg%+10
+            As you enter Asgard, the waiting gods cheer, and Thor comes running out to take his hammer. He crades it happily, then hugs you tightly enough to kill a human.
+
+            "Thank you!" he booms, and Loki answers.
+
+            "You're welcome." he smiles.
+
+            There are celebrations in Asgard that night, and they go on well into the next day. Everyone is intensely relieved, and this incident will stick in their minds for a while. You, Loki and Heimdall came out of it extremely well.
+            *finish

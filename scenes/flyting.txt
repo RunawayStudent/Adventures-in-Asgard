@@ -1,0 +1,11 @@
+*if loki>60
+    "And we all know why that is, don't we? Tell me, ${name}, do you miss having me in your bed?"
+    
+    "Oh, shut up!" snaps (someone.)
+
+    Incidentally, was he telling the truth?
+    *fake_choice
+        #Yes.
+        #No.
+        #That's my business.
+            Fair enough.
